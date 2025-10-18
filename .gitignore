@@ -1,0 +1,59 @@
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints*
+
+# --- Python bytecode ---
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual envs ---
+.venv/
+venv/
+*-env/
+
+# --- Dotenv (secrets) ---
+.env
+.env.*
+!.env.example
+
+# --- Build / packaging ---
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Testing / coverage ---
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+
+# --- Type checking / linters ---
+.mypy_cache/
+.pyre/
+.ruff_cache/
+.pytype/
+
+# --- Editors / OS junk ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+
+# --- Temp folder --- 
+temp/
+
+# --- Elastic Beanstalk ---
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# --- Run artifacts / local outputs (optional) ---
+runs/
+outputs/
