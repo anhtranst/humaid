@@ -49,11 +49,13 @@ Thumbs.db
 # --- Temp folder --- 
 temp/
 
+# --- Reference documents --- 
+docs/
+
 # --- Elastic Beanstalk ---
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
 # --- Run artifacts / local outputs (optional) ---
-runs/
 outputs/
