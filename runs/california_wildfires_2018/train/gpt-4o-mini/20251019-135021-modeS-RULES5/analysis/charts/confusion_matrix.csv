@@ -1,0 +1,11 @@
+class_label,caution_and_advice,displaced_people_and_evacuations,infrastructure_and_utility_damage,injured_or_dead_people,missing_or_found_people,not_humanitarian,other_relevant_information,requests_or_urgent_needs,rescue_volunteering_or_donation_effort,sympathy_and_support
+caution_and_advice,56,1,12,4,0,5,19,0,0,0
+displaced_people_and_evacuations,10,207,6,5,2,5,5,6,7,5
+infrastructure_and_utility_damage,1,17,210,31,0,14,9,6,1,6
+injured_or_dead_people,2,24,44,1220,19,25,1,0,1,26
+missing_or_found_people,0,1,1,28,92,0,1,0,0,2
+not_humanitarian,19,18,58,35,1,633,90,12,3,54
+other_relevant_information,36,24,127,35,3,251,189,8,5,49
+requests_or_urgent_needs,1,0,1,0,1,2,1,35,13,1
+rescue_volunteering_or_donation_effort,5,31,17,22,14,30,62,52,708,50
+sympathy_and_support,6,8,1,4,2,5,5,3,23,273
