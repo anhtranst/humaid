@@ -18,13 +18,15 @@ other_relevant_information
 not_humanitarian
 ```
 
+---
+
 ## Quick Start
 
 ### 1) Requirements
 
 - Python 3.10+
 - Packages: `pandas`, `numpy`, `matplotlib`, `requests`, `python-dotenv`
-- An OpenAI API key (models: `gpt-4o-mini`, `gpt-4o` )
+- An OpenAI API key (models: `gpt-4o-mini` recommended)
 
 ```bash
 pip install -r requirements.txt
@@ -48,11 +50,12 @@ OPENAI_API_KEY= [YOUR-KEY]
 Dataset/
   HumAID/<event>/<event>_<split>.tsv     # Input TSVs
 humaidclf/
-  __init__.py
-  io.py            # load_tsv, plan_run_dirs
-  prompts.py       # LABELS (ordered as above), SYSTEM_PROMPT, make_user_message
-  batch.py         # sync_test_sample, build_requests_jsonl_S, batch helpers, parser
-  eval.py          # metrics + analysis & plots
+  __init__.py        # Exposes the package API (incl. run_experiment, resume_experiment)
+  io.py              # load_tsv, plan_run_dirs
+  prompts.py         # LABELS (ordered as above), SYSTEM_PROMPT, make_user_message
+  batch.py           # sync_test_sample, build_requests_jsonl_S, batch helpers, parser
+  eval.py            # metrics + analysis & plots
+  runner.py          # high-level orchestration: run_experiment(), resume_experiment()
 runs/
   <event>/<split>/<model>/<timestamp>-<tag>/
     requests.jsonl
@@ -72,15 +75,57 @@ runs/
         summary.json
 ```
 
-We intentionally store analysis inside each run folder so repeated analyses don't mix across runs.
+We intentionally store **analysis** inside each run folder so repeated analyses don't mix across runs.
 
 ---
 
 ## How to Use
 
-Examples below assume you're in a Jupyter notebook or a Python script at the repo root.
+> You can use either the **one-liner runner** or the **step-by-step** workflow.
 
-### A) Load data (TSV)
+### Option 1 — One-liner runner (recommended)
+
+```python
+from dotenv import load_dotenv; load_dotenv()
+from humaidclf import run_experiment
+
+RULES = '''
+Pick ONE label for the tweet's PRIMARY INTENT.
+- caution_and_advice: warnings/instructions
+- sympathy_and_support: prayers/condolences/praise (no logistics)
+- requests_or_urgent_needs: asking for help/supplies/services
+- displaced_people_and_evacuations: evacuation/relocation/shelter
+- injured_or_dead_people: injuries/casualties/deaths
+- missing_or_found_people: explicit missing or found/reunited
+- infrastructure_and_utility_damage: asset damage/outages CAUSED BY the disaster
+- rescue_volunteering_or_donation_effort: offering help; organizing rescues/donations/volunteers/events
+- other_relevant_information: on-topic facts/stats/updates when none above fits (event/hashtag/location+disaster term or official update = on-topic)
+- not_humanitarian: unrelated or no clear disaster context
+Return only the label.
+'''
+
+plan, preds, summary = run_experiment(
+    dataset_path="Dataset/HumAID/california_wildfires_2018/california_wildfires_2018_train.tsv",
+    rules=RULES,
+    model="gpt-4o-mini",
+    tag="modeS-RULES5",     # appears in the run folder name
+    dryrun_n=20,            # small synchronous sanity check
+    poll_secs=60,           # batch status polling interval
+    do_analysis=True,       # write analysis/ charts and metrics
+)
+summary
+```
+
+#### Resume a submitted run later
+
+```python
+from humaidclf import resume_experiment
+plan2, preds2, summary2 = resume_experiment(plan["dir"])   # uses batch_meta.json in that directory
+```
+
+### Option 2 — Step-by-step
+
+#### A) Load data (TSV)
 
 Expected columns: `tweet_id`, `tweet_text`, and (optional) `class_label` for ground truth.
 
@@ -93,7 +138,7 @@ df = load_tsv(dataset_path, id_col="tweet_id", text_col="tweet_text", label_col=
 len(df), df.head(2)
 ```
 
-### B) Choose rules (zero-shot)
+#### B) Choose rules (zero-shot)
 
 Rules are short text you supply. Swap them to A/B performance vs token cost.
 
@@ -114,7 +159,7 @@ Return only the label.
 '''
 ```
 
-### C) Dry-run a small sample (sanity check)
+#### C) Dry-run a small sample (sanity check)
 
 ```python
 from humaidclf import sync_test_sample, macro_f1
@@ -123,7 +168,7 @@ print("Sample Macro-F1:", macro_f1(demo))
 demo.head()
 ```
 
-### D) Plan output directories & build the Batch requests
+#### D) Plan output directories & build the Batch requests
 
 ```python
 from humaidclf import plan_run_dirs, build_requests_jsonl_S
@@ -141,7 +186,7 @@ runs/<event>/<split>/gpt-4o-mini/<timestamp>-modeS-RULES5/
   (later) outputs.jsonl, predictions.csv, analysis/
 ```
 
-### E) Submit Batch, wait, download, parse
+#### E) Submit Batch, wait, download, parse
 
 ```python
 import json
@@ -163,7 +208,7 @@ with open(plan["batch_meta_json"], "w", encoding="utf-8") as f:
     json.dump({"file_id": fid, "batch_id": bid}, f, indent=2)
 
 # Poll until the batch is done (completed/failed/cancelled)
-info = wait_for_batch(bid, poll_secs=20)
+info = wait_for_batch(bid, poll_secs=60)
 
 # Guard: only proceed if completed
 status = info.get("status")
@@ -180,7 +225,7 @@ print("Saved predictions to:", plan["predictions_csv"])
 print("Macro-F1:", macro_f1(preds))
 ```
 
-Tip: to resume later without rebuilding, load plan["batch_meta_json"] and call wait_for_batch(bid) again; then download/parse as above.
+Tip: to resume later without rebuilding, load `plan["batch_meta_json"]` and call `wait_for_batch(bid)` again; then download/parse as above.
 
 ```python
 # Reload the saved metadata and poll again
@@ -188,7 +233,7 @@ with open(plan["batch_meta_json"], "r", encoding="utf-8") as f:
     meta = json.load(f)
 bid = meta["batch_id"]
 
-info = wait_for_batch(bid, poll_secs=20)
+info = wait_for_batch(bid, poll_secs=60)
 if info.get("status") != "completed":
     raise RuntimeError(f"Batch ended with status='{info.get('status')}'")
 
@@ -231,6 +276,29 @@ mistakes_df, summary, per_cls, conf_df = analyze_and_export_mistakes(
     charts_dir=base / "analysis" / "charts",
 )
 summary
+```
+
+---
+
+## Exported API (from `humaidclf/__init__.py`)
+
+```python
+# IO
+load_tsv, plan_run_dirs
+
+# Prompts
+LABELS, SYSTEM_PROMPT, make_user_message
+
+# Batch
+SCHEMA_S, sync_test_sample, build_requests_jsonl_S,
+upload_file_for_batch, create_batch, get_batch, wait_for_batch,
+download_file_content, parse_outputs_S_to_df
+
+# Eval
+macro_f1, analyze_and_export_mistakes
+
+# Runners
+run_experiment, resume_experiment
 ```
 
 ---

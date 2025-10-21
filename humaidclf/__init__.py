@@ -1,21 +1,78 @@
-from .io import load_tsv, plan_run_dirs
-from .prompts import LABELS, SYSTEM_PROMPT, make_user_message
-from .batch import (
-    SCHEMA_S, sync_test_sample, build_requests_jsonl_S,
-    upload_file_for_batch, create_batch, get_batch, wait_for_batch, download_file_content,
-    parse_outputs_S_to_df
+"""
+humaidclf: Zero-shot tweet classification pipeline for HumAID-style labels
+using OpenAI Chat Completions + Structured Outputs and the Batch API.
+
+This package exposes:
+- I/O helpers (load TSVs, create per-run directories)
+- Prompt assets (label order, system prompt, user message builder)
+- Batch workflow (sync sanity-check, build requests.jsonl, submit/poll/download/parse)
+- Evaluation utilities (macro-F1, analysis charts & confusion matrices)
+- High-level runner (one-call end-to-end or resume)
+"""
+
+# =========================
+# IO utilities
+# =========================
+from .io import (
+    load_tsv,        # Read a TSV and normalize columns to: tweet_id, tweet_text, class_label (optional)
+    plan_run_dirs,   # Create a timestamped run directory layout (requests.jsonl / outputs.jsonl / predictions.csv / analysis/)
 )
-from .eval import macro_f1, analyze_and_export_mistakes
+
+# =========================
+# Prompt assets
+# =========================
+from .prompts import (
+    LABELS,          # Canonical label order (matches your README & structured output enum)
+    SYSTEM_PROMPT,   # Short system prompt to enforce “one label + JSON schema” behavior
+    make_user_message,  # Helper to build the user message from rules + tweet text (optional convenience)
+)
+
+# =========================
+# Batch (OpenAI API workflow)
+# =========================
+from .batch import (
+    SCHEMA_S,               # JSON Schema used by Structured Outputs (Mode S): {label, confidence}
+    sync_test_sample,       # Small synchronous sanity check on N examples (catches prompt/schema issues early)
+    build_requests_jsonl_S, # Build requests.jsonl for the Batch API (one request per tweet)
+    upload_file_for_batch,  # POST /files (purpose="batch") — upload the requests.jsonl
+    create_batch,           # POST /batches — create a batch job for /v1/chat/completions
+    get_batch,              # GET /batches/{id} — retrieve batch status/metadata
+    wait_for_batch,         # Poll GET /batches/{id} until completed/failed/cancelled
+    download_file_content,  # GET /files/{id}/content — download batch output JSONL
+    parse_outputs_S_to_df,  # Parse outputs.jsonl back into a DataFrame (re-attach tweet_text/class_label when provided)
+)
+
+# =========================
+# Evaluation utilities
+# =========================
+from .eval import (
+    macro_f1,                       # Macro-averaged F1 over available truth labels
+    analyze_and_export_mistakes,    # Save mistakes.csv and charts (counts + row-norm confusion, per-class metrics, summary)
+)
+
+# =========================
+# High-level runners
+# =========================
+from .runner import (
+    run_experiment,     # End-to-end: load → dry-run → build → submit → wait → download → parse → (optional) analysis
+    resume_experiment,  # Resume a submitted run using batch_meta.json (download/parse/analyze after it completes)
+)
 
 __all__ = [
     # IO
     "load_tsv", "plan_run_dirs",
+
     # Prompts
     "LABELS", "SYSTEM_PROMPT", "make_user_message",
+
     # Batch
     "SCHEMA_S", "sync_test_sample", "build_requests_jsonl_S",
     "upload_file_for_batch", "create_batch", "get_batch", "wait_for_batch",
     "download_file_content", "parse_outputs_S_to_df",
+
     # Eval
     "macro_f1", "analyze_and_export_mistakes",
+
+    # Runners
+    "run_experiment", "resume_experiment",
 ]
