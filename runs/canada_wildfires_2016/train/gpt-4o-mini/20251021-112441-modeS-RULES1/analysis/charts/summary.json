@@ -1,0 +1,18 @@
+{
+  "num_total_with_truth": 1569,
+  "num_correct": 1197,
+  "num_incorrect": 372,
+  "accuracy": 0.762906309751434,
+  "macro_f1": 0.5732361371596117,
+  "labels": [
+    "requests_or_urgent_needs",
+    "rescue_volunteering_or_donation_effort",
+    "caution_and_advice",
+    "displaced_people_and_evacuations",
+    "missing_or_found_people",
+    "infrastructure_and_utility_damage",
+    "sympathy_and_support",
+    "other_relevant_information",
+    "not_humanitarian"
+  ]
+}

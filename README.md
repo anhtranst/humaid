@@ -3,7 +3,7 @@
 Zero-shot tweet classification for humanitarian response categories (HumAID-style labels) using OpenAI's **Chat Completions + Structured Outputs** and the **Batch API**.  
 Outputs include predictions and analysis artifacts (confusion matrices, per-class metrics, mistakes).
 
-## Labels
+## Labels (canonical order)
 
 ```
 caution_and_advice
@@ -17,6 +17,8 @@ rescue_volunteering_or_donation_effort
 other_relevant_information
 not_humanitarian
 ```
+
+This order is enforced in the code (enum for Structured Outputs) and used consistently in plots and reports.
 
 ---
 
@@ -39,7 +41,7 @@ pip install pandas numpy matplotlib requests python-dotenv
 Create a `.env` file in the repo root:
 
 ```
-OPENAI_API_KEY= [YOUR-KEY]
+OPENAI_API_KEY=[YOUR-KEY]
 ```
 
 `.gitignore` already ignores `.env`. If a key was ever committed, rotate it and purge from history (e.g., `git filter-repo`).
@@ -56,6 +58,9 @@ humaidclf/
   batch.py           # sync_test_sample, build_requests_jsonl_S, batch helpers, parser
   eval.py            # metrics + analysis & plots
   runner.py          # high-level orchestration: run_experiment(), resume_experiment()
+rules/               # project-local rule variants
+  __init__.py        # exports RULES_BASELINE, RULES_1, RULE2,.., RULES_REGISTRY, get_rule
+  humaid_rules.py    # definitions of RULES_BASELINE and RULES_1 (edit here as you iterate)
 runs/
   <event>/<split>/<model>/<timestamp>-<tag>/
     requests.jsonl
@@ -87,31 +92,17 @@ We intentionally store **analysis** inside each run folder so repeated analyses 
 
 ```python
 from dotenv import load_dotenv; load_dotenv()
+from rules import RULES_BASELINE  # or RULES_1
 from humaidclf import run_experiment
-
-RULES = '''
-Pick ONE label for the tweet's PRIMARY INTENT.
-- caution_and_advice: warnings/instructions
-- sympathy_and_support: prayers/condolences/praise (no logistics)
-- requests_or_urgent_needs: asking for help/supplies/services
-- displaced_people_and_evacuations: evacuation/relocation/shelter
-- injured_or_dead_people: injuries/casualties/deaths
-- missing_or_found_people: explicit missing or found/reunited
-- infrastructure_and_utility_damage: asset damage/outages CAUSED BY the disaster
-- rescue_volunteering_or_donation_effort: offering help; organizing rescues/donations/volunteers/events
-- other_relevant_information: on-topic facts/stats/updates when none above fits (event/hashtag/location+disaster term or official update = on-topic)
-- not_humanitarian: unrelated or no clear disaster context
-Return only the label.
-'''
 
 plan, preds, summary = run_experiment(
     dataset_path="Dataset/HumAID/california_wildfires_2018/california_wildfires_2018_train.tsv",
-    rules=RULES,
+    rules=RULES_BASELINE,     # supply your chosen rules text from rules/
     model="gpt-4o-mini",
-    tag="modeS-RULES5",     # appears in the run folder name
-    dryrun_n=20,            # small synchronous sanity check
-    poll_secs=60,           # batch status polling interval
-    do_analysis=True,       # write analysis/ charts and metrics
+    tag="modeS-RULES_BASELINE",
+    dryrun_n=20,              # small synchronous sanity check
+    poll_secs=60,             # batch status polling interval
+    do_analysis=True,         # write analysis/ charts and metrics
 )
 summary
 ```
@@ -140,23 +131,11 @@ len(df), df.head(2)
 
 #### B) Choose rules (zero-shot)
 
-Rules are short text you supply. Swap them to A/B performance vs token cost.
+Rules live **outside** the package in the `rules/` module so you can iterate freely.
 
 ```python
-RULES = '''
-Pick ONE label for the tweet's PRIMARY INTENT.
-- caution_and_advice: warnings/instructions
-- sympathy_and_support: prayers/condolences/praise (no logistics)
-- requests_or_urgent_needs: asking for help/supplies/services
-- displaced_people_and_evacuations: evacuation/relocation/shelter
-- injured_or_dead_people: injuries/casualties/deaths
-- missing_or_found_people: explicit missing or found/reunited
-- infrastructure_and_utility_damage: asset damage/outages CAUSED BY the disaster
-- rescue_volunteering_or_donation_effort: offering help; organizing rescues/donations/volunteers/events
-- other_relevant_information: on-topic facts/stats/updates when none above fits (event/hashtag/location+disaster term or official update = on-topic)
-- not_humanitarian: unrelated or no clear disaster context
-Return only the label.
-'''
+from rules import RULES_1  # or RULES_BASELINE
+RULES = RULES_1
 ```
 
 #### C) Dry-run a small sample (sanity check)
@@ -173,7 +152,7 @@ demo.head()
 ```python
 from humaidclf import plan_run_dirs, build_requests_jsonl_S
 
-plan = plan_run_dirs(dataset_path, out_root="runs", model="gpt-4o-mini", tag="modeS-RULES5")
+plan = plan_run_dirs(dataset_path, out_root="runs", model="gpt-4o-mini", tag="modeS-RULES1")
 build_requests_jsonl_S(df, plan["requests_jsonl"], rules=RULES, model=plan["model"], temperature=0.0)
 plan
 ```
@@ -181,7 +160,7 @@ plan
 This creates:
 
 ```
-runs/<event>/<split>/gpt-4o-mini/<timestamp>-modeS-RULES5/
+runs/<event>/<split>/gpt-4o-mini/<timestamp>-modeS-RULES1/
   requests.jsonl
   (later) outputs.jsonl, predictions.csv, analysis/
 ```
@@ -269,7 +248,7 @@ Artifacts appear under `runs/.../<run_id>/analysis/` as listed in the layout abo
 from pathlib import Path
 from humaidclf import analyze_and_export_mistakes
 
-base = Path("runs/california_wildfires_2018/train/gpt-4o-mini/20251017-220548-modeS-RULES5")
+base = Path("runs/california_wildfires_2018/train/gpt-4o-mini/20251017-220548-modeS-RULES1")
 mistakes_df, summary, per_cls, conf_df = analyze_and_export_mistakes(
     pred_csv_path=base / "predictions.csv",
     out_mistakes_csv_path=base / "analysis" / "mistakes.csv",

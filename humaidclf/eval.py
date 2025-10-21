@@ -6,18 +6,55 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Try to import the canonical label order from the package; if unavailable, fall back later.
+try:
+    from .prompts import LABELS as CANON_LABELS
+except Exception:
+    CANON_LABELS = None
 
-def macro_f1(df, truth_col: str = "class_label", pred_col: str = "predicted_label") -> float:
+
+def _resolve_label_order(truth: pd.Series, pred: pd.Series, label_order=None):
+    """
+    Decide the label order to use in metrics/plots.
+    Priority:
+      1) explicit label_order arg if provided
+      2) CANON_LABELS imported from humaidclf.prompts (if available)
+      3) sorted union of labels present in truth ∪ pred
+    Returns:
+      order_used (list[str])
+    """
+    present = list(pd.Index(truth).astype(str).unique()) + list(pd.Index(pred).astype(str).unique())
+    present = sorted(set([x for x in present if x != ""]))  # unique, no empty
+
+    if label_order and len(label_order) > 0:
+        # Keep only labels that actually appear (prevents all-zero rows/cols)
+        return [l for l in label_order if l in present] or present
+    if CANON_LABELS:
+        return [l for l in CANON_LABELS if l in present] or present
+    return present
+
+
+def macro_f1(
+    df: pd.DataFrame,
+    truth_col: str = "class_label",
+    pred_col: str = "predicted_label",
+    label_order: list[str] | None = None,
+) -> float:
     """
     Macro-F1 on a DataFrame of predictions.
     - Ignores rows with empty truth/pred.
-    - Computes F1 per class, then averages equally across classes.
+    - Computes F1 per class in a deterministic label order, then averages equally across classes.
+    - If label_order is provided (or CANON_LABELS is available), it uses that order
+      but only for classes that actually appear in truth ∪ pred.
     """
     sub = df[(df[truth_col] != "") & (df[pred_col] != "")]
     if sub.empty:
         return float("nan")
 
-    labels = sorted(set(sub[truth_col]) | set(sub[pred_col]))
+    labels = _resolve_label_order(sub[truth_col], sub[pred_col], label_order)
+    if not labels:
+        return float("nan")
+
     f1s = []
     for c in labels:
         tp = ((sub[truth_col] == c) & (sub[pred_col] == c)).sum()
@@ -40,6 +77,7 @@ def analyze_and_export_mistakes(
     text_col: str = "tweet_text",
     save_summary_json: bool = True,
     annotate_norm_cm: bool = True,   # show numbers on normalized heatmap
+    label_order: list[str] | None = None,
 ):
     """
     Loads predictions CSV, exports misclassified rows, computes metrics,
@@ -73,8 +111,22 @@ def analyze_and_export_mistakes(
     out_p.parent.mkdir(parents=True, exist_ok=True)
     mistakes_df.to_csv(out_p, index=False)
 
+    # ---------- Determine label order ----------
+    labels = _resolve_label_order(df_eval[truth_col], df_eval[pred_col], label_order)
+    if not labels:
+        # Nothing to evaluate; return early
+        empty_conf = pd.DataFrame()
+        summary = {
+            "num_total_with_truth": 0,
+            "num_correct": 0,
+            "num_incorrect": 0,
+            "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "labels": [],
+        }
+        return mistakes_df, summary, pd.DataFrame(), empty_conf
+
     # ---------- Confusion matrix (counts) ----------
-    labels = sorted(set(df_eval[truth_col]) | set(df_eval[pred_col]))
     conf_mat_df = (
         pd.crosstab(df_eval[truth_col], df_eval[pred_col], dropna=False)
         .reindex(index=labels, columns=labels, fill_value=0)
@@ -102,7 +154,8 @@ def analyze_and_export_mistakes(
         "f1":        f1,
         "support":   support_true.astype(int),
         "error_rate": error_rate,
-    }).sort_values("label")
+    })
+    # No sort here; 'labels' is already in the desired order.
 
     # ---------- Aggregates ----------
     total = C.sum()
@@ -113,8 +166,8 @@ def analyze_and_export_mistakes(
         "num_total_with_truth": int(len(df_eval)),
         "num_correct": int(tp.sum()),
         "num_incorrect": int(len(mistakes_df)),
-        "accuracy": accuracy,
-        "macro_f1": macro,
+        "accuracy": float(accuracy),
+        "macro_f1": float(macro),
         "labels": labels,
     }
 
@@ -138,7 +191,6 @@ def analyze_and_export_mistakes(
         plt.close(fig)
 
         # (B) Confusion matrix (row-normalized to probabilities) with fixed [0,1] range + colorbar
-        #     Row-normalized answers: "Given the TRUE class, where did predictions go?"
         conf_norm = conf_mat_df.div(conf_mat_df.sum(axis=1).replace(0, 1), axis=0).fillna(0.0)
         fig = plt.figure(figsize=(8 + 0.3 * len(labels), 6 + 0.3 * len(labels)))
         im = plt.imshow(conf_norm.values, interpolation="nearest", vmin=0, vmax=1)
@@ -163,7 +215,7 @@ def analyze_and_export_mistakes(
         plt.savefig(charts_dir / "confusion_matrix_row_normalized.png", dpi=200)
         plt.close(fig)
 
-        # (C) Per-class F1
+        # (C) Per-class F1 (in canonical order)
         fig = plt.figure(figsize=(max(8, 0.6 * len(labels)), 5))
         plt.bar(per_class_df["label"], per_class_df["f1"])
         plt.title("Per-class F1")
@@ -173,7 +225,7 @@ def analyze_and_export_mistakes(
         plt.savefig(charts_dir / "per_class_f1.png", dpi=200)
         plt.close(fig)
 
-        # (D) Per-class error rate
+        # (D) Per-class error rate (in canonical order)
         fig = plt.figure(figsize=(max(8, 0.6 * len(labels)), 5))
         plt.bar(per_class_df["label"], per_class_df["error_rate"])
         plt.title("Per-class Error Rate")
@@ -183,7 +235,7 @@ def analyze_and_export_mistakes(
         plt.savefig(charts_dir / "per_class_error_rate.png", dpi=200)
         plt.close(fig)
 
-        # (E) Top confusions (off-diagonal counts)
+        # (E) Top confusions (off-diagonal counts) — order here is by magnitude, intentionally
         pairs = [
             (labels[i], labels[j], int(C[i, j]))
             for i in range(len(labels)) for j in range(len(labels))
@@ -193,7 +245,7 @@ def analyze_and_export_mistakes(
         top_k = pairs[:15]
         if top_k:
             fig = plt.figure(figsize=(10, max(4, 0.4 * len(top_k))))
-            ylabels = [f"{t} \u2192 {p}" for t, p, _ in top_k]  # \u2192 is a right arrow
+            ylabels = [f"{t} \u2192 {p}" for t, p, _ in top_k]  # → arrow
             counts = [c for _, _, c in top_k]
             y = range(len(top_k))
             plt.barh(list(y), counts)
