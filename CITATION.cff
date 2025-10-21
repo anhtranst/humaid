@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "Zero-shot HumAID Tweet Classification with OpenAI Batch"
+authors:
+  - family-names: Tran
+    given-names: Anh
+  - family-names: Li
+    given-names: Hongmin
+version: "0.1.0"
+date-released: 2025-10-20
+url: "https://github.com/anhtranst/humaid"
+license: "MIT"
+message: "If you use this repository, please cite it using the metadata above."
