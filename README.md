@@ -7,14 +7,14 @@ Outputs include predictions and analysis artifacts (confusion matrices, per-clas
 
 ```
 caution_and_advice
-sympathy_and_support
-requests_or_urgent_needs
 displaced_people_and_evacuations
+infrastructure_and_utility_damage
 injured_or_dead_people
 missing_or_found_people
-infrastructure_and_utility_damage
+requests_or_urgent_needs
 rescue_volunteering_or_donation_effort
-other_relevant_information
+sympathy_and_support
+other_relevant_information 
 not_humanitarian
 ```
 
