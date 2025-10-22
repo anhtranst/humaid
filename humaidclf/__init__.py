@@ -51,6 +51,25 @@ from .eval import (
 )
 
 # =========================
+# Token calculations
+# =========================
+from .budget import (
+    get_token_encoder,
+    estimate_request_tokens,
+    estimate_dataset_tokens,
+    build_token_index,
+    shard_dataset_by_tokens,
+)
+
+# =========================
+# API key switcher
+# =========================
+from .batch import (
+    set_api_key_env, set_api_key_value, get_active_api_key_label,
+    use_api_key_env, use_api_key_value,
+)
+
+# =========================
 # High-level runners
 # =========================
 from .runner import (
@@ -75,4 +94,15 @@ __all__ = [
 
     # Runners
     "run_experiment", "resume_experiment",
+
+    # Tokens
+    "get_token_encoder",
+    "estimate_request_tokens",
+    "estimate_dataset_tokens",
+    "build_token_index",
+    "shard_dataset_by_tokens",
+
+    # API key
+    "set_api_key_env", "set_api_key_value", "get_active_api_key_label",
+    "use_api_key_env", "use_api_key_value",
 ]

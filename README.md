@@ -28,23 +28,27 @@ This order is enforced in the code (enum for Structured Outputs) and used consis
 
 - Python 3.10+
 - Packages: `pandas`, `numpy`, `matplotlib`, `requests`, `python-dotenv`
+- Optional (recommended): `tiktoken` for accurate token estimates
 - An OpenAI API key (models: `gpt-4o-mini` recommended)
 
 ```bash
 pip install -r requirements.txt
 # or:
-pip install pandas numpy matplotlib requests python-dotenv
+pip install pandas numpy matplotlib requests python-dotenv tiktoken
 ```
 
-### 2) Configure your API key (do NOT commit it)
+### 2) Configure your API keys (do NOT commit them)
 
-Create a `.env` file in the repo root:
+Create a `.env` file in the repo root. You can keep a primary and an alternate key:
 
 ```
-OPENAI_API_KEY=[YOUR-KEY]
+OPENAI_API_KEY_1=...  # e.g., Tier-1 key with 2M batch cap
+OPENAI_API_KEY_2=...  # e.g., higher-capacity key
+# Optional: set a default
+OPENAI_API_KEY=${OPENAI_API_KEY_1}
 ```
 
-`.gitignore` already ignores `.env`. If a key was ever committed, rotate it and purge from history (e.g., `git filter-repo`).
+`.gitignore` already ignores `.env`. If a key was ever committed, rotate it and purge from history.
 
 ### 3) Project layout
 
@@ -55,11 +59,12 @@ humaidclf/
   __init__.py        # Exposes the package API (incl. run_experiment, resume_experiment)
   io.py              # load_tsv, plan_run_dirs
   prompts.py         # LABELS (ordered as above), SYSTEM_PROMPT, make_user_message
-  batch.py           # sync_test_sample, build_requests_jsonl_S, batch helpers, parser
-  eval.py            # metrics + analysis & plots
+  batch.py           # sync_test_sample, build_requests_jsonl_S, batch helpers, parser, API key switchers
+  budget.py          # NEW: token budgeting (dataset token estimates, sharding, gating by cap)
+  eval.py            # metrics + analysis & plots (fixed canonical label order)
   runner.py          # high-level orchestration: run_experiment(), resume_experiment()
-rules/               # project-local rule variants
-  __init__.py        # exports RULES_BASELINE, RULES_1, RULE2,.., RULES_REGISTRY, get_rule
+rules/               # project-local rule variants (outside the package for fast iteration)
+  __init__.py        # exports RULES_BASELINE, RULES_1, RULES_REGISTRY, get_rule
   humaid_rules.py    # definitions of RULES_BASELINE and RULES_1 (edit here as you iterate)
 runs/
   <event>/<split>/<model>/<timestamp>-<tag>/
@@ -78,6 +83,9 @@ runs/
         top_confusions.png
         per_class_metrics.csv
         summary.json
+  _indexes/
+    token_budget_*.csv             # saved token budgeting indices
+    runs_*.csv                     # indices of completed runs
 ```
 
 We intentionally store **analysis** inside each run folder so repeated analyses don't mix across runs.
@@ -204,23 +212,97 @@ print("Saved predictions to:", plan["predictions_csv"])
 print("Macro-F1:", macro_f1(preds))
 ```
 
-Tip: to resume later without rebuilding, load `plan["batch_meta_json"]` and call `wait_for_batch(bid)` again; then download/parse as above.
+---
+
+## Token budgeting & dataset gating (NEW: `budget.py`)
+
+Before you submit a Batch job, estimate tokens per dataset and decide which ones fit your tier cap.
 
 ```python
-# Reload the saved metadata and poll again
-with open(plan["batch_meta_json"], "r", encoding="utf-8") as f:
-    meta = json.load(f)
-bid = meta["batch_id"]
+from pathlib import Path
+import pandas as pd
+from rules import RULES_1
+from humaidclf import build_token_index  # from budget.py
 
-info = wait_for_batch(bid, poll_secs=60)
-if info.get("status") != "completed":
-    raise RuntimeError(f"Batch ended with status='{info.get('status')}'")
+BASE = Path("Dataset/HumAID")
+SPLITS = ["train"]                # or ["train","dev","test"]
+MODEL = "gpt-4o-mini"
+BATCH_TOKEN_LIMIT = 2_000_000     # e.g., Tier-1 cap
+SAFETY_MARGIN = 0.90              # 10% headroom
 
-download_file_content(info["output_file_id"], str(plan["outputs_jsonl"]))
-preds = parse_outputs_S_to_df(plan["outputs_jsonl"], df)
-preds.to_csv(plan["predictions_csv"], index=False)
-print("Saved predictions to:", plan["predictions_csv"])
-print("Macro-F1:", macro_f1(preds))
+def discover_tsvs(base: Path, splits: list[str]):
+    items = []
+    for event_dir in sorted([p for p in base.iterdir() if p.is_dir()]):
+        event = event_dir.name
+        for split in splits:
+            tsv = event_dir / f"{event}_{split}.tsv"
+            if tsv.exists():
+                items.append({"event": event, "split": split, "tsv": str(tsv)})
+    return pd.DataFrame(items)
+
+df_sources = discover_tsvs(BASE, SPLITS)
+token_index = build_token_index(
+    df_sources, model=MODEL, rules_text=RULES_1,
+    batch_token_limit=BATCH_TOKEN_LIMIT, safety_margin=SAFETY_MARGIN,
+    sample_size=200, max_output_tokens=40
+)
+display(token_index)
+
+df_fit     = token_index[token_index["fits_cap"]]
+df_too_big = token_index[~token_index["fits_cap"]]
+```
+
+Optionally shard a large TSV into chunks that each fit your budget:
+
+```python
+from humaidclf import shard_dataset_by_tokens
+
+TARGET_BUDGET = int(BATCH_TOKEN_LIMIT * SAFETY_MARGIN)
+shards = shard_dataset_by_tokens(
+    "Dataset/HumAID/some_event/some_event_train.tsv",
+    model=MODEL, rules_text=RULES_1, target_token_budget=TARGET_BUDGET, max_output_tokens=40
+)
+len(shards), [len(s) for s in shards]
+```
+
+---
+
+## Switching API keys (NEW in `batch.py`)
+
+You can switch keys globally or just for a code block. This lets you run small datasets with your Tier‑1 key and large ones with your alternate key.
+
+```python
+from humaidclf.batch import (
+    set_api_key_env, set_api_key_value, get_active_api_key_label,
+    use_api_key_env, use_api_key_value,
+)
+
+# Permanent switch for the session (using .env variable names)
+set_api_key_env("OPENAI_API_KEY_1")
+print(get_active_api_key_label())  # -> "OPENAI_API_KEY_1"
+
+# Temporary switch (auto-restores after the 'with' block)
+with use_api_key_env("OPENAI_API_KEY_2"):
+    print(get_active_api_key_label())  # -> "OPENAI_API_KEY_2"
+    # run big batches here
+print(get_active_api_key_label())      # restored
+```
+
+Combine with token budgeting to route datasets to the right key:
+
+```python
+from humaidclf import run_experiment
+from rules import RULES_1
+
+# 1) Run "fit" datasets on Tier-1 key
+with use_api_key_env("OPENAI_API_KEY_1"):
+    for _, row in df_fit.iterrows():
+        run_experiment(row["tsv"], rules=RULES_1, model="gpt-4o-mini", tag="modeS-RULES1-TIER1")
+
+# 2) Run "too big" datasets on alternate key
+with use_api_key_env("OPENAI_API_KEY_2"):
+    for _, row in df_too_big.iterrows():
+        run_experiment(row["tsv"], rules=RULES_1, model="gpt-4o-mini", tag="modeS-RULES1-ALT")
 ```
 
 ---
@@ -271,7 +353,14 @@ LABELS, SYSTEM_PROMPT, make_user_message
 # Batch
 SCHEMA_S, sync_test_sample, build_requests_jsonl_S,
 upload_file_for_batch, create_batch, get_batch, wait_for_batch,
-download_file_content, parse_outputs_S_to_df
+download_file_content, parse_outputs_S_to_df,
+# API key switching
+set_api_key_env, set_api_key_value, get_active_api_key_label,
+use_api_key_env, use_api_key_value,
+
+# Budgeting
+get_token_encoder, estimate_request_tokens, estimate_dataset_tokens,
+build_token_index, shard_dataset_by_tokens,
 
 # Eval
 macro_f1, analyze_and_export_mistakes
@@ -291,6 +380,7 @@ run_experiment, resume_experiment
 - Confusion matrices:
   - Counts: shows frequencies (can be dominated by big classes).
   - Row-normalized: shows per-class recall (diagonals = recall), fixed [0,1] with colorbar.
+- Large datasets: use `build_token_index()` to check caps, `use_api_key_env()` to switch keys, and `shard_dataset_by_tokens()` if you want to keep everything under one key.
 
 ---
 

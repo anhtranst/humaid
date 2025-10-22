@@ -12,19 +12,6 @@ LABELS = [
   "not_humanitarian",
 ]
 
-# LABELS = [
-#   "requests_or_urgent_needs",
-#   "rescue_volunteering_or_donation_effort",
-#   "caution_and_advice",
-#   "displaced_people_and_evacuations",
-#   "injured_or_dead_people",
-#   "missing_or_found_people",
-#   "infrastructure_and_utility_damage",
-#   "sympathy_and_support",
-#   "other_relevant_information",
-#   "not_humanitarian",    
-# ]
-
 SYSTEM_PROMPT = (
   "You are a precise tweet classifier for humanitarian-response content. "
   "Choose exactly one label from the allowed labels that best fits the tweet. "

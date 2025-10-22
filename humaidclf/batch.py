@@ -1,12 +1,95 @@
 import os, json, time, requests
+from contextlib import contextmanager
 import pandas as pd
 
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
-assert OPENAI_API_KEY, "Please set OPENAI_API_KEY in your environment (e.g., via dotenv)."
+# OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+# assert OPENAI_API_KEY, "Please set OPENAI_API_KEY in your environment (e.g., via dotenv)."
 
+# OPENAI_BASE = "https://api.openai.com/v1"
+# H_JSON = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
+# H_MULTI = {"Authorization": f"Bearer {OPENAI_API_KEY}"}
+
+# ---- API base & dynamic headers ----
 OPENAI_BASE = "https://api.openai.com/v1"
-H_JSON = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
-H_MULTI = {"Authorization": f"Bearer {OPENAI_API_KEY}"}
+
+# Module-level state (mutated by key-switching helpers)
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+ACTIVE_KEY_LABEL = "OPENAI_API_KEY" if OPENAI_API_KEY else None
+
+def _rebuild_headers():
+    """(Re)build request headers from the current OPENAI_API_KEY."""
+    if not OPENAI_API_KEY:
+        raise RuntimeError("No OPENAI_API_KEY is set. Use set_api_key_env('OPENAI_API_KEY_1') or set_api_key_value(...).")
+    return (
+        {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"},  # H_JSON
+        {"Authorization": f"Bearer {OPENAI_API_KEY}"},                                      # H_MULTI
+    )
+
+H_JSON, H_MULTI = _rebuild_headers() if OPENAI_API_KEY else ({}, {})
+
+def set_api_key_env(varname: str) -> None:
+    """
+    Switch the active API key using an environment variable name, e.g.:
+        set_api_key_env('OPENAI_API_KEY_1')
+        set_api_key_env('OPENAI_API_KEY_2')
+    """
+    global OPENAI_API_KEY, ACTIVE_KEY_LABEL, H_JSON, H_MULTI
+    val = os.environ.get(varname)
+    if not val:
+        raise KeyError(f"Environment variable '{varname}' is not set.")
+    OPENAI_API_KEY = val.strip()
+    ACTIVE_KEY_LABEL = varname
+    H_JSON, H_MULTI = _rebuild_headers()
+
+def set_api_key_value(key: str, label: str | None = None) -> None:
+    """
+    Switch the active API key using a literal key string (avoid committing keys to code!).
+    Optionally pass a label for debugging/readability (e.g., 'TIER1' or 'ALT').
+    """
+    global OPENAI_API_KEY, ACTIVE_KEY_LABEL, H_JSON, H_MULTI
+    if not key or not isinstance(key, str):
+        raise ValueError("key must be a non-empty string.")
+    OPENAI_API_KEY = key.strip()
+    ACTIVE_KEY_LABEL = label or "<direct>"
+    H_JSON, H_MULTI = _rebuild_headers()
+
+def get_active_api_key_label() -> str | None:
+    """Return the current active key label (env var name or custom label)."""
+    return ACTIVE_KEY_LABEL
+
+@contextmanager
+def use_api_key_env(varname: str):
+    """
+    Temporarily switch to the key from `varname` inside a with-block.
+    Restores the previous key on exit.
+    """
+    prev_key, prev_label, prev_H_JSON, prev_H_MULTI = OPENAI_API_KEY, ACTIVE_KEY_LABEL, H_JSON.copy(), H_MULTI.copy()
+    set_api_key_env(varname)
+    try:
+        yield
+    finally:
+        # restore
+        globals()["OPENAI_API_KEY"] = prev_key
+        globals()["ACTIVE_KEY_LABEL"] = prev_label
+        globals()["H_JSON"] = prev_H_JSON
+        globals()["H_MULTI"] = prev_H_MULTI
+
+@contextmanager
+def use_api_key_value(key: str, label: str | None = None):
+    """
+    Temporarily switch to a literal key inside a with-block.
+    Restores the previous key on exit.
+    """
+    prev_key, prev_label, prev_H_JSON, prev_H_MULTI = OPENAI_API_KEY, ACTIVE_KEY_LABEL, H_JSON.copy(), H_MULTI.copy()
+    set_api_key_value(key, label=label)
+    try:
+        yield
+    finally:
+        # restore
+        globals()["OPENAI_API_KEY"] = prev_key
+        globals()["ACTIVE_KEY_LABEL"] = prev_label
+        globals()["H_JSON"] = prev_H_JSON
+        globals()["H_MULTI"] = prev_H_MULTI
 
 from .prompts import SYSTEM_PROMPT, make_user_message, LABELS
 

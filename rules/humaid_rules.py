@@ -11,13 +11,13 @@ HumAID zero-shot rules (project-local, experiment-focused).
 # Baseline template we can always fall back to
 RULES_BASELINE = """
 - caution_and_advice: Reports of warnings issued or lifted, guidance and tips related to the disaster.
-- sympathy_and_support: Tweets with prayers, thoughts, and emotional support.
-- requests_or_urgent_needs: Reports of urgent needs or supplies such as food, water, clothing, money,...
 - displaced_people_and_evacuations: People who have relocated due to the crisis, even for a short time...
+- infrastructure_and_utility_damage: Reports of any type of damage to infrastructure such as buildings, houses,...
 - injured_or_dead_people: Reports of injured or dead people due to the disaster.
 - missing_or_found_people: Reports of missing or found people due to the disaster.
-- infrastructure_and_utility_damage: Reports of any type of damage to infrastructure such as buildings, houses,...
+- requests_or_urgent_needs: Reports of urgent needs or supplies such as food, water, clothing, money,...
 - rescue_volunteering_or_donation_effort: Reports of any type of rescue, volunteering, or donation efforts...
+- sympathy_and_support: Tweets with prayers, thoughts, and emotional support.
 - other_relevant_information: on-topic but none of the above
 - not_humanitarian: If the tweet does not convey humanitarian aid-related information.
 """.strip()
@@ -25,13 +25,13 @@ RULES_BASELINE = """
 # === Experiment variants ===
 
 RULES_1 = """
-- requests_or_urgent_needs: asking for help/supplies/SOS
-- rescue_volunteering_or_donation_effort: offering help, donation, organizing aid
 - caution_and_advice: warnings/instructions/tips
 - displaced_people_and_evacuations: evacuations, relocation, shelters
+- infrastructure_and_utility_damage: damage/outages to roads/bridges/power/water/buildings
 - injured_or_dead_people: injuries, casualties, fatalities
 - missing_or_found_people: missing or found persons
-- infrastructure_and_utility_damage: damage/outages to roads/bridges/power/water/buildings
+- requests_or_urgent_needs: asking for help/supplies/SOS
+- rescue_volunteering_or_donation_effort: offering help, donation, organizing aid
 - sympathy_and_support: prayers/condolences, no actionable info
 - other_relevant_information: on-topic but none of the above
 - not_humanitarian: unrelated to disasters/aid
@@ -42,13 +42,13 @@ RULES_2 = """
 Pick ONE label for the tweet's PRIMARY INTENT.
 
 - caution_and_advice: warnings/instructions/tips about the disaster
-- sympathy_and_support: prayers/condolences/morale support (no logistics)
-- requests_or_urgent_needs: asking for help/supplies/services (need/urgent/sos)
 - displaced_people_and_evacuations: evacuation/relocation/shelter/displaced
+- infrastructure_and_utility_damage: damage/outages to roads/buildings/power/water/comms caused by the disaster
 - injured_or_dead_people: injuries/casualties/deaths
 - missing_or_found_people: explicit missing OR found/reunited persons
-- infrastructure_and_utility_damage: damage/outages to roads/buildings/power/water/comms caused by the disaster
+- requests_or_urgent_needs: asking for help/supplies/services (need/urgent/sos)
 - rescue_volunteering_or_donation_effort: offering help; organizing rescues/donations/volunteers/events
+- sympathy_and_support: prayers/condolences/morale support (no logistics)
 - other_relevant_information: on-topic facts/stats/official updates when none above fits
 - not_humanitarian: unrelated to disasters or unclear context
 
