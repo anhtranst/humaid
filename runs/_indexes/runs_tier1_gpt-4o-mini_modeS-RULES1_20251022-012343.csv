@@ -1,0 +1,4 @@
+event,split,run_dir,predictions_csv,macro_f1,accuracy,num_total,key
+kaikoura_earthquake_2016,train,runs\kaikoura_earthquake_2016\train\gpt-4o-mini\20251021-182421-modeS-RULES1-TIER1,runs\kaikoura_earthquake_2016\train\gpt-4o-mini\20251021-182421-modeS-RULES1-TIER1\predictions.csv,0.6662618907292215,0.6946614583333334,1536,OPENAI_API_KEY_1
+canada_wildfires_2016,train,runs\canada_wildfires_2016\train\gpt-4o-mini\20251021-202956-modeS-RULES1-TIER1,runs\canada_wildfires_2016\train\gpt-4o-mini\20251021-202956-modeS-RULES1-TIER1\predictions.csv,0.5862165196251916,0.7731038878266412,1569,OPENAI_API_KEY_1
+cyclone_idai_2019,train,runs\cyclone_idai_2019\train\gpt-4o-mini\20251021-205521-modeS-RULES1-TIER1,runs\cyclone_idai_2019\train\gpt-4o-mini\20251021-205521-modeS-RULES1-TIER1\predictions.csv,0.578483258711523,0.6832546313112967,2753,OPENAI_API_KEY_1
