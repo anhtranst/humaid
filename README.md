@@ -1,20 +1,20 @@
 # HumAID Tweet Classification (Zero-shot with OpenAI Batch)
 
 Zero-shot tweet classification for humanitarian response categories (HumAID-style labels) using OpenAI's **Chat Completions + Structured Outputs** and the **Batch API**.  
-Outputs include predictions and analysis artifacts (confusion matrices, per-class metrics, mistakes).
+Outputs include predictions and analysis artifacts (confusion matrices, per-class metrics, mistakes), plus a **curated results dashboard**.
 
 ## Labels (canonical order)
 
 ```
 caution_and_advice
+sympathy_and_support
+requests_or_urgent_needs
 displaced_people_and_evacuations
-infrastructure_and_utility_damage
 injured_or_dead_people
 missing_or_found_people
-requests_or_urgent_needs
+infrastructure_and_utility_damage
 rescue_volunteering_or_donation_effort
-sympathy_and_support
-other_relevant_information 
+other_relevant_information
 not_humanitarian
 ```
 
@@ -42,8 +42,8 @@ pip install pandas numpy matplotlib requests python-dotenv tiktoken
 Create a `.env` file in the repo root. You can keep a primary and an alternate key:
 
 ```
-OPENAI_API_KEY_1=...  # e.g., Tier-1 key with 2M batch cap
-OPENAI_API_KEY_2=...  # e.g., higher-capacity key
+OPENAI_API_KEY_1=sk-...  # e.g., Tier-1 key with 2M batch cap
+OPENAI_API_KEY_2=sk-...  # e.g., higher-capacity key
 # Optional: set a default
 OPENAI_API_KEY=${OPENAI_API_KEY_1}
 ```
@@ -55,17 +55,21 @@ OPENAI_API_KEY=${OPENAI_API_KEY_1}
 ```
 Dataset/
   HumAID/<event>/<event>_<split>.tsv     # Input TSVs
+
 humaidclf/
   __init__.py        # Exposes the package API (incl. run_experiment, resume_experiment)
   io.py              # load_tsv, plan_run_dirs
   prompts.py         # LABELS (ordered as above), SYSTEM_PROMPT, make_user_message
   batch.py           # sync_test_sample, build_requests_jsonl_S, batch helpers, parser, API key switchers
-  budget.py          # NEW: token budgeting (dataset token estimates, sharding, gating by cap)
-  eval.py            # metrics + analysis & plots (fixed canonical label order)
-  runner.py          # high-level orchestration: run_experiment(), resume_experiment()
+  budget.py          # Token budgeting (dataset token estimates, sharding, gating by cap)
+  eval.py            # Metrics + analysis & plots (fixed canonical label order)
+  report.py          # NEW: curated results index (HTML) with zoomable charts
+  runner.py          # High-level orchestration: run_experiment(), resume_experiment()
+
 rules/               # project-local rule variants (outside the package for fast iteration)
   __init__.py        # exports RULES_BASELINE, RULES_1, RULES_REGISTRY, get_rule
   humaid_rules.py    # definitions of RULES_BASELINE and RULES_1 (edit here as you iterate)
+
 runs/
   <event>/<split>/<model>/<timestamp>-<tag>/
     requests.jsonl
@@ -86,9 +90,20 @@ runs/
   _indexes/
     token_budget_*.csv             # saved token budgeting indices
     runs_*.csv                     # indices of completed runs
+
+results/            # NEW: curated, human-picked best results (one or more per event/split/model)
+  <event>/<split>/<model>/<run_name>/
+    predictions.csv
+    analysis/
+      charts/ (same artifacts as runs/*/analysis/charts/)
+      summary.json
+      mistakes.csv
+  index.html        # built by report.py (summary table + detailed cards)
+
+00_build_results_index.ipynb   # NEW: small notebook to rebuild results/index.html
 ```
 
-We intentionally store **analysis** inside each run folder so repeated analyses don't mix across runs.
+We intentionally store **analysis** inside each run folder so repeated analyses don't mix across runs. The `results/` tree is **manual and curated**: copy only your favorite run(s) there for presentation.
 
 ---
 
@@ -214,7 +229,7 @@ print("Macro-F1:", macro_f1(preds))
 
 ---
 
-## Token budgeting & dataset gating (NEW: `budget.py`)
+## Token budgeting & dataset gating (`budget.py`)
 
 Before you submit a Batch job, estimate tokens per dataset and decide which ones fit your tier cap.
 
@@ -267,7 +282,7 @@ len(shards), [len(s) for s in shards]
 
 ---
 
-## Switching API keys (NEW in `batch.py`)
+## Switching API keys (`batch.py`)
 
 You can switch keys globally or just for a code block. This lets you run small datasets with your Tier‑1 key and large ones with your alternate key.
 
@@ -303,6 +318,64 @@ with use_api_key_env("OPENAI_API_KEY_1"):
 with use_api_key_env("OPENAI_API_KEY_2"):
     for _, row in df_too_big.iterrows():
         run_experiment(row["tsv"], rules=RULES_1, model="gpt-4o-mini", tag="modeS-RULES1-ALT")
+```
+
+---
+
+## Curated results & summary page (`report.py`) — NEW
+
+You can **manually curate** the best runs under `results/` and build a dashboard page.
+
+**Directory layout (curated):**
+```
+results/<event>/<split>/<model>/<run_name>/
+  predictions.csv
+  analysis/
+    charts/
+      confusion_matrix_counts.png
+      confusion_matrix_row_normalized.png
+      per_class_error_rate.png
+      per_class_f1.png
+      top_confusions.png        # optional
+      confusion_matrix.csv
+      confusion_matrix_row_normalized.csv
+      per_class_metrics.csv
+      summary.json
+    mistakes.csv
+```
+
+**Build / refresh the page (`results/index.html`)**
+```python
+from humaidclf.report import build_results_index
+df_summary = build_results_index("results", out_html="results/index.html")
+df_summary.head()
+```
+
+**Optional helper to copy a run you like into `results/`:**
+```python
+from humaidclf.report import promote_run_to_results
+
+promote_run_to_results(
+    run_dir="runs/<event>/<split>/<model>/<timestamp>-<tag>",
+    results_root="results",
+    run_name="<timestamp>-<tag>"   # or any label you prefer
+)
+```
+The generated HTML includes:
+- A **summary table** (Event, Split, Model, Run, Test size, Accuracy, Macro‑F1)
+- Detailed cards per result with **zoomable charts** (click any image to open a modal, ESC to close)
+
+**Notebook (convenience):** `00_build_results_index.ipynb`  
+Minimal contents:
+```python
+from humaidclf.report import build_results_index
+df = build_results_index("results", out_html="results/index.html")
+df
+```
+(Optional) add a second cell to preview inline (but images cannot be displayed):
+```python
+from IPython.display import HTML
+HTML(filename="results/index.html")
 ```
 
 ---
@@ -364,6 +437,9 @@ build_token_index, shard_dataset_by_tokens,
 
 # Eval
 macro_f1, analyze_and_export_mistakes
+
+# Report
+promote_run_to_results, build_results_index
 
 # Runners
 run_experiment, resume_experiment
