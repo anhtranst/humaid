@@ -21,8 +21,10 @@ Directory layout you maintain manually:
 Then call build_results_index("results") to generate results/index.html.
 
 Features:
-- Summary table (Event, Split, Model, Run, Test size, Accuracy, Macro-F1)
-- Detail cards with embedded chart previews
+- Page is organized by SPLIT (e.g., train, test, dev) in sections.
+  For each split:
+    1) Summary table (Event, Model, Run, Test size, Accuracy, Macro-F1)
+    2) Detail cards with embedded chart previews
 - Click any image to open a zoomable modal (ESC/backdrop click to close)
 """
 
@@ -154,10 +156,11 @@ def _collect_results(results_root: Path) -> List[Dict]:
 
     return entries
 
+
 def _render_summary_table(df: pd.DataFrame) -> str:
     """
-    Render compact HTML table:
-      Event | Split | Model | Run | Test size | Accuracy | Macro-F1
+    Render compact HTML table for a given split section:
+      Event | Model | Run | Test size | Accuracy | Macro-F1
     """
     tbl = df.copy()
     tbl["Test size"] = tbl["test_size"].astype(int)
@@ -166,17 +169,15 @@ def _render_summary_table(df: pd.DataFrame) -> str:
 
     tbl = tbl.rename(columns={
         "event": "Event",
-        "split": "Split",
         "model": "Model",
         "run_name": "Run",
-    })[["Event", "Split", "Model", "Run", "Test size", "Accuracy", "Macro-F1"]]
+    })[["Event", "Model", "Run", "Test size", "Accuracy", "Macro-F1"]]
 
     rows = []
     for _, r in tbl.iterrows():
         rows.append(
             f"<tr>"
             f"<td><strong>{r['Event']}</strong></td>"
-            f"<td>{r['Split']}</td>"
             f"<td><code>{r['Model']}</code></td>"
             f"<td><code>{r['Run']}</code></td>"
             f"<td class='num'>{r['Test size']}</td>"
@@ -187,19 +188,21 @@ def _render_summary_table(df: pd.DataFrame) -> str:
     return (
         "<table class='summary'>"
         "<thead><tr>"
-        "<th>Event</th><th>Split</th><th>Model</th><th>Run</th>"
+        "<th>Event</th><th>Model</th><th>Run</th>"
         "<th>Test size</th><th>Accuracy</th><th>Macro-F1</th>"
         "</tr></thead>"
         f"<tbody>{''.join(rows)}</tbody>"
         "</table>"
     )
 
+
 def build_results_index(results_root: str | Path, out_html: str | Path = None) -> pd.DataFrame:
     """
-    Build an HTML index page summarizing curated results.
-    - Top summary table
-    - Detailed cards with embedded chart previews
-    - Click any image to open a zoomable modal
+    Build an HTML index page summarizing curated results, organized by SPLIT sections.
+    For each split:
+      - Summary table (Event, Model, Run, Test size, Accuracy, Macro-F1)
+      - Detailed cards with embedded chart previews
+      - Click any image to open a zoomable modal
     """
     results_root = Path(results_root)
     out_html = Path(out_html) if out_html else (results_root / "index.html")
@@ -209,51 +212,68 @@ def build_results_index(results_root: str | Path, out_html: str | Path = None) -
         out_html.write_text("<h2>No results found.</h2>", encoding="utf-8")
         return pd.DataFrame()
 
-    df = pd.DataFrame(entries).sort_values(["event", "split", "model", "run_name"]).reset_index(drop=True)
+    df = pd.DataFrame(entries).sort_values(["split", "event", "model", "run_name"]).reset_index(drop=True)
 
     def rel(p: Path | str) -> str:
         return str(Path(p).relative_to(results_root)).replace("\\", "/")
 
-    # Summary
-    summary_table_html = _render_summary_table(df)
+    # Build HTML sections per split
+    split_sections: List[str] = []
+    for split in df["split"].unique():
+        df_split = df[df["split"] == split].copy()
 
-    # Details (cards)
-    rows_html: List[str] = []
-    for _, r in df.iterrows():
-        charts = Path(r["charts_dir"])
-        imgs = []
-        for name in IMG_FILES:
-            fp = charts / name
-            if fp.exists():
-                imgs.append(
-                    f'<div class="imgbox">'
-                    f'  <img class="zoomable" src="{rel(fp)}" alt="{name}" '
-                    f'       data-fullsrc="{rel(fp)}">'
-                    f'</div>'
-                )
-        imgs_html = "\n".join(imgs) if imgs else "<em>No charts found.</em>"
+        # Summary for this split
+        summary_table_html = _render_summary_table(
+            df_split[["event", "model", "run_name", "test_size", "accuracy", "macro_f1"]]
+            .sort_values(["event", "model", "run_name"])
+        )
 
-        run_label = f" — <code>{r['run_name']}</code>" if r["run_name"] else ""
-        rows_html.append(f"""
-        <section class="card">
-          <div class="head">
-            <div>
-              <h3>{r['event']} — {r['split']}</h3>
-              <div class="sub">model: <code>{r['model']}</code>{run_label}</div>
-              <div class="sub path">{rel(r['dir'])}</div>
-            </div>
-            <table class="metrics">
-              <tr><th>Test size</th><td>{int(r['test_size'])}</td></tr>
-              <tr><th>Accuracy</th><td>{r['accuracy']:.4f}</td></tr>
-              <tr><th>Macro-F1</th><td>{r['macro_f1']:.4f}</td></tr>
-            </table>
+        # Details (cards) for this split
+        rows_html: List[str] = []
+        for _, r in df_split.iterrows():
+            charts = Path(r["charts_dir"])
+            imgs = []
+            for name in IMG_FILES:
+                fp = charts / name
+                if fp.exists():
+                    imgs.append(
+                        f'<div class="imgbox">'
+                        f'  <img class="zoomable" src="{rel(fp)}" alt="{name}" '
+                        f'       data-fullsrc="{rel(fp)}">'
+                        f'</div>'
+                    )
+            imgs_html = "\n".join(imgs) if imgs else "<em>No charts found.</em>"
+
+            run_label = f" — <code>{r['run_name']}</code>" if r["run_name"] else ""
+            rows_html.append(f"""
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>{r['event']} — {split}</h3>
+                  <div class="sub">model: <code>{r['model']}</code>{run_label}</div>
+                  <div class="sub path">{rel(r['dir'])}</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>{int(r['test_size'])}</td></tr>
+                  <tr><th>Accuracy</th><td>{r['accuracy']:.4f}</td></tr>
+                  <tr><th>Macro-F1</th><td>{r['macro_f1']:.4f}</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                {imgs_html}
+              </div>
+            </section>
+            """)
+
+        split_sections.append(f"""
+          <h2>Split: <code>{split}</code></h2>
+          {summary_table_html}
+          <div class="grid">
+            {''.join(rows_html)}
           </div>
-          <div class="imgs">
-            {imgs_html}
-          </div>
-        </section>
         """)
 
+    # Assemble full page
     html = f"""<!doctype html>
 <html>
 <head>
@@ -301,13 +321,7 @@ def build_results_index(results_root: str | Path, out_html: str | Path = None) -
 <body>
   <h1>HumAID Zero-shot Results</h1>
 
-  <h2>Summary</h2>
-  {summary_table_html}
-
-  <h2>Details</h2>
-  <div class="grid">
-    {''.join(rows_html)}
-  </div>
+  {''.join(split_sections)}
 
   <!-- Modal -->
   <div id="imgModal" class="modal" aria-hidden="true">

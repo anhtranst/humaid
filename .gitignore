@@ -46,9 +46,10 @@ Thumbs.db
 # --- Logs ---
 *.log
 
-# --- Temp folder --- 
+# --- Temp folder/files --- 
 temp/
 archive/
+test.ipynb
 
 # --- Reference documents --- 
 docs/
