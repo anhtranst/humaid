@@ -1,4 +1,16 @@
 # humaidclf/runner.py
+# -----------------------------------------------------------------------------
+# Orchestrates a full zero-shot run for HumAID:
+#   TSV -> (optional) dry-run sanity check -> build JSONL -> (maybe bypass) submit batch
+#   -> (optional) wait -> download/parse -> PATCH MISSING/BLANK/OOS -> save predictions
+#   -> (optional) analysis
+#
+# NEW:
+#   • Single-label events bypass API exactly as before (local deterministic predictions).
+#   • After Batch completes, we also fetch errors.jsonl (if any),
+#     parse successes, mark explicit errors, and then PATCH any missing/blank/OOS
+#     predictions synchronously so predictions.csv is row-aligned with the TSV.
+# -----------------------------------------------------------------------------
 
 from __future__ import annotations
 import json
@@ -16,9 +28,47 @@ from .batch import (
     wait_for_batch,
     download_file_content,
     parse_outputs_S_to_df,
+    retry_fill_missing_predictions,
 )
 from .eval import macro_f1, analyze_and_export_mistakes
 
+
+# =============================================================================
+# Local helpers (runner-only)
+# =============================================================================
+
+def _present_labels_from_df(df: pd.DataFrame) -> list[str]:
+    """
+    Extract unique labels that appear in ground truth (cleaned).
+    Sorting is only for determinism; downstream eval uses truth-only scope.
+    """
+    s = (
+        df.get("class_label", pd.Series(dtype=object))
+          .astype(str).str.strip()
+          .replace({"": pd.NA, "nan": pd.NA, "None": pd.NA})
+          .dropna()
+    )
+    return sorted(set(s.tolist()))
+
+def _predict_single_label_event(df: pd.DataFrame, only_label: str) -> pd.DataFrame:
+    """
+    Fast path for single-label events: no API call is needed.
+    Produces the same columns as parse_outputs_S_to_df() (minus 'status').
+    """
+    return pd.DataFrame({
+        "tweet_id": df["tweet_id"].astype(str),
+        "tweet_text": df["tweet_text"],
+        "class_label": df.get("class_label", ""),
+        "predicted_label": only_label,
+        "confidence": 1.0,       # deterministic since there is no choice
+        "entropy": float("nan"),
+        "status": "ok",
+    })
+
+
+# =============================================================================
+# Public API
+# =============================================================================
 
 def run_experiment(
     dataset_path: str,
@@ -35,86 +85,151 @@ def run_experiment(
     submit_only: bool = False,
 ) -> Tuple[Dict[str, Any], pd.DataFrame, Optional[Dict[str, Any]]]:
     """
-    End-to-end: load TSV -> dry-run sanity check -> build batch JSONL -> submit -> (optionally wait) ->
-    download + parse -> save predictions -> (optionally) analysis.
-
-    Parameters
-    ----------
-    dataset_path : str
-        Path to input TSV with columns: tweet_id, tweet_text, (optional) class_label.
-    rules : str
-        Zero-shot rules text used in the user message.
-    model : str
-        OpenAI model name (e.g., "gpt-4o-mini").
-    tag : str
-        Tag appended to the run directory name (timestamp is auto-added).
-    temperature : float
-        Generation temperature (use 0.0 for deterministic classification).
-    dryrun_n : int
-        Number of examples for the synchronous sanity check before submitting the batch.
-    poll_secs : int
-        Seconds between batch status polls (if submit_only=False).
-    out_root : str
-        Root folder for run outputs (the function creates "runs/<event>/<split>/<model>/<timestamp>-<tag>/").
-    do_analysis : bool
-        If True, writes analysis artifacts under <run_dir>/<analysis_subdir>/.
-    analysis_subdir : str
-        Subfolder name for analysis inside the run directory (default: "analysis").
-    submit_only : bool
-        If True, submit batch and return immediately after writing batch_meta.json (no waiting, no parsing).
-
-    Returns
-    -------
-    plan : dict
-        Paths & metadata for the run (includes 'dir', 'requests_jsonl', 'outputs_jsonl', 'predictions_csv', 'batch_meta_json').
-    preds_df : pandas.DataFrame
-        Predictions dataframe (empty if submit_only=True).
-    analysis_summary : dict | None
-        Summary dict from analyze_and_export_mistakes (None if do_analysis=False or submit_only=True).
+    End-to-end: load TSV -> dry-run -> build JSONL -> (maybe bypass) submit
+    -> (optionally wait) -> download & parse -> PATCH -> save -> (optional) analysis.
 
     Notes
     -----
-    - This function blocks while waiting for batch completion unless submit_only=True.
-    - Use the saved batch_meta.json to resume later with wait_for_batch(bid).
+    - Blocks while waiting for batch completion unless submit_only=True.
+    - Single-label events: build_requests_jsonl_S() writes an EMPTY file by convention;
+      we detect that and predict locally (no API), then proceed with identical artifacts.
     """
+    # -------------------------------------------------------------------------
     # 0) Load TSV
+    # -------------------------------------------------------------------------
     df = load_tsv(dataset_path)
 
-    # 1) Dry-run sanity check (small sample to catch schema/prompt issues early)
+    # -------------------------------------------------------------------------
+    # 1) Dry-run sanity check (small, synchronous)
+    # -------------------------------------------------------------------------
     if dryrun_n and dryrun_n > 0:
-        _ = sync_test_sample(df, n=dryrun_n, rules=rules, model=model, temperature=temperature, seed=42)
+        _ = sync_test_sample(
+            df, n=dryrun_n, rules=rules, model=model,
+            temperature=temperature, seed=42
+        )
 
+    # -------------------------------------------------------------------------
     # 2) Plan run dirs + build requests.jsonl
+    # -------------------------------------------------------------------------
     plan = plan_run_dirs(dataset_path, out_root=out_root, model=model, tag=tag)
-    build_requests_jsonl_S(df, plan["requests_jsonl"], rules=rules, model=model, temperature=temperature)
 
-    # 3) Submit batch
+    # With filtered labels logic in batch.py, this writes an EMPTY file
+    # if the event has exactly one valid label.
+    build_requests_jsonl_S(
+        df, plan["requests_jsonl"],
+        rules=rules, model=model, temperature=temperature
+    )
+
+    # -------------------------------------------------------------------------
+    # 2.1) Single-label BYPASS
+    # -------------------------------------------------------------------------
+    req_path = Path(plan["requests_jsonl"])
+    if req_path.exists() and req_path.stat().st_size == 0:
+        present = _present_labels_from_df(df)
+        if len(present) != 1:
+            raise RuntimeError(
+                "build_requests_jsonl_S produced an empty JSONL but present label count != 1.\n"
+                f"Detected labels (truth): {present}"
+            )
+        only_label = present[0]
+
+        preds = _predict_single_label_event(df, only_label)
+
+        Path(plan["predictions_csv"]).parent.mkdir(parents=True, exist_ok=True)
+        preds.to_csv(plan["predictions_csv"], index=False)
+        print("[single-label] Saved predictions to:", plan["predictions_csv"])
+        try:
+            print("[single-label] Macro-F1:", macro_f1(preds))
+        except Exception:
+            pass
+
+        # Provenance for bypass mode
+        meta = {"mode": "local_single_label", "only_label": only_label}
+        with open(plan["batch_meta_json"], "w", encoding="utf-8") as f:
+            json.dump(meta, f, indent=2)
+
+        # Optional analysis
+        analysis_summary = None
+        if do_analysis:
+            charts_dir = Path(plan["dir"]) / analysis_subdir / "charts"
+            mistakes_csv = Path(plan["dir"]) / analysis_subdir / "mistakes.csv"
+            _, summary, _, _ = analyze_and_export_mistakes(
+                pred_csv_path=str(plan["predictions_csv"]),
+                out_mistakes_csv_path=str(mistakes_csv),
+                charts_dir=str(charts_dir),
+            )
+            analysis_summary = summary
+
+        return plan, preds, analysis_summary
+
+    # -------------------------------------------------------------------------
+    # 3) Submit batch (normal multi-label path)
+    # -------------------------------------------------------------------------
     fid = upload_file_for_batch(str(plan["requests_jsonl"]))
     bid = create_batch(fid, endpoint="/v1/chat/completions", completion_window="24h")
+
     with open(plan["batch_meta_json"], "w", encoding="utf-8") as f:
         json.dump({"file_id": fid, "batch_id": bid}, f, indent=2)
 
     if submit_only:
-        # Return early so caller can resume later
+        # Caller will resume later using resume_experiment()
         return plan, pd.DataFrame(), None
 
-    # Wait for completion
+    # -------------------------------------------------------------------------
+    # 4) Wait for completion, then download & parse
+    #     • Successes -> outputs.jsonl
+    #     • Errors    -> errors.jsonl  (if available)
+    # -------------------------------------------------------------------------
     info = wait_for_batch(bid, poll_secs=poll_secs)
     status = info.get("status")
     if status != "completed":
-        raise RuntimeError(f"Batch ended with status='{status}'. Full info:\n{json.dumps(info, indent=2)}")
+        raise RuntimeError(
+            f"Batch ended with status='{status}'. Full info:\n{json.dumps(info, indent=2)}"
+        )
 
-    # 4) Download + parse + save
     out_file_id = info["output_file_id"]
     download_file_content(out_file_id, str(plan["outputs_jsonl"]))
-    preds = parse_outputs_S_to_df(plan["outputs_jsonl"], df)
+
+    errors_jsonl_path: Optional[str] = None
+    err_id = info.get("error_file_id")
+    if err_id:
+        errors_jsonl_path = str(Path(plan["dir"]) / "errors.jsonl")
+        download_file_content(err_id, errors_jsonl_path)
+
+    # Parse the provider's outputs and re-attach source fields
+    preds = parse_outputs_S_to_df(
+        plan["outputs_jsonl"], df,
+        errors_jsonl_path=errors_jsonl_path
+    )
+
+    # -------------------------------------------------------------------------
+    # 4.1) PATCH PASS: Fill any missing / blank / OOS predictions synchronously
+    # -------------------------------------------------------------------------
+    if (len(preds) != len(df)) or (preds["predicted_label"] == "").any() or (~preds["predicted_label"].isin(_present_labels_from_df(df))).any():
+        preds = retry_fill_missing_predictions(
+            source_df=df,
+            preds_df=preds,
+            rules=rules,
+            model=model,
+            temperature=temperature,
+            max_tokens=40,
+            max_retries=3,
+            backoff_seconds=2.0,
+        )
+
+    # Persist final predictions (patched/aligned)
     Path(plan["predictions_csv"]).parent.mkdir(parents=True, exist_ok=True)
     preds.to_csv(plan["predictions_csv"], index=False)
 
     print("Saved predictions to:", plan["predictions_csv"])
-    print("Macro-F1:", macro_f1(preds))
+    try:
+        print("Macro-F1:", macro_f1(preds))  # eval default scope='truth'
+    except Exception:
+        pass
 
-    # Optional: Analysis artifacts into <run_dir>/<analysis_subdir>/
+    # -------------------------------------------------------------------------
+    # 5) Optional analysis artifacts
+    # -------------------------------------------------------------------------
     analysis_summary = None
     if do_analysis:
         charts_dir = Path(plan["dir"]) / analysis_subdir / "charts"
@@ -136,33 +251,16 @@ def resume_experiment(
     analysis_subdir: str = "analysis",
 ) -> Tuple[Dict[str, Any], pd.DataFrame, Optional[Dict[str, Any]]]:
     """
-    Resume a previously submitted run by reading batch_meta.json from <run_dir> and finishing
-    the download/parse/analysis steps (assumes the batch is now completed).
+    Resume a previously submitted run by reading batch_meta.json from <run_dir>
+    and finishing the download/parse/patch/analysis steps.
 
-    Parameters
-    ----------
-    run_dir : str | Path
-        The existing run directory created by plan_run_dirs (contains batch_meta.json).
-    do_analysis : bool
-        Whether to produce analysis artifacts under <run_dir>/<analysis_subdir>/.
-    analysis_subdir : str
-        Subfolder for analysis output.
-
-    Returns
-    -------
-    plan : dict
-        Same structure as returned by run_experiment().
-    preds_df : pandas.DataFrame
-        Parsed predictions.
-    analysis_summary : dict | None
-        Summary dict from analyze_and_export_mistakes (None if do_analysis=False).
+    Also supports single-label bypass runs where batch_meta.json contains:
+      {"mode": "local_single_label", "only_label": "<label>"}.
     """
     run_dir = Path(run_dir)
     with open(run_dir / "batch_meta.json", "r", encoding="utf-8") as f:
         meta = json.load(f)
-    bid = meta["batch_id"]
 
-    # Rebuild "plan" mapping
     plan = {
         "dir": run_dir,
         "requests_jsonl": run_dir / "requests.jsonl",
@@ -171,21 +269,50 @@ def resume_experiment(
         "batch_meta_json": run_dir / "batch_meta.json",
     }
 
-    # Poll again to get final info, then download/parse
+    # -------------------------------------------------------------------------
+    # Single-label bypass resume
+    # -------------------------------------------------------------------------
+    if meta.get("mode") == "local_single_label":
+        preds = pd.read_csv(plan["predictions_csv"])
+        analysis_summary = None
+        if do_analysis:
+            charts_dir = run_dir / analysis_subdir / "charts"
+            mistakes_csv = run_dir / analysis_subdir / "mistakes.csv"
+            _, summary, _, _ = analyze_and_export_mistakes(
+                pred_csv_path=str(plan["predictions_csv"]),
+                out_mistakes_csv_path=str(mistakes_csv),
+                charts_dir=str(charts_dir),
+            )
+            analysis_summary = summary
+        return plan, preds, analysis_summary
+
+    # -------------------------------------------------------------------------
+    # Normal batch resume path
+    # -------------------------------------------------------------------------
+    bid = meta["batch_id"]
+
     info = wait_for_batch(bid, poll_secs=20)
     if info.get("status") != "completed":
         raise RuntimeError(f"Batch ended with status='{info.get('status')}'")
 
+    # Re-download outputs (and errors if present) to ensure we have final files
     out_file_id = info["output_file_id"]
     download_file_content(out_file_id, str(plan["outputs_jsonl"]))
 
-    # We need the original dataset rows to parse text/labels back in; for resume we assume
-    # you have the original TSV path recorded externally or you only need the parsed fields.
-    # If you want full reattachment of tweet_text/class_label, consider saving a compact
-    # snapshot of the source rows at plan time.
-    # For now, parse with minimal fields and let downstream code join if needed.
-    # (If your parse requires the original df, extend batch_meta.json to include dataset_path.)
-    preds = parse_outputs_S_to_df(plan["outputs_jsonl"], pd.DataFrame(columns=["tweet_id","tweet_text","class_label"]))
+    errors_jsonl_path: Optional[str] = None
+    err_id = info.get("error_file_id")
+    if err_id:
+        errors_jsonl_path = str(run_dir / "errors.jsonl")
+        download_file_content(err_id, errors_jsonl_path)
+
+    # Parse minimal + patch to row-align; we don't have the original df here,
+    # so create a minimal shell to keep columns consistent.
+    src_shell = pd.DataFrame(columns=["tweet_id", "tweet_text", "class_label"])
+    preds = parse_outputs_S_to_df(
+        str(plan["outputs_jsonl"]),
+        src_shell,
+        errors_jsonl_path=errors_jsonl_path
+    )
     preds.to_csv(plan["predictions_csv"], index=False)
 
     analysis_summary = None

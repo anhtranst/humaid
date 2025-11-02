@@ -31,7 +31,6 @@ from .prompts import (
 # Batch (OpenAI API workflow)
 # =========================
 from .batch import (
-    SCHEMA_S,               # JSON Schema used by Structured Outputs (Mode S): {label, confidence}
     sync_test_sample,       # Small synchronous sanity check on N examples (catches prompt/schema issues early)
     build_requests_jsonl_S, # Build requests.jsonl for the Batch API (one request per tweet)
     upload_file_for_batch,  # POST /files (purpose="batch") — upload the requests.jsonl
@@ -85,7 +84,7 @@ __all__ = [
     "LABELS", "SYSTEM_PROMPT", "make_user_message",
 
     # Batch
-    "SCHEMA_S", "sync_test_sample", "build_requests_jsonl_S",
+    "sync_test_sample", "build_requests_jsonl_S",
     "upload_file_for_batch", "create_batch", "get_batch", "wait_for_batch",
     "download_file_content", "parse_outputs_S_to_df",
 

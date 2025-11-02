@@ -1,3 +1,5 @@
+import re
+
 #-----------------------------------FOR MODIFIED RULES (1 AND 2) -----------------------------------------#
 LABELS = [
   "caution_and_advice",
@@ -19,15 +21,42 @@ SYSTEM_PROMPT = (
   "Follow the short rules and output JSON that matches the schema; no extra fields."
 )
 
-def make_user_message(tweet_text: str, rules: str, labels: list[str] = LABELS) -> str:
+def filter_rules_by_labels(rules_text: str, allowed_labels: list[str]) -> str:
+    """
+    Keep only bullet lines that define labels we actually allow for this event.
+    Lines that don't start with a label definition (e.g., tie-break notes) are kept.
+      Expected bullet format: "- label_name: description..."
+    """
+    allowed = set(str(x).strip() for x in allowed_labels)
+    out_lines = []
+    for raw in rules_text.splitlines():
+        line = raw.rstrip()
+        m = re.match(r'^\s*-\s*([a-z0-9_]+)\s*:\s*(.+)$', line, flags=re.I)
+        if not m:
+            # keep notes like "Tie-break: ..." or blank lines
+            out_lines.append(line)
+            continue
+        label = m.group(1).strip()
+        if label in allowed:
+            out_lines.append(line)
+    return "\n".join(out_lines).strip()
+
+def make_user_message(tweet_text: str, rules_text: str, current_labels: list[str]) -> str:
+    """
+    Build the user message with per-event filtered rules and the explicit allowed list.
+    """
+    rules_filtered = filter_rules_by_labels(rules_text, current_labels)
+    allowed_csv = ", ".join(current_labels)
+
     return (
-        f"Allowed labels: {labels}\n"
+        "Classify this tweet into exactly ONE of the allowed labels.\n"
+        f"Allowed labels (enum): {allowed_csv}\n\n"
         "Rules:\n"
-        f"{rules.strip()}\n"
-        "Choose exactly one label. If unrelated, choose 'not_humanitarian'.\n"
-        f'Tweet: """{tweet_text}""".\n'
-        f"Label: "
+        f"{rules_filtered}\n\n"
+        "Return JSON that conforms to the provided schema.\n"
+        f'Tweet: """{tweet_text}"""'
     )
+    
 #-----------------------------------FOR MODIFIED RULES (1 AND 2) -----------------------------------------#
 
 
