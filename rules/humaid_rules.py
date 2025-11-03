@@ -51,8 +51,6 @@ Pick ONE label for the tweet's PRIMARY INTENT.
 - sympathy_and_support: prayers/condolences/morale support (no logistics)
 - other_relevant_information: on-topic facts/stats/official updates when none above fits
 - not_humanitarian: unrelated to disasters or unclear context
-
-Return only the label.
 """.strip()
 
 # Optional: a tiny registry so you can fetch by name
