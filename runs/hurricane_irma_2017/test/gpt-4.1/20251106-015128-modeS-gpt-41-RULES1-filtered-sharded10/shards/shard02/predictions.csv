@@ -1,0 +1,192 @@
+tweet_id,tweet_text,class_label,predicted_label,confidence,entropy,status
+908021190232551426,@nytimesworld I must have missed hearing about all the help Trump offered to Mexico after the earthquake. And to Cuba and the Caribbean and to,not_humanitarian,other_relevant_information,0.7,,ok
+905886107820331008,Secure loose rain gutters and downspouts. Clear any clogged areas or debris to prevent water damage to your property #FLPrepares #Irma,infrastructure_and_utility_damage,caution_and_advice,0.99,,ok
+908879908046233605,SEVERE STORM THREAT rest of the night. See live Radar:  #wx #tornado #flood #hail #wind,caution_and_advice,caution_and_advice,0.95,,ok
+908701822235193345,@theblogess this quote has helped keep my head above the flood waters! Displaced but not disappointed!! #suckitHarvey,displaced_people_and_evacuations,displaced_people_and_evacuations,0.85,,ok
+905395037478977536,"@jesss_pereira @sarahlimanya 👀 excuse me, but youre part of said tsunami",other_relevant_information,not_humanitarian,0.98,,ok
+905712466021294084,"Hurricane Irma brings death, destruction to Caribbean: 8 killed, 23 injured  via @wfla",injured_or_dead_people,injured_or_dead_people,0.98,,ok
+907865310971219968,Miami woman delivers her own baby because Irma’s powerful winds kept help from getting to her,other_relevant_information,other_relevant_information,0.85,,ok
+907964584820133889,I donated to Irma relief. Please do the same if you can.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+905447326801567744,"#HurricaneIrma battered #StMartin with heavy rain and damaging winds earlier today, flattening buildings in its wake",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+906646062991122432,"Helped Grandpa cut down two dead trees today in preparation for #HurricaneIrma. As you can see, Im doing the heavy lifting. 💪 ~Maizy",not_humanitarian,caution_and_advice,0.6,,ok
+908263458830995457,Got thru Irma with minor damage to my back porch and rear gate nothing serious.Wish I could say the same for my fellow Floridians.,infrastructure_and_utility_damage,sympathy_and_support,0.95,,ok
+909062036335812609,Aid continues to arrive to Cuba in the wake of Irma,rescue_volunteering_or_donation_effort,other_relevant_information,0.85,,ok
+908990811559297024,"@SaveTheChimps in FL dealing w/ aftermath of #HurricaneIrma, and need fleece or cotton blankets. Pls share/donate.",rescue_volunteering_or_donation_effort,requests_or_urgent_needs,0.95,,ok
+905438075106492416,they raised 500 million for haiti after that earthquake in 2010 and built 6 homes.,rescue_volunteering_or_donation_effort,other_relevant_information,0.85,,ok
+905728430934638592,"#Irma update - nothing good. More than half of Puerto Rico loses power, leaving 900,000 in the dark and nearly 50,000 without water.",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.98,,ok
+909151682222845952,Where Hurricane Irma victims can find food and water in the Tampa Bay area,other_relevant_information,other_relevant_information,0.85,,ok
+908794999034335232,For all Florida Residents: @UHMCHCA has free ice for hurricane Irma victims.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+907589355547623425,"Hoping all is well from Irma. With power out &amp; minimal flooding, I reread #akissofshadows by candlelight. @LKHamilton",other_relevant_information,infrastructure_and_utility_damage,0.8,,ok
+906699556783616000,"We had a tornado warning for a bit there. The weather is starting to turn, worst of it isnt until tomorrow though. #hurricaneirma2017",caution_and_advice,caution_and_advice,0.8,,ok
+905893738869817344,"Category 5 #HurricaneIrma kills 10 in Caribbean, heads for Florida: Reuters  #environment",injured_or_dead_people,injured_or_dead_people,0.98,,ok
+908456583386058753,Tim Duncan Raises More Than $2 Million for Hurrican Irma Relief,other_relevant_information,rescue_volunteering_or_donation_effort,0.95,,ok
+909464457671143424,#HurricaneHarvey and #HurricaneIrma aftermath buoys gas prices:,other_relevant_information,other_relevant_information,0.85,,ok
+905543538766688256,@Amy_Siskind I cant tell you how many pallets of food and water were routed through the airports in Miami and the ports in SF after the earthquake,rescue_volunteering_or_donation_effort,other_relevant_information,0.85,,ok
+907341656600535040,I am so thankful that we were spared any major damage from Hurricane Irma. Thankful to our God. Praying for,sympathy_and_support,sympathy_and_support,0.95,,ok
+906508857752645632,"#irma evacuees - #myrtlebeach is close to FL, has rooms &amp; will be safe;",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+905685949266448384,RT @wildweatherdan: Im actually surprised there are some houses still with four walls. Deaths reported as Hurricane Irma batters :,injured_or_dead_people,injured_or_dead_people,0.9,,ok
+906629479157555200,PLEASE SHARE OR DONATE TO HELP THE HURRICANE VICTIMS. LOVE HOPE FAITH AND PRAYERS TO ALL,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+906390611963600896,Still learning of severe damage left by Irma on the islands in recent days,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.7,,ok
+907097380222156801,#AmericanAirlines Curbs Operations At Over Fifty Airports As Hurricane Irma Barrels Through  Read more:  $AAL,other_relevant_information,infrastructure_and_utility_damage,0.7,,ok
+907745988043042816,This tops watching two 100 story buildings sink into the ground? Time for a little perspective at CNN.,other_relevant_information,not_humanitarian,0.98,,ok
+907986541963878401,Harvey victims in Texas still recovering as focus shifts to Irma and Florida #news,other_relevant_information,other_relevant_information,0.85,,ok
+908008682054709248,"in the book of Genesis, GOD saw how wicked the world was so he destroyed it with a flood. maybe he knew this would open peoples eyes.. smh",not_humanitarian,not_humanitarian,0.98,,ok
+908508928119468033,"USGS reports a M2.85 #earthquake 0km ENE of Pahala, Hawaii on 9/15/17 @ 1:45:44 UTC  #quake",caution_and_advice,other_relevant_information,0.98,,ok
+905416745451532292,I just saw that India has a flood that has killed thousands and now this? I sure do hope its not the end of the,injured_or_dead_people,sympathy_and_support,0.85,,ok
+908848541791113216,"J.J. Watt has closed the Houston Flood Relief Fund after raising $37,097,298 from 209,429 donors.",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+909389028654424064,Please donate what you can to support local #BVI families &amp; communities affected by #Irma at @virginunite,sympathy_and_support,rescue_volunteering_or_donation_effort,0.98,,ok
+908319095774478342,"Forrest fires, hurricanes, school shootings, contaminated water, the super volcano and yet the wall is still on his to-do list?Fuck this guy",not_humanitarian,other_relevant_information,0.6,,ok
+907983338752929792,"Even though #Irma has passed, we’re still praying. Father, bless those without power, without homes, or without hope. #prayer",sympathy_and_support,sympathy_and_support,0.98,,ok
+906214260535111680,"Hurricane #Matthew damage forgotten in Washington as #Harvey, #Irma take their toll -  #ncga #ncpol #ncgov",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.6,,ok
+907054288437837824,Look at some of the damage in South Florida. #Irma @appersons,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+909080761101426688,Volunteers packed more than 5k non-perishable food bags &amp; 2000 hygiene for Irma relief in S.Fl.Tks to +250 students 100 staff volunteers!,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.98,,ok
+908756209896792066,There probably does need to be a reasonable limit on how many times we pay for flood prone homes,infrastructure_and_utility_damage,other_relevant_information,0.7,,ok
+909180883206332416,Solidarity continues across the state. Visit  to donate for Hurricane Irma victims in need.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+908526574525435904,Praying for those in the affected areas of Hurricane Harvey and Hurricane Irma We hope everyone is able to stay safe during this time 💚💚💚,sympathy_and_support,sympathy_and_support,1.0,,ok
+908240162240565248,Hurricane Irma: UK overseas territories not eligible for foreign aid,other_relevant_information,other_relevant_information,0.85,,ok
+907076665309782016,@KING5Seattle Pls incl. shots of Miami Seaquarium &amp; #Lolitas tank in f/u coverage of #Irma. Severe damage in area reported #WillSheSurvive?,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.6,,ok
+908318466754543616,Water damage: Seven home insurance scenarios #HurricaneIrma #AfterIRMA #Hurricane,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.7,,ok
+908517659905363968,Trump blames a bad mobile phone reception for his delayed message of condolences to Mexicos earthquake victims; a Brooklyn bridge story!,other_relevant_information,sympathy_and_support,0.6,,ok
+908481711532539904,"Due to flood damage from #Harvey2017, Brazos Bend SP near Houston extends closure thru Nov. 7. Get updates via FB",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+908685618800185344,Florida growers estimate billions of dollars in damage from Hurricane Irma via @thepacker,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+907267246313132032,Water coming over the sea wall and flooding East Bay St at the Battery. Plz dont 🚙around 🚧. 🌊💦CharlestonSC #🌀Irma,caution_and_advice,caution_and_advice,0.95,,ok
+907753187641380864,"1 Miami News Search Businesses (After Irma, is your water safe to drink? You might have to boil it.) Miami  -",other_relevant_information,caution_and_advice,0.9,,ok
+908998618979405824,"In Irma’s Wake, Surveying the Damage Along the Coast: A photo essay of the Southeast, where",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.7,,ok
+905647847244050432,.@LAFD members who assisted with Harvey efforts have been rerouted to Alabama for Hurricane #Irma. My story:,other_relevant_information,rescue_volunteering_or_donation_effort,0.8,,ok
+908267497375367169,Hurricane #Irma decimated #StJohn. Wind so strong it stripped the trees. Residents in shock.,caution_and_advice,infrastructure_and_utility_damage,0.8,,ok
+908891017482526720,@RaysBaseball Rays have done more damage to their fans than Irma,not_humanitarian,not_humanitarian,0.99,,ok
+905307852079816704,5.2 magnitude Earthquake recorded in Andamans. No loss of lives or property recorded.,other_relevant_information,other_relevant_information,0.95,,ok
+906447940335448065,The following list is current status of #Irma #Evacuation centers in #Miami  For Updates:,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+909388318244327426,Safe after Irma and no real damage. However we still do not have power in Riverstone and left on Thursday staying with friends in Bradenton.,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+906275995665170432,Hurricane Irma has killed at least 10 people and left catastrophic damage in its wake,injured_or_dead_people,injured_or_dead_people,0.95,,ok
+909461455963074560,Thanks @MiamiDadePD for sending a food truck down to Key West to make paella for those protecting paradise. #KWPD #Irma,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.8,,ok
+908286792717266944,"Black Creek crested at 28.5 feet Tuesday morning, destroying homes and docks and shattering the lives of residents.",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+908763624839184385,Mexican Bitcoin Exchange Bitso Aids Red Cross Earthquake Relief Efforts,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+906992795029819392,"As #Irma hits Florida, the trail of destruction caused by the hurricane is already huge. For info on our appeal:",other_relevant_information,rescue_volunteering_or_donation_effort,0.7,,ok
+905711423321292800,RT @EcoInternet3: #HurricaneIrma kills eight on Saint Martin as it pounds Caribbean: Reuters  #environment,injured_or_dead_people,injured_or_dead_people,0.98,,ok
+909399247786840064,RT @blmarche: #DukeEnergy was never prepared for Irma! Day 7 for a minimal damage community still waiting for power!!!!,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+907982177878597634,Five dead at Florida nursing home that lost power during Hurricane Irma: Rescue teams  #news,injured_or_dead_people,injured_or_dead_people,0.98,,ok
+907058725332111360,"Crestview, Florida is getting destroyed by Irma. I was able to climb to the roof of my house to take this picture to warn others",infrastructure_and_utility_damage,caution_and_advice,0.8,,ok
+907935206732173312,The damage from #Irma could soon be felt at your table.,infrastructure_and_utility_damage,other_relevant_information,0.7,,ok
+907957297200160768,"UPDATED: 2 dead, others evacuated at Hollywood nursing home without power after Irma.",injured_or_dead_people,injured_or_dead_people,0.9,,ok
+906551035438780416,"Right now Florida needs 1,000 volunteer shelter nurses. We need your help for our special needs shelters. -@FLGovScott #irma",requests_or_urgent_needs,rescue_volunteering_or_donation_effort,0.98,,ok
+909459690077245442,"This is very cool. Kenny Chesney Creating Music, Merch for Hurricane Irma Relief Efforts",other_relevant_information,rescue_volunteering_or_donation_effort,0.85,,ok
+908440769660375041,"At Immokalee Friendship House, @NationalGuard is helping to distribute food and water to those affected by #HurricaneIrma. #swfl #agrmirma",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+908629410005311489,RT legacyinsgrp1 RT legacyinsgrp1 RT ijournal 8 Patients Killed in Florida Nursing Home After Irma-Related,injured_or_dead_people,injured_or_dead_people,0.98,,ok
+908302445683523584,Options for Mortgage Holders Suffering from Flood Damage,other_relevant_information,other_relevant_information,0.8,,ok
+906552880039067651,My thoughts are with all who are in the path of Hurricane Irma. Now is the time for us to take care of one another,sympathy_and_support,sympathy_and_support,0.95,,ok
+908008026807967744,"5 elderly residents dead in nursing home that lost power during Hurricane Irma in Hollywood, Florida",injured_or_dead_people,injured_or_dead_people,1.0,,ok
+908398870060605440,#trailrunning in another park while the #forest #fire is being put out in my favorite one.,not_humanitarian,other_relevant_information,0.7,,ok
+908381739038408704,"▶️ Hurricane Irma: Quarter of Florida Keys homes destroyed, US officials estimate",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+909001541624975361,Come along and see some great #LiveMusic and support the victims of #HurricaneIrma,other_relevant_information,rescue_volunteering_or_donation_effort,0.85,,ok
+908734429299867648,"Throw away any food that has been exposed to temperatures above 40F (4C) for 2+ hours. When in doubt, throw it out! 🚮 #Irma #PublicPower",caution_and_advice,caution_and_advice,0.98,,ok
+906278897792286721,"Weve got your back, Florida. Talk/Text/Data relief for ALL FL customers 9/9-9/11. Stay tuned for #Irma updates.",other_relevant_information,infrastructure_and_utility_damage,0.6,,ok
+908593847466434561,#Lava Details • #Etna #Sicily,not_humanitarian,other_relevant_information,0.7,,ok
+908383055752114176,Check out damage to Florida keys here. You can get to street level. Amazing how some areas suffered so badly.,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+905712060088111107,Devastating Hurricane Irma Flattens Most Solid Buildings On Caribbean Island | Zero Hedge,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+906451061061378048,MES appealed to the victims of hurricane \Irma\ in the Caribbean   #news #Russia,other_relevant_information,sympathy_and_support,0.8,,ok
+908245586540941312,Life after the mudslide:  How thousands of displaced people in Sierra Leone are living a month on. My latest on BBC.,displaced_people_and_evacuations,displaced_people_and_evacuations,0.9,,ok
+905524621759348738,"@AmyMacKinnon Far inland (so no storm surge flooding, rain flooding a concern, but not life threatening). Main concern in both places is trees vs roofs.",not_humanitarian,infrastructure_and_utility_damage,0.7,,ok
+908315015475851264,"Our hearts, thoughts and prayers are with our friends and families dealing with the devastating hurricanes and earthquake",sympathy_and_support,sympathy_and_support,1.0,,ok
+906235278976831488,Hurricane Irma Evacuees Can Stay At These Places For Free,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+909321252648742912,"But I live in Key Largo affected by Hurricane Irma. If anyone wants to help donate or share this, Id be grateful",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+905520388045721601,Wow - nearly $400k raised for #HurricaneHarvey by the fundraiser started by @TheFamilyBeer !  #strongerthanstorms,other_relevant_information,rescue_volunteering_or_donation_effort,0.95,,ok
+906933322395271168,.@pbyrond on #Periscope: Irma Impact Hollywood Beach Florida! High Winds Flooding #IrmaHurricane2017 #HurricaneIr,other_relevant_information,other_relevant_information,0.8,,ok
+907734098957017088,Nearly 6 million people in #Florida are cut off from power due to #HurricaneIrma. Find out how you can help: .,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.7,,ok
+907476606251421696,Hurricane Irma: Cuba faces period of darkness and rebuilding: Hurricane Irma destroyed,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+906803243736616960,So scary this how this is how tsunami happen 😰😰😔,other_relevant_information,sympathy_and_support,0.85,,ok
+908014999318151169,@irvpolo Hello there! We are sorry to hear that you were affected by Hurricane Irma. Can you please DM us so we can get further details from you? -DD,sympathy_and_support,sympathy_and_support,0.7,,ok
+906598069478871043,"Any families or elderly #evacuating South Florida from #hurricaneirma, I have an extra bedroom in Orlando with food and water you can use",displaced_people_and_evacuations,rescue_volunteering_or_donation_effort,0.98,,ok
+908776425242624001,"- Bitso, a cryptocurrency exchange in Mexico, has continues its campaign to aid the victims of the recent earthqu",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+905923134401990656,Irma has cost 10 people in the Eastern Caribbean their lives so far and it still going strong. Praying for all victims and their families,sympathy_and_support,injured_or_dead_people,0.95,,ok
+909401739438129152,"Israels volunteer emergency medical services @UnitedHatzalah joined US forces in Florida, helping the people affected by #HurricaneIrma",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+909111978622377984,@Spoonersloth Post hurricane Irma cleanup activities,rescue_volunteering_or_donation_effort,other_relevant_information,0.8,,ok
+908576930227658752,#news Cuomo plans Friday trip to US Virgin Islands to survey Irma damage,infrastructure_and_utility_damage,other_relevant_information,0.85,,ok
+907665366972878848,Florida men rescue dolphin washed in by Irma,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+909396649964957697,"Residents now allowed back to #FloridaKeys. Israel search, rescue teams back on standby status. #Irma #IrmaRecovery #Israel @UnitedHatzalah",other_relevant_information,displaced_people_and_evacuations,0.85,,ok
+907371072080814081,"Mauricio and Angela Romy, parents @StHilaryChicago, are loading a truck of supplies to take to #HurricaneIrma victims",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+906895246772117504,"Hurricane Irma makes landfall in Florida Keys, at least 3 dead in the state",injured_or_dead_people,injured_or_dead_people,0.95,,ok
+905511343272247296,@mansionz I am standing on the beach watching the tsunami grow From a minuscule rise in the horizon to a monstrous tidal wave,other_relevant_information,other_relevant_information,0.8,,ok
+908361721022177280,A low pressure system impacts our region and could cause localized flooding. Heavy rainfall is our biggest weather threat.,caution_and_advice,caution_and_advice,0.85,,ok
+908006018516480001,"Was your property damaged as a result of #Irma? If so, we can help you navigate the insurance claims process right from the beginning 🏡🛠️💵",infrastructure_and_utility_damage,rescue_volunteering_or_donation_effort,0.8,,ok
+907763750886936576,Mobile home residents fear they will be the forgotten victims of Hurricane Irma,other_relevant_information,other_relevant_information,0.85,,ok
+906447814779076608,"BREAKING: #HurricaneIrma Forces 850,000 #Florida Residents to Evacuate  #RedNationRising #PrayForFlorida",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+908340874291097600,#DSTRRescueNeeded Need help no elecity or food from hurrican,requests_or_urgent_needs,requests_or_urgent_needs,0.98,,ok
+907950768992419841,"During Hurricane Irma, 4 people have been killed in unrelated carbon monoxide poisoning from generators.",injured_or_dead_people,injured_or_dead_people,0.98,,ok
+908307347843551232,The coast guard is hard at work still rescuing people from flooded areas  #J2150BG,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+908363541798899712,@USICD Help Disabled Peoples Int. N. America Caribbean w/ Hurricane Irma relief efforts. 60 ppl in Barbuda. Donate:,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+909557073716891649,@iamcarlenes not sure of your location but if you are ever in any need of any updates&amp;were affected by #Irma please know I am here for you!,other_relevant_information,sympathy_and_support,0.8,,ok
+909543401250480128,Hurricane Irma damage prevents #Florida  - #ClipTrends #VideoTrends #News #5578096226001 #Al_Jazeera #Blackout,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+908232223127678976,8 die at Florida nursing home in Irma’s sweltering aftermath,injured_or_dead_people,injured_or_dead_people,0.99,,ok
+905745369279160321,RT @FLGovScott: This morning I’ll be on the @TODAYshow around 7am discussing Florida’s efforts to prepare for Cat. 5 Hurricane Irma.,caution_and_advice,other_relevant_information,0.8,,ok
+905647870833029120,#WorldStarHipHop Hurricane Irma Already Blamed For Three Deaths!,injured_or_dead_people,injured_or_dead_people,0.95,,ok
+906039255234777088,"UK boosts aid budget for Irma, sends two warships",rescue_volunteering_or_donation_effort,other_relevant_information,0.8,,ok
+905734596519714816,RT @YahooNews: Hurricane Irma causes at least 9 deaths in Caribbean,injured_or_dead_people,injured_or_dead_people,0.98,,ok
+908405684621811713,#CornwallAlliance What Unintended Consequences Accompany Mandatory Evacuations for Hurrican Read Blog:,displaced_people_and_evacuations,other_relevant_information,0.7,,ok
+906936075163258880,Georgia Gov. Nathan Deal expands state of emergency to include all 159 counties in the state ahead of #HurricaneIrma,caution_and_advice,other_relevant_information,0.95,,ok
+905296546698289153,@shelbyrecord I always hope not and am praying. Steven was in the Northridge earthquakehe has some pretty scary stories.,sympathy_and_support,sympathy_and_support,0.95,,ok
+907217621979996160,Hurricane Irma keeps first responders off the roads,other_relevant_information,other_relevant_information,0.85,,ok
+908112481033138177,@propagandhi This guy kills it at the floor is lava,not_humanitarian,not_humanitarian,0.99,,ok
+906171616190767105,"On waters edge in #Cuban fishing town #Caibarien, police patrol low-lying areas; tell residents they have to leave. #Irma @WPLGLocal10",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+905906634802769921,#HurricaneIrma is still heading our way. Barrier island and mobile home residents should evacuate as soon as possible. #StaySAfeDelrayBeach,displaced_people_and_evacuations,caution_and_advice,0.95,,ok
+905292712424988672,The world not cities fam. Also said the world wouldnt end in a flood but there have been numerous of hurricanes floods so,other_relevant_information,not_humanitarian,0.98,,ok
+908610095872970752,"September 14, 2017: Tamp Bay Florida water disappeared as Hurricane Irma was approaching South Florida on",other_relevant_information,other_relevant_information,0.85,,ok
+908415886410895360,‘I had to do something.’ A Florida carpenter and others rally to rescue #manatees stranded after #Irma.  @MyFWC,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+906044052109451264,@hms_ocean and RFA Mounts Bay have been retasked to provide vital aid to Caribbean islands in the wake of #hurricaneirma,other_relevant_information,rescue_volunteering_or_donation_effort,0.9,,ok
+907871958645329920,"Estimated 16 million power outages from #Irma, twice as many as Sandy, most on record for a hurricane. More:",other_relevant_information,infrastructure_and_utility_damage,0.95,,ok
+907301436815495168,Unbelievable! Historic flooding in Downtown #Jacksonville. #Irma @ActionNewsJax #Florida,other_relevant_information,infrastructure_and_utility_damage,0.7,,ok
+908877658984869888,"NXT Wrestler Lacey Evans’ Home Hit by Hurricane Irma, Cleanup Underway:",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.7,,ok
+908143628580790274,Our water reclamation system is continuing to work overtime after #Irma. Please do your part by using water only when necessary.,caution_and_advice,caution_and_advice,0.95,,ok
+908971493908008960,Good news. Dignity kits are being distributed to women &amp; girls displaced by Hurricane Irma:,rescue_volunteering_or_donation_effort,other_relevant_information,0.8,,ok
+908847489570279425,"NWS Survey Team confirms an EF0 tornado touched down near Olar, SC in Bamberg Co on Sep 11 in association with Irma.",other_relevant_information,other_relevant_information,0.95,,ok
+908393579697106949,#Irma has caused #BVI infrastructure to collapse – more support is needed from major aid orgs &amp; government,requests_or_urgent_needs,infrastructure_and_utility_damage,0.8,,ok
+908399600045719552,"Hurricane Irma has so drastically changed the ecosystems of the Caribbean Islands, the destruction can be seen from space.",other_relevant_information,infrastructure_and_utility_damage,0.7,,ok
+906029883746205696,WTF?! Tenants terrified after rental company locks away buildings’ storm shutters as #HurricaneIrma bears down,other_relevant_information,infrastructure_and_utility_damage,0.6,,ok
+908193458514419712,TIME’s videographers captured footage of first responders (heroes) preparing for rescue efforts as #HurricaneIrma approached FL via TIME.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.8,,ok
+908345275181301760,#Irma before and after imagery – a look a some of the areas damaged in the Caribbean and Florida.,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+906220862277345280,More evacuations are expected as #Irma gets close. Pay attention to local alerts &amp; emergency management  #FLprepares,displaced_people_and_evacuations,caution_and_advice,0.7,,ok
+908839240729055232,Finished 6 days of #Harvey flood relief in #Houston. I literally cannot give anymore. I am wiped.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+907974940934238209,What to do if Hurricane Irma damaged a place where you booked a vacation,infrastructure_and_utility_damage,caution_and_advice,0.85,,ok
+908543978911416322,We were uprooted from war. We know the feeling of leaving everything behind:  #Irma #Refugees,displaced_people_and_evacuations,displaced_people_and_evacuations,0.85,,ok
+905739603663089664,Hurricane Irmas deadly path of destruction across Caribbean is revealed in aerial shots of St Martin,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.7,,ok
+908943367807127552,"Not your fault that Hurricane Irma evacuees are being displaced by Tennessee football fans, right?",displaced_people_and_evacuations,displaced_people_and_evacuations,0.7,,ok
+905470265878044672,Have questions about whats in The 21st Century Flood Reform Act? NARs FAQ can help:  #NFIP #FloodInsurance,other_relevant_information,other_relevant_information,0.7,,ok
+905313980125773824,US Experience on forest fires: could it be relevant for Europe in the long term?,other_relevant_information,other_relevant_information,0.85,,ok
+905554006587691008,"Want to Help Houston flood victims? Donate info here:  As thanks, get this prize or surprise a friend!",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+908947811454144512,Here’s how Miami Heat plan to help those affected by Hurricane Irma  #Miami Heat,sympathy_and_support,rescue_volunteering_or_donation_effort,0.8,,ok
+907837939081781250,These migrant workers earn $350 a week in the fields. Now Irma has destroyed their homes.,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+905744292056100864,Florida Prepares for Evacuations Ahead of Hurricane Irma - TIME,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+908452625812738048,disaster survival emergency kit earthquake hurricane preparedness food water,caution_and_advice,caution_and_advice,0.85,,ok
+905691771522265089,RT @BadAstronomer: Listening to Rush Limbaugh’s ideological rabidness could get people killed when it comes to hurricane Irma:,not_humanitarian,caution_and_advice,0.6,,ok
+908849809808691200,FLOOD OF REFUGEES IN (2015) 65.3 MILLION 🚨 🚨 HIGHEST NUMBER IN THE #USA HISTORY,other_relevant_information,displaced_people_and_evacuations,0.85,,ok
+909429390710206465,Has #Irma left you in need? Were here to HELP! Visit  or call 352-547-3434.,other_relevant_information,rescue_volunteering_or_donation_effort,0.95,,ok
+908428571252854785,Hurricane Katia leaves two dead in Mexico as earthquake clean-up begins,injured_or_dead_people,injured_or_dead_people,0.95,,ok
+909361614717059074,Hurricanes Harvey and Irma destroyed more than homes - Chicago Tribune,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.7,,ok
+906098716838416385,Thinking about heading to a Special Needs Shelter? Heres what you need to know. #HurricaneIrma #SpecialNeeds,other_relevant_information,caution_and_advice,0.95,,ok
+907975976038158337,Florida farmers have barely begun to assess the damage Irma wrought on crops -- but they expect it to be significa,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+906256901884825600,GoFundMe has created a central page for campaigns to help those affected by Hurricane Irma: .,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+905480799335669760,Houston Flood Relief Fund  via @youcaring - still really really hate the Texans though,other_relevant_information,rescue_volunteering_or_donation_effort,0.95,,ok
+908705222360317952,@SLCPubServices hey guys. The flood waters pushed this grate up into the road on 400 W and 400 S. That could cause some damage to cars,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+907597857523412993,Two rivers across our area could reach minor flood stage after rain from Tropical Storm Irma.,caution_and_advice,other_relevant_information,0.85,,ok
+908325377969455109,8 People Die in Florida Nursing Home That Lost Power During Irma -  by RO Water Filter,injured_or_dead_people,injured_or_dead_people,0.98,,ok
+908359939369836545,Dear friends we need to help Mario and the sanctuary,rescue_volunteering_or_donation_effort,requests_or_urgent_needs,0.8,,ok
+905527058163531776,Joel Osteen: Millionaire televangelist tells Texas flood victims not to have ‘poor me’ attitude,not_humanitarian,sympathy_and_support,0.6,,ok
+908229876339142656,Hurrican Irma: Walt Disney Company makes $2.5m aid donation,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+907995452846604294,@GinaYarboro @LoveOurPotus @chadmom2 @EdKrassen @IRdotnet @realDonaldTrump Btw look who cared about showing up to visit the Louisiana flood victims in 2016.,not_humanitarian,sympathy_and_support,0.6,,ok
+908616798593003520,Eight People Dead At Florida Nursing Home After Irma,injured_or_dead_people,injured_or_dead_people,1.0,,ok
+906945491023384576,Please help your neighbors!,sympathy_and_support,rescue_volunteering_or_donation_effort,0.7,,ok
+908563200727121920,Many areas of #Haiti haven’t even fully recovered from #Hurricane Matthew last year &amp;now they’re facing this”  #Irma,other_relevant_information,other_relevant_information,0.85,,ok
+909459829965639680,Navy Overflight Shows Footage of Irma Damage to US Virgin Islands,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+906342413417029633,"Irma is shifting to Westcoast of FL Now. Hope everyone that stayed has a wine cellar Because no power, food or gas is going to be imminent.",other_relevant_information,caution_and_advice,0.7,,ok
+907976056723963905,.@Dukeenergy is using #drones #UAS to survey power-line damage after #IrmaHurricane2017 #Irma in Florida #emergingtech,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+908778642502770688,Gibraltar contributes to HMS Ocean aid for Hurricane Irma,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+908888876550426624,"Yesterday, Marines with the 26th MEU delivered over 52,000 pounds of relief supplies to victims of Hurricane #Irma, in Key West, Florida.",other_relevant_information,rescue_volunteering_or_donation_effort,0.95,,ok
+908072335751696384,".@USCG Cutter Hamilton crew conducts Hurricane #Irma relief efforts off the coast of Mayport, FL. Read more here:",other_relevant_information,rescue_volunteering_or_donation_effort,0.85,,ok
+907711257180073986,"More than 1,000 Davey employees are on the ground aiding in the recovery efforts after #IrmaHurricane2017,  #WorkSafe",other_relevant_information,rescue_volunteering_or_donation_effort,0.95,,ok
+905435404031184901,Meanwhile the racist fake POTUS is threatening to withhold disaster relief funds so he can build a wall between us.,not_humanitarian,other_relevant_information,0.7,,ok
+908425525114298368,"PLS: Support recovery efforts in the Caribbean, where years of #climate smart #ag work has been destroyed by Irma",infrastructure_and_utility_damage,rescue_volunteering_or_donation_effort,0.85,,ok
+906552864281186305,"4 Maps That Show the Gigantic Hurricane Irma Evacuation  #SHELTERINPLACE #ALERT Unlike during Hurricane Harvey, whe",displaced_people_and_evacuations,displaced_people_and_evacuations,0.8,,ok
+908299472257642496,Darren Finney showing us the damage at his home. #MerrittIsland #HurricaneIrma @WFTV,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+908542963793326081,"My prayer for you all is that the Lord fills your cup, making it overflow, that you may drink of the Living Water and never be thirsty 🙌🏽🙏🏽🎶",sympathy_and_support,sympathy_and_support,0.98,,ok
+908372070215684096,Hurricane hit areas brace for mosquito boom in flood waters | Miami Herald,caution_and_advice,other_relevant_information,0.85,,ok
+909498460172423170,#Healthcareworkers: Florida has an immediate need for volunteers in medical needs shelters. Learn more here:  #Irma,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.98,,ok

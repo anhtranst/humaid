@@ -1,0 +1,11 @@
+event,split,run_dir,predictions_csv,macro_f1,accuracy,num_total,mode
+canada_wildfires_2016,test,runs\canada_wildfires_2016\test\gpt-4o\20251103-141827-modeS-gpt-4o-RULES1-filtered-sharded3,runs\canada_wildfires_2016\test\gpt-4o\20251103-141827-modeS-gpt-4o-RULES1-filtered-sharded3\predictions.csv,0.6659918591730463,0.7820224719101123,445,sharded3
+kaikoura_earthquake_2016,test,runs\kaikoura_earthquake_2016\test\gpt-4o\20251103-145340-modeS-gpt-4o-RULES1-filtered-sharded3,runs\kaikoura_earthquake_2016\test\gpt-4o\20251103-145340-modeS-gpt-4o-RULES1-filtered-sharded3\predictions.csv,0.7396143857553994,0.7402298850574712,435,sharded3
+cyclone_idai_2019,test,runs\cyclone_idai_2019\test\gpt-4o\20251103-150853-modeS-gpt-4o-RULES1-filtered-sharded5,runs\cyclone_idai_2019\test\gpt-4o\20251103-150853-modeS-gpt-4o-RULES1-filtered-sharded5\predictions.csv,0.6379098935329914,0.7496790757381258,779,sharded5
+hurricane_florence_2018,test,ERROR,,,,0,sharded8
+hurricane_maria_2017,test,ERROR,,,,0,sharded9
+california_wildfires_2018,test,ERROR,,,,0,sharded10
+hurricane_dorian_2019,test,ERROR,,,,0,sharded10
+kerala_floods_2018,test,ERROR,,,,0,sharded10
+hurricane_harvey_2017,test,runs\hurricane_harvey_2017\test\gpt-4o\20251103-230013-modeS-gpt-4o-RULES1-filtered-sharded11,runs\hurricane_harvey_2017\test\gpt-4o\20251103-230013-modeS-gpt-4o-RULES1-filtered-sharded11\predictions.csv,0.6109514709949109,0.6565096952908587,1805,sharded11
+hurricane_irma_2017,test,ERROR,,,,0,sharded12

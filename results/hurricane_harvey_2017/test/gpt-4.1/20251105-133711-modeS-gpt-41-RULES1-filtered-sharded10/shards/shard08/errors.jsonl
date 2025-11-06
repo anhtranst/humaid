@@ -1,0 +1,3 @@
+{"id": "batch_req_690bd38d364c8190bd58dc45dab3c371", "custom_id": "tweet-903458022797783040", "response": {"status_code": 0, "request_id": "", "body": {}}, "error": null}
+{"id": "batch_req_690bd395dcf881909ac306695a063578", "custom_id": "tweet-902686999751999488", "response": {"status_code": 503, "request_id": "", "body": {}}, "error": null}
+{"id": "batch_req_690bd3966bc481909e4b4d479fd5c65f", "custom_id": "tweet-901771029512585216", "response": {"status_code": 503, "request_id": "", "body": {}}, "error": null}

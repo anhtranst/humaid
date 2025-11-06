@@ -76,6 +76,33 @@ from .runner import (
     resume_experiment,  # Resume a submitted run using batch_meta.json (download/parse/analyze after it completes)
 )
 
+# =========================
+# Stratified splitting (label-balanced shards)
+# =========================
+# Utility to split a DataFrame into K shards while preserving class ratios.
+# This is kept separate from the runner so it can be reused in analysis/ablations.
+try:
+    from .stratify import (
+        stratified_k_shards,  # Returns a list of (df_shard, indices) with per-class proportions preserved
+    )
+except Exception:
+    # Optional module; only exported if available
+    pass
+
+# =========================
+# Sharded runner (token/size constrained orchestration)
+# =========================
+# Orchestrates multiple stratified shards end-to-end and then merges the shard predictions.
+# Useful when token budgets / provider limits require slicing large events.
+try:
+    from .runner_sharded import (
+        run_experiment_sharded,  # Same contract as run_experiment, but runs per-shard under the hood
+    )
+except Exception:
+    # Optional module; only exported if available
+    pass
+
+
 __all__ = [
     # IO
     "load_tsv", "plan_run_dirs",
@@ -105,3 +132,10 @@ __all__ = [
     "set_api_key_env", "set_api_key_value", "get_active_api_key_label",
     "use_api_key_env", "use_api_key_value",
 ]
+
+# Conditionally expose optional modules if present
+if "stratified_k_shards" in globals():
+    __all__.append("stratified_k_shards")
+
+if "run_experiment_sharded" in globals():
+    __all__.append("run_experiment_sharded")

@@ -27,9 +27,9 @@ What this page shows (per SPLIT section):
      with:
        • Clickable headers to sort
        • Best-run badges (Macro-F1, Accuracy) per (split, event)
-       • NEW: OOS preds is clickable to show a breakdown of out-of-scope labels (label → count)
+       • OOS preds is clickable to show a breakdown of out-of-scope labels (label → count)
   2) Detail cards with embedded chart previews (click to zoom)
-     • NEW: “view” link for OOS breakdown inside each card
+     • “view” link for OOS breakdown inside each card
 
 Recompute mode (optional):
 - Set recompute=True to ignore/outdate old summaries and recompute from predictions.csv
@@ -327,6 +327,7 @@ def _render_summary_table(df: pd.DataFrame) -> str:
     - Adds best-run badges per (split, event) for Macro-F1 and Accuracy (ties allowed).
     - Sortable by clicking column headers (numeric-aware).
     - OOS preds is clickable (opens modal with label→count breakdown).
+    - NEW: rows are group-striped by event; models are shown as small colored pills.
     """
     tbl = df.copy()
 
@@ -372,9 +373,21 @@ def _render_summary_table(df: pd.DataFrame) -> str:
     if has_oos_any: headers.append(("OOS preds", "number"))
     head_cells = "".join([f"<th data-type='{t}'>{h}</th>" for h, t in headers])
 
-    # Row builder
+    # Row builder with group striping by Event
     rows = []
+    grp = 0
+    prev_event = None
+
     for _, r in tbl.iterrows():
+        if r["Event"] != prev_event:
+            grp ^= 1  # flip 0 <-> 1 when event changes
+            prev_event = r["Event"]
+
+        # Model pill styles
+        m = (r["Model"] or "").lower()
+        pill_cls = "pill-4omini" if "4o-mini" in m else ("pill-41" if "4.1" in m or "gpt-4-1" in m else "pill-4o")
+        model_html = f"<span class='pill {pill_cls}'>{r['Model']}</span>"
+
         best_acc_badge = "<span class='badge badge-acc' title='Best Accuracy in Event'>best</span>" if r["_best_acc"] else ""
         best_f1_badge  = "<span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span>" if r["_best_f1"] else ""
 
@@ -393,9 +406,9 @@ def _render_summary_table(df: pd.DataFrame) -> str:
                 oos_td = f"<td class='num' data-sort='0'>0</td>"
 
         rows.append(
-            "<tr>"
+            f"<tr class='grp-{grp}'>"
             f"<td><strong>{r['Event']}</strong></td>"
-            f"<td><code>{r['Model']}</code></td>"
+            f"<td>{model_html}</td>"
             f"<td><code>{r['Run']}</code></td>"
             f"<td class='num' data-sort='{int(r['Test size'])}'>{int(r['Test size'])}</td>"
             f"<td class='num' data-sort='{float(r['Accuracy'])}'>{r['Accuracy']} {best_acc_badge}</td>"
@@ -413,13 +426,8 @@ def _render_summary_table(df: pd.DataFrame) -> str:
 
 
 # Example usages:
-# Fast: trust existing analysis, write to default index.html
 # build_results_index("results")
-#
-# Recompute ONLY missing analyses, write to a custom file
 # build_results_index("results", out_html="results/index_recap.html", recompute=True, recompute_missing_only=True)
-#
-# Force recompute EVERYTHING with current eval.py, to a separate file
 # build_results_index("results", out_html="results/index_fresh.html", recompute=True, recompute_missing_only=False)
 
 def build_results_index(
@@ -479,7 +487,6 @@ def build_results_index(
 
         # Summary for this split (includes badges per event)
         base_cols = ["event", "model", "run_name", "test_size", "accuracy", "macro_f1"]
-        # Include optional columns only if present
         if "labels_scope" in df_split.columns:
             base_cols.append("labels_scope")
         if "invalid_pred_outside_truth" in df_split.columns:
@@ -599,6 +606,21 @@ def build_results_index(
   /* Optional visual cues */
   td.bad {{ color: #b91c1c; font-weight: 700; }}   /* red numeric for OOS preds > 0 */
   td.scope {{ color: #374151; font-variant: all-small-caps; letter-spacing: .02em; }}
+
+  /* --- Group striping by event --- */
+  tr.grp-0 {{ background: #fff7ed; }}
+  tr.grp-1 {{ background: #eaf2ff;    }}
+  tr.grp-0:hover, tr.grp-1:hover {{ background: #e2e8f0; }}
+
+  /* Left color bar per event (two alternating hues) */
+  tr.grp-0 td:first-child {{ border-left: 4px solid #60a5fa; }} /* blue */
+  tr.grp-1 td:first-child {{ border-left: 4px solid #34d399; }} /* green */
+
+  /* Model pills */
+  .pill {{ display:inline-block; padding:2px 6px; border-radius:999px; font-size:11px; line-height:1; }}
+  .pill-4o     {{ background:#eef2ff; color:#3730a3; border:1px solid #c7d2fe; }}
+  .pill-41     {{ background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; }}
+  .pill-4omini {{ background:#fef3c7; color:#92400e; border:1px solid #fde68a; }}
 
   /* Modal (for images and OOS tables) */
   .modal {{

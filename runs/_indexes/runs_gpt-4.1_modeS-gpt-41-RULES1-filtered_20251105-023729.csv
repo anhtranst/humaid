@@ -1,0 +1,11 @@
+event,split,run_dir,predictions_csv,macro_f1,accuracy,num_total,mode
+canada_wildfires_2016,test,runs\canada_wildfires_2016\test\gpt-4.1\20251104-210916-modeS-gpt-41-RULES1-filtered-sharded2,runs\canada_wildfires_2016\test\gpt-4.1\20251104-210916-modeS-gpt-41-RULES1-filtered-sharded2\predictions.csv,0.6822047952159465,0.7730337078651686,445,sharded2
+kaikoura_earthquake_2016,test,runs\kaikoura_earthquake_2016\test\gpt-4.1\20251104-214935-modeS-gpt-41-RULES1-filtered-sharded2,runs\kaikoura_earthquake_2016\test\gpt-4.1\20251104-214935-modeS-gpt-41-RULES1-filtered-sharded2\predictions.csv,0.6534323859580998,0.6735632183908046,435,sharded2
+cyclone_idai_2019,test,runs\cyclone_idai_2019\test\gpt-4.1\20251104-215945-modeS-gpt-41-RULES1-filtered-sharded4,runs\cyclone_idai_2019\test\gpt-4.1\20251104-215945-modeS-gpt-41-RULES1-filtered-sharded4\predictions.csv,0.6304554199320731,0.7175866495507061,779,sharded4
+hurricane_florence_2018,test,runs\hurricane_florence_2018\test\gpt-4.1\20251104-222000-modeS-gpt-41-RULES1-filtered-sharded6,runs\hurricane_florence_2018\test\gpt-4.1\20251104-222000-modeS-gpt-41-RULES1-filtered-sharded6\predictions.csv,0.6975135954545832,0.734085414987913,1241,sharded6
+hurricane_maria_2017,test,runs\hurricane_maria_2017\test\gpt-4.1\20251104-232533-modeS-gpt-41-RULES1-filtered-sharded7,runs\hurricane_maria_2017\test\gpt-4.1\20251104-232533-modeS-gpt-41-RULES1-filtered-sharded7\predictions.csv,0.6238380738341013,0.6761442441054092,1442,sharded7
+california_wildfires_2018,test,runs\california_wildfires_2018\test\gpt-4.1\20251105-000600-modeS-gpt-41-RULES1-filtered-sharded7,runs\california_wildfires_2018\test\gpt-4.1\20251105-000600-modeS-gpt-41-RULES1-filtered-sharded7\predictions.csv,0.635326039590496,0.7104722792607803,1461,sharded7
+hurricane_dorian_2019,test,runs\hurricane_dorian_2019\test\gpt-4.1\20251105-004124-modeS-gpt-41-RULES1-filtered-sharded7,runs\hurricane_dorian_2019\test\gpt-4.1\20251105-004124-modeS-gpt-41-RULES1-filtered-sharded7\predictions.csv,0.560272475369006,0.6027851458885941,1508,sharded7
+kerala_floods_2018,test,ERROR,,,,0,sharded7
+hurricane_harvey_2017,test,ERROR,,,,0,sharded8
+hurricane_irma_2017,test,ERROR,,,,0,sharded8

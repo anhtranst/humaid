@@ -216,7 +216,8 @@ def sync_test_sample(
         if not parsed:
             content = choice.get("content", "")
             if isinstance(content, list):  # some providers return list-of-parts
-                content = content[0].get("text", "")
+                content = content[0].get("text", ""
+                )
             parsed = json.loads(content) if content else {}
 
         pred = parsed.get("label", "")
@@ -251,16 +252,15 @@ def build_requests_jsonl_S(
     rules: str,
     model: str = "gpt-4o-mini",
     temperature: float = 0.0,
+    labels_override: list[str] | None = None,
+    allow_single_label_bypass: bool = True,
 ):
-    """
-    Build JSONL for OpenAI Batch targeting /v1/chat/completions (Mode S).
-    - Derives CURRENT_LABELS from the event (truth present labels if available).
-    - Writes an EMPTY file when the event has exactly one valid label (signal bypass).
-    """
-    CURRENT_LABELS = _extract_present_labels(df)
+    """Zero-shot Batch JSONL builder targeting /v1/chat/completions."""
+    # Use override (event-wide labels) if provided; else derive from this df
+    CURRENT_LABELS = labels_override or _extract_present_labels(df)
 
-    if len(CURRENT_LABELS) == 1:
-        # Single-label event -> nothing to ask the model. Upstream runner detects this.
+    # Single-label: optionally bypass (sharded runs should pass allow_single_label_bypass=False)
+    if allow_single_label_bypass and len(CURRENT_LABELS) == 1:
         with open(out_path, "w", encoding="utf-8") as f:
             pass
         return out_path
@@ -270,7 +270,7 @@ def build_requests_jsonl_S(
     with open(out_path, "w", encoding="utf-8") as f:
         for _, row in df.iterrows():
             tid = str(row["tweet_id"]).strip()
-            text = str(row.get("tweet_text", "") or "").replace("\r", " ").strip()
+            text = str(row["tweet_text"] or "").replace("\r", " ").strip()
             user_msg = make_user_message(text, rules, CURRENT_LABELS)
             body = {
                 "model": model,
@@ -281,10 +281,8 @@ def build_requests_jsonl_S(
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": user_msg},
                 ],
-                "response_format": {
-                    "type": "json_schema",
-                    "json_schema": {"name": "tweet_label", "schema": schema}
-                },
+                "response_format": {"type": "json_schema",
+                                    "json_schema": {"name": "tweet_label", "schema": schema}},
             }
             line = {
                 "custom_id": f"tweet-{tid}",
@@ -294,7 +292,6 @@ def build_requests_jsonl_S(
             }
             f.write(json.dumps(line, ensure_ascii=False) + "\n")
     return out_path
-
 
 # =============================================================================
 # Batch submission helpers
@@ -431,6 +428,7 @@ def retry_fill_missing_predictions(
     max_tokens: int = 40,
     max_retries: int = 3,
     backoff_seconds: float = 2.0,
+    labels_override: list[str] | None = None,   # <-- NEW (supports sharded runs)
 ) -> pd.DataFrame:
     """
     Patch pass that fixes:
@@ -439,8 +437,12 @@ def retry_fill_missing_predictions(
       • (optional) rows with OOS predicted_label (outside event label set)
 
     Returns a row-aligned DataFrame (one row per source_df row).
+
+    labels_override:
+      If provided, use this fixed event-level label list for the schema
+      (important for sharded runs so every shard uses the same schema).
     """
-    CURRENT_LABELS = _extract_present_labels(source_df)
+    CURRENT_LABELS = labels_override or _extract_present_labels(source_df)
     schema = _make_schema(CURRENT_LABELS)
 
     # Build source lookup

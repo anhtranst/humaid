@@ -1,0 +1,168 @@
+tweet_id,tweet_text,class_label,predicted_label,confidence,entropy,status
+902857522037567489,So many people attempt to drive through flood water–this may be the most important graphic you can share,other_relevant_information,caution_and_advice,0.95,,ok
+903450788906848256,"What to look for in kids affected by Harvey that might indicate a need for mental health support, from TAG Center at @TexasChildrens",requests_or_urgent_needs,caution_and_advice,0.85,,ok
+903405927071490048,Donations of all kind are being accepted @Royal_grooming to aid those victimized by Hurricane Harveyplease support,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+903493981882933250,"@RealScreenGeek i think this should be reworded, nothing in ur article refers to hurricane harvey and it comes off as inappropriate. maybe link red cross?",other_relevant_information,not_humanitarian,0.9,,ok
+901718160528769024,The flooding is so bad in SE Harris County and surrounding areas the National Weather Service created a new designation to describe it,other_relevant_information,infrastructure_and_utility_damage,0.85,,ok
+902614379526545415,#SanAntonio helps by sheltering #harvey evacuees.  #mobilechat #TexasStrong,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+903729356899590148,New post (Pimp C’s Widow Denies UGK Archives Were Destroyed in Hurricane Harvey) has been published on UK  -,infrastructure_and_utility_damage,not_humanitarian,0.95,,ok
+902650569260765186,RT @invisibleman_17 Rescue worker daves a dog in #HoustonFloods #HurricaneHarvey  @HamillHimself @mesmitch @247razz,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+903352940873711616,The Alley Theater has sustained millions of dollars in flood damage from #HurricaneHarvey,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+903747914098507776,Managing traumatic stress: Dealing with #hurricanes from afar. What can YOU do? #HurricaneHarvey,other_relevant_information,caution_and_advice,0.85,,ok
+902899291244683264,@enews Thank you for taking the lead on donatining for Texans in the hard hitting areas from HURRICANE HARVEY ! OTHERS SHOULD FOLLOW UR EXAMPLE .,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+903404236616204288,1/3: Texas Republicans who rail against government but gladly accept @FEMA assistance should take a hard look in the mirror after #Harvey.,other_relevant_information,not_humanitarian,0.9,,ok
+902841611863728128,Texans Being Warned of Increase In Alligators Due to Hurricane Harvey Flooding,other_relevant_information,caution_and_advice,0.9,,ok
+902647815314268160,There is no difference between a house of worship and a shelter.,not_humanitarian,not_humanitarian,0.9,,ok
+902858483510386688,Here are the list of Evacuation shelters. #Harvey #TexasFloods,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+903047416479395840,First pic is a gym at Rockport Fulton High. Second is the First Baptist Church in Rockport. Devastating damage. #harvey,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+903062946623889408,".@HumaneSociety rescuers wade through Texas floods to save, evacuate animals from #HurricaneHarvey:",displaced_people_and_evacuations,rescue_volunteering_or_donation_effort,0.95,,ok
+903748113281765377,"DOG RESCUE This is in Lumberton, Texas, down the street from my moms house. Thats my brother in the black shirt. #Harvey",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+901780286542893061,"Hurricane Harvey, tornadoes, more storms Continue the damage, destruction the norm",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+903743237692653568,Crisis relief can help @NewYorkLife policy owners impacted by #HurricaneHarvey. Call 1-800-Call-NYL for assistance.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+901888582411046912,GALLERY: Hurricane Harvey causes widespread damage,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+903703912326332416,"Sad to see all the damage #HurricaneHarvey has caused Refugio, TX Beautiful to see how the community is coming together to rebuild.",infrastructure_and_utility_damage,sympathy_and_support,0.85,,ok
+902867245537173504,What #HurricaneHarvey and Its Damage Can Teach Us About the #Holy Spirits #Anointing,infrastructure_and_utility_damage,not_humanitarian,0.9,,ok
+903456790880239616,"#harvey Death toll crosses 40, say officials, flood waters to crest in some places on Friday #flooding",injured_or_dead_people,injured_or_dead_people,0.9,,ok
+902658787080900609,Attn Iowans: @ARLIowa is holding a Clear the Shelter adoption event to make room for animals displaced by #Harvey!,displaced_people_and_evacuations,displaced_people_and_evacuations,0.9,,ok
+903450320273108992,HALLELUJAH!!! Music to the ears of every lil ole shelter dog ever passed over for 2 much energy. This dog is Border Collie AND pibble mix!!!,rescue_volunteering_or_donation_effort,not_humanitarian,0.95,,ok
+902856579556487169,"@KBTXShel Over 30 in our neighborhood, sun finally came out with double #rainbows 🌈 #TexasStrong #HurricaneHarvey",not_humanitarian,not_humanitarian,0.9,,ok
+903724434363744256,"More than one-quarter of Houstons CRE might be damaged, CoStar Group:   #CRE #Harvey",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+901835839801577473,RT maltatoday Hurricane Harvey: Authorities expect death toll to rise,injured_or_dead_people,injured_or_dead_people,0.9,,ok
+901775170557247489,RT @FoxNews: .@GovMikeHuckabee on #HurricaneHarvey damage: Its almost apocalyptic to describe it.,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+903645706115788800,Your running list of damage estimates since #HurricaneHarvey hit one week ago,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+902722380346396672,"Looks like a river bottom but its a street in west Houston. Floods creeping higher, making more streets impassable. #Harvey @ABC",other_relevant_information,infrastructure_and_utility_damage,0.9,,ok
+903637150364729344,BRIEF-KMG says its ‍facilities did not sustain meaningful damage from Hurricane Harvey,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+902912130365747200,BREAKING: The real victim of Hurricane Harvey has been identified.,injured_or_dead_people,not_humanitarian,0.9,,ok
+902858118178144256,Thoughts and Prayers are free. Its amazing to see the love and compassion for one another! Keep spreading contagious kindness!! #Harvey2017,sympathy_and_support,sympathy_and_support,0.95,,ok
+903763588350959616,.@Tstory2 &amp; @cbettis35 would like support in their effort to raise funds for Hurricane Harvey relief. #TexasStrong:,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902644645351579649,#HurricaneHarvey #PrayForTexas #ComedyHeals #Repost @michaelblackson I have child support so I,sympathy_and_support,not_humanitarian,0.95,,ok
+901696559372480512,RT @austintexasgov: A flash flood warning is in effect for Travis County until 5 a.m.  #harvey #atxwx #atxfloods,caution_and_advice,caution_and_advice,0.95,,ok
+903677696101818372,"The forgotten but freakish damage from Hurricane Harveys eyewall in Rockport, Tex.  #environment #NJ",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+903363839953162240,Hurricane Harvey: Help UHD students w/ school supplies lost  via @youcaring,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+903762232303124480,"CES Beta Club will take donations to send to the victims of Hurricane Harvey. Cleaning supplies, baby needs, and hygiene items are needed.",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+901779567257546753,Flooding by Brays Bayou outside our apartment #Harvey #HurricaneHarvey,other_relevant_information,infrastructure_and_utility_damage,0.85,,ok
+903642042538000384,Many have lost everything from the effects of #Harvey. They need your support. Text SENDRELIEF to 41444 to aid those in need.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902715600887275521,If there is mandatory evacuation those hote rules go by the wayside! I learned that in Katrina- wasnt leaving my Dalmatian in 🚗. #LetDogsIn,displaced_people_and_evacuations,displaced_people_and_evacuations,0.9,,ok
+902657637321515008,Mutual assistance crews are on the move to help assist with #Harvey restoration efforts:,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+902827195009290240,Retweeted FEMA (@fema): A look at some of the damage caused by #Harvey via examples submitted through the @fema,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+903751591899029505,"Monsanto Pledges $500,000 Donation to Help Support Hurricane Harvey Relief Efforts",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902683535756206080,My old neighborhood RT @JudgeTedPoe: Kings Point in Kingwood is now under a Voluntary evacuation. #harvey #kingwood,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+902685046821318656,Fort Worth ready &amp; activated to receive #Harvey evacuees after receiving State request to open shelters. More info:,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+903748618791694339,Texas senator Ted Cruz visits Coast Guard Sector Houston-Galveston to observe first responders in action #uscg #HurricaneHarvey #harvey,rescue_volunteering_or_donation_effort,other_relevant_information,0.8,,ok
+902653459564040193,The Alabama National Guard is joining Hurricane Harvey recovery efforts in Texas.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+903744425440022528,"Meteorologists Say Hurricane Irma Could Be More Powerful, Destructive than Harvey #HurricaneHarvey #HurricaneIrma",caution_and_advice,other_relevant_information,0.85,,ok
+901763654047150080,"Things are beginning to get dire in #Houston, due to flooding from #Harvey. #houstonflood",other_relevant_information,other_relevant_information,0.85,,ok
+901283531078467584,Category 4 Hurricane Harvey makes landfall on Texas coast with 130 mph winds and flooding rains,caution_and_advice,other_relevant_information,0.9,,ok
+901780370986860544,"Two dead, at least 30 unaccounted for as Harvey slams Texas - The weakened storm could deliver heavy rain throu",injured_or_dead_people,injured_or_dead_people,0.95,,ok
+903369243722428418,"Confirmed tornado, damage reports coming in from W Alabama. @spann still streaming. #alwx #Harvey",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+903749496630370305,Hurricane Harvey may have destroyed 1 million cars—and changed the U.S. used auto market,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+902846385162244096,KidLit Cares is raising money for the Red Cross to help w/ Hurricane Harvey relief. Bid on my #JediAcademy sketch:,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+903408121011331072,🇺🇸Hero saves 50 in Texas town of Port Arthur including babies &amp; sick after official rescuers failed to show up,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+902649263641030660,"#HurricaneHarvey has devastated many, but donations can help. Give through any of these organizations. #OathForGood",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902686636747710464,Thoughts and prayers are with the city of Houston during this difficult time. #HurricaneHarvey #HoustonStrong,sympathy_and_support,sympathy_and_support,0.95,,ok
+902621260642967557,Death toll continues to climb as #Harvey continues to dump more rain #nbcct,injured_or_dead_people,injured_or_dead_people,0.95,,ok
+901323120581246976,"2AM UPDATE: Now a Cat 3 storm, still VERY powerful. Heavy rain, flooding - #HurricaneHarvey just getting started.",caution_and_advice,other_relevant_information,0.85,,ok
+903428841732939777,"ok, now were talking about Harvey. The argument: we should still celebrate Columbus Day because some people died in the hurricane.",injured_or_dead_people,not_humanitarian,0.9,,ok
+902649839703482368,"Houstons conv. ctr is a massive shelter. Today, there was a line around the bldg of ppl wanting to volunteer there",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902893489582735360,Please were in lumberton and I have a newborn we have to wait until 6 am for anyone to come help us 😰,requests_or_urgent_needs,requests_or_urgent_needs,0.95,,ok
+903356512982016000,@Airbnb and generous homeowners offering over 300+ free shelter to #Harvey evacuees. Show your #Texas spirit! #Harvey2017 @abc13houston,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902664218478084096,"For every $1 donated, they can make $6 worth of food for hungry, displaced hurricane victims. Please give what you can. Thank you.",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902644215217217536,Two of our officers were interviewed by @KPRC2 after rescuing two four-legged Houstonians #HoustonStrong #HurricaneHarvey,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+901281391291371520,Severe structural damage in Rockport via the @bclemms live stream. #HurricaneHarvey @StormHour @spann,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+902577644281180161,#Smithville evacuees recount the night they fled their homes amid Tropical Storm #Harveys fury w/ VIDEO.,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+903749410584178689,"Another 131,400 cans of water out the door for #HurricaneHarvey AND @oskarblues is MATCHING all donations up to 50K",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902841468829696000,Our thoughts &amp; prayers are with @houstonpolice who are mourning the loss of Sgt. Perez who was working in Hurricane Harvey and drowned.,sympathy_and_support,sympathy_and_support,0.95,,ok
+903622229249941504,"In light of #HurricaneHarvey and the flooding in India, Nepal, and Bangladesh, can you deny the reality of #climatechange ? #resist",other_relevant_information,not_humanitarian,0.9,,ok
+902638742653071361,"If you donate now through Google to the #HurricaneHarvey funds, they will DOUBLE your contribution.",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902633546296242177,"That is a MASSIVE amount of rain. To put in perspective, DC averages 39.74 a YEAR. Some around Houston got that in 4 days. #HurricaneHarvey",other_relevant_information,other_relevant_information,0.85,,ok
+901514164732088349,More people are killed each weekend in Chicago than killed by Hurricane Harvey. Where is the 24/7 media coverage of the murders?,injured_or_dead_people,not_humanitarian,0.95,,ok
+901792538335600640,I liked a @YouTube video  HARVEY CAUSING CATASTROPHlC FLOODING In TEXAS,other_relevant_information,not_humanitarian,0.95,,ok
+901697637031825408,"Tornado Watch in effect in Hardin, Harris, Jasper, Jefferson, Liberty and Matagorda Counties until 1 PM #txwx #news",caution_and_advice,caution_and_advice,0.95,,ok
+903749498048008193,Hurricane Harvey Impact on Houston Commercial Real Estate Market  #HurricaneHarvey #commercialrealestate,other_relevant_information,not_humanitarian,0.95,,ok
+902854935238373377,"NBA, players union to donate $1M to Hurricane Harvey relief  (via  )",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902851023286480897,For the latest news as related to #HurricaneHarvey efforts visit:  (left menu offers multiple language translation),other_relevant_information,other_relevant_information,0.85,,ok
+902607274761445376,THIS JUST IN! CNN Has No Heart! Hurricane Surviving Mom BLASTS Network For Shoving Mic In Her Face  #hurricaneharvey,other_relevant_information,not_humanitarian,0.9,,ok
+902851684115861506,"LATEST: #Harvey makes 2nd landfall in Louisiana, death toll rises",injured_or_dead_people,injured_or_dead_people,0.9,,ok
+903765841400954882,Thanks to everyone that came to help out at the house🙏✊🏽 #Harvey,sympathy_and_support,rescue_volunteering_or_donation_effort,0.85,,ok
+902606586866270210,Macalister Falls Dr WATER Rising #sugarlandtx #siennaplantation #FortBendCounty #BrazosRiver #flooding #HoustonFlood2017 #Harvey,other_relevant_information,infrastructure_and_utility_damage,0.85,,ok
+903601538710388737,Leonardo DiCaprio Donated $1 Million to Hurricane Harvey Relief,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+903404782294929408,An Idaho boutique is donating merchandise and money to help some Texas shops damaged by Hurricane Harvey.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902908720815984641,"The victims of #Harvey dont hugs, they need effectiveness! Something sorely lacking with Obama",not_humanitarian,sympathy_and_support,0.7,,ok
+902652267219865600,@Doc_Sanger Sowhats the sitch down south with that development over the Yucatán my friend? #Harvey victims want to know. 😳,other_relevant_information,not_humanitarian,0.85,,ok
+902864369993777152,"[Hurricane Harvey, flooding forces Astros, Texans to move home games -  via ]",caution_and_advice,displaced_people_and_evacuations,0.8,,ok
+902657752564203520,"Jim Crane, the ownership group and our Foundation will donate $4 million to the relief efforts aiding the victims of Hurricane Harvey.",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902654102596763648,For all those wanting to help people impacted by #Harvey we must call 1-800-REDCROSS and donate. #TexasStrong,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+901733516890820608,"Can you also please lift paywall on articles about the other major disaster–&gt;Trump&lt;- Help people get informedand away from Breitbart, Fox",not_humanitarian,not_humanitarian,0.95,,ok
+902852563950870528,Sandra Bullock has pledged $1 million to Hurricane Harvey victims. #HopeForHouston,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+902606873563672577,Join the @NFL and help those affected by Hurricane Harvey. Text HARVEY to 90999 to donate $10 to @RedCross.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902649067699920900,Coldplay sings a special song for Houston and Hurricane Harvey victims,other_relevant_information,sympathy_and_support,0.85,,ok
+901750152561647616,RT @weatherchannel: NEW: A FLASH FLOOD EMERGENCY has been issued for much of the Houston metro area. STAY HOME! Flooding ongoing #Harvey ht,caution_and_advice,caution_and_advice,0.95,,ok
+903755765101592576,Drop off your hurricane relief supplies at our place today and tomorrow. #designateddropoffpoint @DallasGuardians,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902854286174023680,This is unusual: @FLOTUS Melania Trump issues her own formal statement on #HurricaneHarvey separate from the presidents.,not_humanitarian,not_humanitarian,0.95,,ok
+902635108963942400,Immigrant walks to work in waist high water! Yet this is who @realDonaldTrump wants to keep out! While he is telling SS to keep him dry.,other_relevant_information,not_humanitarian,0.85,,ok
+903379044439392256,Our friend Buddy came by the Command Center tonight to help us take care of our people affected by #HurricaneHarvey! @homedepot #HomerFund,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+901654445666308096,"Fairfield Inn in Rockport was originally a #HurricaneHarvey shelter, but it had to be evacuated last night after violent shaking and this.",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+902655654363414529,Our hearts are with those affected by #HurricaneHarvey ❤️,sympathy_and_support,sympathy_and_support,0.95,,ok
+901822503659692032,"Harveys death toll, Houston flooding, fire at Austins Franklin Barbecue: Your weekend news roundup -",injured_or_dead_people,injured_or_dead_people,0.8,,ok
+902638103038480385,Find out how to get help and how to give help during #Hurricane Harvey  #RedCross,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+901805307126456320,"Mr. President*, five people have been killed by #Harvey and the #HoustonFlood is devastating a city. How can you say its going well?",injured_or_dead_people,injured_or_dead_people,0.95,,ok
+903590252148871169,First wide-scale use of #drones to measure damage since the FAA OK’ed the tech for commercial use in 2016: #Harvey,other_relevant_information,other_relevant_information,0.85,,ok
+902643959465480192,"We are in need of NEW packaged socks, undergarments &amp; T-shirts, to be provided for victims of Hurricane Harvey.",requests_or_urgent_needs,requests_or_urgent_needs,0.95,,ok
+901792451433779200,#Harvey evacuees: @GovAbbott is suspending hotel occupancy taxes Aug. 23 – Sept. 6. Details you should know:,displaced_people_and_evacuations,displaced_people_and_evacuations,0.9,,ok
+902635126613569536,OBrien on #HurricaneHarvey: Were just doing the best we can to stay in touch and see what we can do to help them.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.8,,ok
+901755964981993476,BREAKING: TORNADO WARNING FOR FORT BEND COUNTY TEXAS. Take cover especially if you are in Sugar Land. Praying for family &amp; friends.,caution_and_advice,caution_and_advice,0.95,,ok
+902848523653304320,"If you are a registered architect in Texas, @TXArchitects has info about how to help with Hurricane Harvey relief:",other_relevant_information,rescue_volunteering_or_donation_effort,0.9,,ok
+902912101336969218,"We are praying for Texas. Lord Jesus, please help these families. #HurricaneHarvey #TexasForever",sympathy_and_support,sympathy_and_support,0.95,,ok
+901831394606936064,"@realDonaldTrump The victims of #Harvey havent either, they just arent excited about it like you are, you moron",other_relevant_information,sympathy_and_support,0.7,,ok
+903063276099076096,"For years, the ogre Joe Arpaio headed a fascistic police state that killed hundreds of inmates. Donny pardoned him prior even to sentencing.",other_relevant_information,not_humanitarian,0.95,,ok
+902649828945088513,The @operationbless team is already making a difference in the lives of #HurricaneHarvey victims in #Texas. Watch:,other_relevant_information,rescue_volunteering_or_donation_effort,0.9,,ok
+903362823497158656,Joint statement on water quality in Hurricane Harvey-affected areas:,other_relevant_information,infrastructure_and_utility_damage,0.85,,ok
+902918355497177088,Watch: Men on a boat appear to take liquor shots during #Harvey flooding,not_humanitarian,not_humanitarian,0.95,,ok
+903047951974617089,URGENT! PETA’s emergency rescue team is in #PortArthur. If you know of animals in need or left behind please tweet us their address! #Harvey,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902672740267765761,#Texas has given the culture so much and as of now they need our help. Join In to help make #TexasStrong again,sympathy_and_support,rescue_volunteering_or_donation_effort,0.85,,ok
+902608802763206656,"Please do not attempt to drive donation items to #Texas, as many roads are closed due to flooding. #HurricaneHarvey",rescue_volunteering_or_donation_effort,caution_and_advice,0.95,,ok
+902908996801191936,Hurricane Harvey recovery operations continue. Drinking water is safe. No water restrictions planned. Public Works and Traffic crews work.,other_relevant_information,other_relevant_information,0.85,,ok
+902647929088958464,Rescue Row = where samaritans are meeting to help save ppl. Very familiar with this area. About 5 miles from my uncle &amp; aunt. #Harvey #HOU,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+902651789081763840,can I order from @amazon and have it be shipped to shelters or food banks in Houston? cc @FeedingTexas @HoustonTX #Harvey2017,other_relevant_information,rescue_volunteering_or_donation_effort,0.9,,ok
+902852645630726144,"Please help, this lady needs to be rescue Marilyn guidry ,6210 Charles ave, Port Arthur , tx 713 5427751, 80 year old Water waist #harvey",requests_or_urgent_needs,requests_or_urgent_needs,0.95,,ok
+902641829794992128,double page spread for hurricane harvey as 8 people are dead yet nothing on the mudslide killing thousands in Sierra Leone?Sad sad world,injured_or_dead_people,injured_or_dead_people,0.9,,ok
+903359701747937281,#HurricaneHarvey damage to be among top 10 most costly” for #insurers  via @insureca4less,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+903408747762110468,"Dez took call from Jerry Jones who pledged $1 million, Hurricane Harvey relief efforts @dallascowboys @salvationarmy",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+903456523048722433,"In order to help victims of Hurricane Harvey, my family and I have kickstarted a fundraiser to help those in need! Anything helps!",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902847945447538690,The Walt Disney Company and KTRK-TV Houston commit $1 Million for Hurricane Harvey Relief:,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902674241149067264,@thehill Don and Melania inspecting damage in the minority areas of Houston. #harvey #trumpintx #trumpinTexas @DonaldTHaters @realDonaldTrump,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+902655887487229952,A group of good samaritans from Louisiana act as #firstresponders. #HurricaneHarvey #HoustonStrong #CajunNavy,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+903487805782818818,I have friends basically all over the United States. Prayers go to the ones that are getting affected with Hurricane Harvey!,sympathy_and_support,sympathy_and_support,0.95,,ok
+902659652416102400,@realDonaldTrump Why are you not doing something about this? Exxon is poisoning flood victims in Texas!,not_humanitarian,requests_or_urgent_needs,0.8,,ok
+902643742951297024,"Huge need 4 volunteer medical professionals to help flood victims, as well as medical supplies. @LSCCyFair shelter @lonestarcollege #harvey",rescue_volunteering_or_donation_effort,requests_or_urgent_needs,0.95,,ok
+901721845212303364,RT @EvansHerbie: Heavenly Father we pray that those in the flooding water of Harvey take extreme caution and not take chances InJesusName,sympathy_and_support,caution_and_advice,0.85,,ok
+902639015542784000,Here are 17 celebrities that have donated to Hurricane Harvey relief efforts,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+901667745128951808,Tornado warnings got him like ⚠️⚠️⚠️,caution_and_advice,caution_and_advice,0.9,,ok
+903630876759781378,"Damage by #Harvey was almost entirely manmade [&amp;] fingerprinted by neglect, corruption &amp; denial—Water [can] destroy US city @RollingStone",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+902702085128544260,@snietomunoz How do I adopt a pet displaced by Hurricane Harvey?,displaced_people_and_evacuations,displaced_people_and_evacuations,0.8,,ok
+901347258456821760,Category 4 Hurricane Harvey Brings Devastating Damage as it Slams Into Texas,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+902856055499223040,"Really agree, especially with the 1000 deaths in South Asia from their epic rains &amp; floods",injured_or_dead_people,injured_or_dead_people,0.95,,ok
+903048427164065792,"If you need emergency MAINTENANCE meds, visit CVS at NRG Convention Center - #houston #HurricaneHarvey #harveySOS #houstonflood",requests_or_urgent_needs,requests_or_urgent_needs,0.9,,ok
+903742528314331136,"Wow! Were so grateful for the growing number of attorney, law student &amp; paralegal volunteers. Thank you!  #Harvey",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+903745622905196544,Wanna help donate to those who need help because of #HurricaneHarvey? Check out these LOCAL HOUSTON charities!,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+903436544626843648,The area has been under tornado watches all day as whats left of #Harvey heads northeast.,other_relevant_information,caution_and_advice,0.85,,ok
+901650593982406657,"#Harveys stall over Texas has led to power outages, heavy flooding that could last for days. Visit  for safety info.",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+903055882799513600,If you need assistance in the aftermath of Harvey please click the link so we can help! #kleinspirit,other_relevant_information,requests_or_urgent_needs,0.9,,ok
+902604119621459969,How Storm #Harvey brought huge floods to Texas and is being felt in Louisiana More:,other_relevant_information,other_relevant_information,0.8,,ok
+902840204721053696,Sandra Bullock is a treasure. Thank you for leading the donations for #HelpForHouston.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+902684558285524993,Is your pharmacy closed due to #flooding? call #HIV Medication Program 1-800-255-1090  #DAFN #hmrd #Harvey #TX,caution_and_advice,requests_or_urgent_needs,0.9,,ok
+903745679696252928,Thoughts go out to victims of Hurricane Harvey. #StayStrongTexas,sympathy_and_support,sympathy_and_support,0.95,,ok
+903624564214771713,Please donate today!,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+902674152611504128,The death toll in Texas from #Harvey will be justification for teaching Earth Science in High School. None of this is a suprise. #education,injured_or_dead_people,injured_or_dead_people,0.85,,ok
+902875225586589696,.@AKMcGlinchy has the story of one Nixon familys #Harvey evacuation:,displaced_people_and_evacuations,displaced_people_and_evacuations,0.9,,ok
+902633154544009221,#hurricaneharvey please donate to @RedCross @SalvationArmyUS @spcaoftexas (2/2) #mapoli #ReliefForHarvey,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+903683648687308800,.@jimkrasulacbs reports on the destruction caused by Hurricane Harvey on todays Reporters Notebook. Listen:,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+903582175639064578,"@AynRandPaulRyan When Mexico offered assistance with #Harvey . . . @realDonaldTrump pouted, No! I can do it myself!",rescue_volunteering_or_donation_effort,not_humanitarian,0.9,,ok
+902633045555113988,.@DickinsonCS3 is leading a campus-wide effort to help those affected by #HurricaneHarvey. How to contribute: .,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902634704670777346,"Hurricane Evacuee Camping, Governor opens Texas state parks to hurricane evacuees  #texas #Harvey",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+902128588631273473,WATCH: FEMA is holding a briefing on Tropical Storm Harvey and Texas flooding:,other_relevant_information,other_relevant_information,0.8,,ok
+903480883683852288,Please help our brothers &amp; sisters in Texas devastated by #hurricaneharvey - text @RedCross w/ HARVEY” to 90999 4 a $10 donation 🙏,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+902654424870522882,Texas lawyers preparing for launch of legal aid clinics for #Harvey victims  @TexasLawyer @AmericanLawyer,other_relevant_information,rescue_volunteering_or_donation_effort,0.9,,ok
+902646423996510208,Our prayers go out to the victims of hurricane Harvey. Please show your support by donating towards a better,sympathy_and_support,sympathy_and_support,0.9,,ok
+902896920116568066,That jackass theme song remake kills me everytime 😂😂😂,not_humanitarian,not_humanitarian,0.98,,ok
+902641114678743040,Night shift #volunteers needed.only if you can get there safely. #Harvey @GRBCC,requests_or_urgent_needs,rescue_volunteering_or_donation_effort,0.95,,ok
