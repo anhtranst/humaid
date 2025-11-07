@@ -399,6 +399,7 @@ def _render_summary_table(df: pd.DataFrame) -> str:
             oos_val = int(r.get("OOS preds", 0))
             breakdown = r.get("oos_breakdown", None) or []
             title = f"{r['Event']} • {r['Model']} • {r['Run']}".strip(" •")
+            rules = next((p for p in r['Run'].split('-') if p.upper().startswith('RULES')), '')
             data_attr = f" data-oos='{json.dumps(breakdown, ensure_ascii=False)}' data-title='{title}'"
             if oos_val > 0:
                 oos_td = f"<td class='num bad' data-sort='{oos_val}'><button class='oos-btn'{data_attr} aria-label='View OOS breakdown'>{oos_val}</button></td>"
@@ -406,7 +407,7 @@ def _render_summary_table(df: pd.DataFrame) -> str:
                 oos_td = f"<td class='num' data-sort='0'>0</td>"
 
         rows.append(
-            f"<tr class='grp-{grp}'>"
+            f"<tr class='grp-{grp}' title='{r['Event']}\n{r['Model']}\n{rules}'>"
             f"<td><strong>{r['Event']}</strong></td>"
             f"<td>{model_html}</td>"
             f"<td><code>{r['Run']}</code></td>"
@@ -610,7 +611,7 @@ def build_results_index(
   /* --- Group striping by event --- */
   tr.grp-0 {{ background: #fff7ed; }}
   tr.grp-1 {{ background: #eaf2ff;    }}
-  tr.grp-0:hover, tr.grp-1:hover {{ background: #e2e8f0; }}
+  tr.grp-0:hover, tr.grp-1:hover {{ background: #e6f25e; }}
 
   /* Left color bar per event (two alternating hues) */
   tr.grp-0 td:first-child {{ border-left: 4px solid #60a5fa; }} /* blue */

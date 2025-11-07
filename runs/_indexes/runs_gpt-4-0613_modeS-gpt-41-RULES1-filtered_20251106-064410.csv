@@ -1,0 +1,11 @@
+event,split,run_dir,predictions_csv,macro_f1,accuracy,num_total,mode
+canada_wildfires_2016,test,ERROR,,,,0,sharded2
+kaikoura_earthquake_2016,test,ERROR,,,,0,sharded2
+cyclone_idai_2019,test,ERROR,,,,0,sharded4
+hurricane_florence_2018,test,ERROR,,,,0,sharded6
+hurricane_maria_2017,test,ERROR,,,,0,sharded7
+california_wildfires_2018,test,ERROR,,,,0,sharded7
+hurricane_dorian_2019,test,ERROR,,,,0,sharded7
+kerala_floods_2018,test,ERROR,,,,0,sharded7
+hurricane_harvey_2017,test,ERROR,,,,0,sharded8
+hurricane_irma_2017,test,ERROR,,,,0,sharded8

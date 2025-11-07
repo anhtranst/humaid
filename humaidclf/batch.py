@@ -32,6 +32,24 @@ OPENAI_BASE = "https://api.openai.com/v1"
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 ACTIVE_KEY_LABEL = "OPENAI_API_KEY" if OPENAI_API_KEY else None
 
+def _request_params(model: str, max_out_tokens: int) -> dict:
+    """
+    Return the correct request parameters for this model family.
+    - gpt-5*/o4*/o3* use 'max_completion_tokens' and ignore temperature/top_p (fixed to defaults).
+    - older chat models (gpt-4.1/4o/4o-mini/0613) use 'max_tokens' and accept temperature/top_p.
+    """
+    m = (model or "").lower()
+    is_new = m.startswith(("gpt-5", "o4", "o3"))
+
+    tok_field = "max_completion_tokens" if is_new else "max_tokens"
+    params = {tok_field: max_out_tokens}
+
+    if not is_new:
+        # Only include tunables for families that support them
+        params.update({"temperature": 0.0, "top_p": 1})
+
+    return params
+
 def _rebuild_headers():
     """(Re)build request headers from the current OPENAI_API_KEY."""
     if not OPENAI_API_KEY:
@@ -195,18 +213,20 @@ def sync_test_sample(
 
     for _, r in test.iterrows():
         user_msg = make_user_message(str(r["tweet_text"]), rules, CURRENT_LABELS)
+        params = _request_params(model, 40)
         body = {
             "model": model,
-            "temperature": temperature,
-            "top_p": 1,
-            "max_tokens": 40,
+            **params,
             "messages": [
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_msg},
             ],
-            "response_format": {"type": "json_schema",
-                                "json_schema": {"name": "tweet_label", "schema": schema}},
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": {"name": "tweet_label", "schema": schema},
+            },
         }
+
         resp = requests.post(f"{OPENAI_BASE}/chat/completions", headers=H_JSON, json=body, timeout=60)
         if resp.status_code != 200:
             print(">>> API error body:", resp.text)
@@ -268,22 +288,24 @@ def build_requests_jsonl_S(
     schema = _make_schema(CURRENT_LABELS)
 
     with open(out_path, "w", encoding="utf-8") as f:
+        params = _request_params(model, 40)
         for _, row in df.iterrows():
             tid = str(row["tweet_id"]).strip()
             text = str(row["tweet_text"] or "").replace("\r", " ").strip()
             user_msg = make_user_message(text, rules, CURRENT_LABELS)
             body = {
                 "model": model,
-                "temperature": temperature,
-                "top_p": 1,
-                "max_tokens": 40,
+                **params,
                 "messages": [
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": user_msg},
                 ],
-                "response_format": {"type": "json_schema",
-                                    "json_schema": {"name": "tweet_label", "schema": schema}},
+                "response_format": {
+                    "type": "json_schema",
+                    "json_schema": {"name": "tweet_label", "schema": schema},
+                },
             }
+
             line = {
                 "custom_id": f"tweet-{tid}",
                 "method": "POST",
@@ -488,17 +510,18 @@ def retry_fill_missing_predictions(
     for tid in target_ids:
         text = by_id.get(tid, {}).get("tweet_text", "")
         user_msg = make_user_message(text, rules, CURRENT_LABELS)
+        params = _request_params(model, max_tokens)
         body = {
             "model": model,
-            "temperature": temperature,
-            "top_p": 1,
-            "max_tokens": max_tokens,
+            **params,
             "messages": [
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_msg},
             ],
-            "response_format": {"type": "json_schema",
-                                "json_schema": {"name": "tweet_label", "schema": schema}},
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": {"name": "tweet_label", "schema": schema},
+            },
         }
 
         # Small retry loop for transient 5xx/errors
