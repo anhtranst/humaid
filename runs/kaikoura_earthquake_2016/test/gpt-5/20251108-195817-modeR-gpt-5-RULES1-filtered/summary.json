@@ -1,0 +1,82 @@
+{
+  "macro_f1": 0.7081002125876951,
+  "weighted_f1": 0.7153392356622653,
+  "per_class": {
+    "caution_and_advice": {
+      "precision": 0.7435897435897436,
+      "recall": 0.5918367346938775,
+      "f1-score": 0.6590909090909091,
+      "support": 98.0
+    },
+    "displaced_people_and_evacuations": {
+      "precision": 0.6470588235294118,
+      "recall": 0.6470588235294118,
+      "f1-score": 0.6470588235294118,
+      "support": 17.0
+    },
+    "infrastructure_and_utility_damage": {
+      "precision": 0.8333333333333334,
+      "recall": 0.8064516129032258,
+      "f1-score": 0.819672131147541,
+      "support": 62.0
+    },
+    "injured_or_dead_people": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 21.0
+    },
+    "not_humanitarian": {
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1-score": 0.4,
+      "support": 44.0
+    },
+    "other_relevant_information": {
+      "precision": 0.38181818181818183,
+      "recall": 0.6885245901639344,
+      "f1-score": 0.49122807017543857,
+      "support": 61.0
+    },
+    "requests_or_urgent_needs": {
+      "precision": 0.4444444444444444,
+      "recall": 0.8,
+      "f1-score": 0.5714285714285714,
+      "support": 5.0
+    },
+    "rescue_volunteering_or_donation_effort": {
+      "precision": 0.8809523809523809,
+      "recall": 0.9024390243902439,
+      "f1-score": 0.891566265060241,
+      "support": 41.0
+    },
+    "sympathy_and_support": {
+      "precision": 0.9146341463414634,
+      "recall": 0.872093023255814,
+      "f1-score": 0.8928571428571429,
+      "support": 86.0
+    },
+    "accuracy": 0.7126436781609196,
+    "macro avg": {
+      "precision": 0.7328701171121066,
+      "recall": 0.731236786851531,
+      "f1-score": 0.7081002125876951,
+      "support": 435.0
+    },
+    "weighted avg": {
+      "precision": 0.7582279932321984,
+      "recall": 0.7126436781609196,
+      "f1-score": 0.7153392356622653,
+      "support": 435.0
+    }
+  },
+  "num_evaluated": 435,
+  "num_invalid": 0,
+  "classification_stats": {
+    "total_rows": 435,
+    "successful_first_try": 435,
+    "successful_with_retry": 0,
+    "used_fallback": 0,
+    "failed_completely": 0
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "model": "gpt-5",
+  "tag": "modeR-gpt-5-RULES1-probe",
+  "tsv": "Dataset/HumAID/kerala_floods_2018/kerala_floods_2018_test.tsv",
+  "max_retry_attempts": 3,
+  "retry_delay": 1.0
+}

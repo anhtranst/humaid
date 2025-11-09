@@ -385,7 +385,16 @@ def _render_summary_table(df: pd.DataFrame) -> str:
 
         # Model pill styles
         m = (r["Model"] or "").lower()
-        pill_cls = "pill-4omini" if "4o-mini" in m else ("pill-41" if "4.1" in m or "gpt-4-1" in m else "pill-4o")
+        if "5-mini" in m:
+            pill_cls = "pill-5mini"
+        elif "5" in m:
+            pill_cls = "pill-5"            
+        elif "4o-mini" in m:
+            pill_cls = "pill-4omini"
+        elif "4.1" in m or "gpt-4-1" in m:
+            pill_cls = "pill-41"
+        else:
+            pill_cls = "pill-4o"        
         model_html = f"<span class='pill {pill_cls}'>{r['Model']}</span>"
 
         best_acc_badge = "<span class='badge badge-acc' title='Best Accuracy in Event'>best</span>" if r["_best_acc"] else ""
@@ -622,6 +631,8 @@ def build_results_index(
   .pill-4o     {{ background:#eef2ff; color:#3730a3; border:1px solid #c7d2fe; }}
   .pill-41     {{ background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; }}
   .pill-4omini {{ background:#fef3c7; color:#92400e; border:1px solid #fde68a; }}
+  .pill-5 {{ background:#f9edff; color:#3c0b54; border:1px solid #a903fc; }}
+  .pill-5mini {{ background:#fae8e8; color:#870b0b; border:1px solid #fc033d; }}
 
   /* Modal (for images and OOS tables) */
   .modal {{
