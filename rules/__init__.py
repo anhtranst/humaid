@@ -8,6 +8,7 @@ from .humaid_rules import (
     RULES_BASELINE,
     RULES_1,
     RULES_2,
+    RULES_3,
     RULES_REGISTRY,
     get_rule,
 )

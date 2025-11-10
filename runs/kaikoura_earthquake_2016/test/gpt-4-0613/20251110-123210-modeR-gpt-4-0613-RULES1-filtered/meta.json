@@ -1,0 +1,8 @@
+{
+  "model": "gpt-4-0613",
+  "tag": "modeR-gpt-4-0613-RULES1-filtered",
+  "tsv": "Dataset/HumAID/kaikoura_earthquake_2016/kaikoura_earthquake_2016_test.tsv",
+  "max_retry_attempts": 5,
+  "retry_delay": 1.0,
+  "api_endpoint": "chat/completions"
+}

@@ -1,0 +1,11 @@
+event,split,run_dir,predictions_csv,macro_f1,accuracy,num_total,mode
+kaikoura_earthquake_2016,test,runs\kaikoura_earthquake_2016\test\gpt-4o\20251109-231131-modeS-gpt-4o-RULES3-filtered-sharded6,runs\kaikoura_earthquake_2016\test\gpt-4o\20251109-231131-modeS-gpt-4o-RULES3-filtered-sharded6\predictions.csv,0.7342100150480511,0.6850574712643678,435,sharded6
+canada_wildfires_2016,test,runs\canada_wildfires_2016\test\gpt-4o\20251109-234154-modeS-gpt-4o-RULES3-filtered-sharded6,runs\canada_wildfires_2016\test\gpt-4o\20251109-234154-modeS-gpt-4o-RULES3-filtered-sharded6\predictions.csv,0.6431520700076268,0.7460674157303371,445,sharded6
+cyclone_idai_2019,test,runs\cyclone_idai_2019\test\gpt-4o\20251110-001214-modeS-gpt-4o-RULES3-filtered-sharded11,runs\cyclone_idai_2019\test\gpt-4o\20251110-001214-modeS-gpt-4o-RULES3-filtered-sharded11\predictions.csv,0.6182703996876402,0.7368421052631579,779,sharded11
+hurricane_florence_2018,test,runs\hurricane_florence_2018\test\gpt-4o\20251110-012257-modeS-gpt-4o-RULES3-filtered-sharded17,runs\hurricane_florence_2018\test\gpt-4o\20251110-012257-modeS-gpt-4o-RULES3-filtered-sharded17\predictions.csv,0.6659186011032776,0.726027397260274,1241,sharded17
+hurricane_maria_2017,test,runs\hurricane_maria_2017\test\gpt-4o\20251110-034409-modeS-gpt-4o-RULES3-filtered-sharded19,runs\hurricane_maria_2017\test\gpt-4o\20251110-034409-modeS-gpt-4o-RULES3-filtered-sharded19\predictions.csv,0.6070488292027894,0.6349757113115891,1442,sharded19
+california_wildfires_2018,test,ERROR,,,,0,sharded20
+hurricane_dorian_2019,test,ERROR,,,,0,sharded20
+kerala_floods_2018,test,runs\kerala_floods_2018\test\gpt-4o\20251110-073112-modeS-gpt-4o-RULES3-filtered-sharded21,runs\kerala_floods_2018\test\gpt-4o\20251110-073112-modeS-gpt-4o-RULES3-filtered-sharded21\predictions.csv,0.5715331053583979,0.7035398230088495,1582,sharded21
+hurricane_harvey_2017,test,ERROR,,,,0,sharded24
+hurricane_irma_2017,test,ERROR,,,,0,sharded24

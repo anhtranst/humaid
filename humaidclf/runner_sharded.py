@@ -96,20 +96,31 @@ def run_experiment_sharded(
         )
 
         info = wait_for_batch(bid, poll_secs=poll_secs)
+        
+        # Always persist batch info for post-mortem
+        (shard_dir / "batch_info.json").write_text(json.dumps(info, indent=2), encoding="utf-8")
+        
+        err_path = None
+        if info.get("error_file_id"):
+            err_path = shard_dir / "errors.jsonl"
+            download_file_content(info["error_file_id"], str(err_path))
+        
         if info.get("status") != "completed":
-            raise RuntimeError(f"[{shard_name}] batch ended with status='{info.get('status')}'")
+            raise RuntimeError(
+                f"[{shard_name}] batch ended with status='{info.get('status')}'. "
+                f"See '{shard_dir / 'batch_info.json'}' and "
+                f"{(err_path and str(err_path)) or 'Batch dashboard'} for details."
+            )
 
         download_file_content(info["output_file_id"], str(plan["outputs_jsonl"]))
-        errors_jsonl_path: Optional[str] = None
-        if info.get("error_file_id"):
-            errors_jsonl_path = str(shard_dir / "errors.jsonl")
-            download_file_content(info["error_file_id"], errors_jsonl_path)
 
         # --- Parse + patch missing
         # Ensure shard tweet_id dtype is string to preserve alignment
         df_shard = df_shard.copy()
         df_shard["tweet_id"] = df_shard["tweet_id"].astype(str)
-
+        
+        errors_jsonl_path = str(err_path) if err_path else None
+        
         preds = parse_outputs_S_to_df(
             outputs_jsonl_path=str(plan["outputs_jsonl"]),
             source_df=df_shard,

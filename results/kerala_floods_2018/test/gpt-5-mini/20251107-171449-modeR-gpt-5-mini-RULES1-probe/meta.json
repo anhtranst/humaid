@@ -1,5 +1,0 @@
-{
-  "model": "gpt-5-mini",
-  "tag": "modeR-gpt-5-mini-RULES1-probe",
-  "tsv": "Dataset/HumAID/kerala_floods_2018/kerala_floods_2018_test.tsv"
-}

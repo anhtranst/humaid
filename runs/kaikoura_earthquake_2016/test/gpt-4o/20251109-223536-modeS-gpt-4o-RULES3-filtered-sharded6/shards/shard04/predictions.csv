@@ -1,0 +1,72 @@
+tweet_id,tweet_text,class_label,predicted_label,confidence,entropy,status
+798732684784566272,RT @1NewsNZ: Earthquake LIVE: Wellington building to be taken down due to quake damage,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+797839351476588545,"Powerful magnitude 7.8 earthquake strikes New Zealand, USGS says via the @FoxNews App",caution_and_advice,other_relevant_information,0.9,,ok
+797797117519462400,Tsunami sirens going off in Lower Hutt #eqnz #earthquake #tsunami #wgtn,caution_and_advice,other_relevant_information,0.9,,ok
+771434679404630016,"Get a text, oh theres a tsunami warning. Go on SM and everyone is freaking the fuck out about an earthquake. Didnt feel it!",caution_and_advice,other_relevant_information,0.85,,ok
+800420927490002944,Over 4K aftershocks in one week.,other_relevant_information,other_relevant_information,0.9,,ok
+797807921601998853,Praying for everyone safety #eqnz,sympathy_and_support,sympathy_and_support,0.95,,ok
+797792919960756224,Christchurch tsunami warning sirens now working. #eqnz,caution_and_advice,caution_and_advice,0.9,,ok
+797941803332665344,Another decent shake. #Wellington #eqnz #earthquake,caution_and_advice,other_relevant_information,0.9,,ok
+797996432376483841,If Rice Bowl Burger Bar is open Im getting fish and chips. I need comfort food (or at least an excuse). #eqnz,not_humanitarian,not_humanitarian,0.98,,ok
+797797303461388289,UPDATE from NZ herald: tsunami waves in kaikoura and Wellington. Power out in some areas. Road damaged to Cheviot. #eqnz,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+798001375862931457,PHOTOS || Earthquake damage shown from the @NZAirForce NH90 down south:  // #earthquake #eqnz #newzealand,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+800577888672063488,RT @RCN_MRC: #HMCSVancouver is the #CAF contribution to @CanadaFP mission to deliver post #EQNZ aid in New Zealand #OpRENAISSANCE,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+797971252384186368,"RT @nzherald: #BREAKING Several large aftershocks hit Wellington, Seddon and Cheviot. Live updates:  #eqnz",caution_and_advice,other_relevant_information,0.95,,ok
+797794457491935233,RT @Claire_Phipps: There has been a severe earthquake in New Zealand; damage unclear (its the middle of the night) #eqnz,infrastructure_and_utility_damage,other_relevant_information,0.9,,ok
+797892470725971968,"RT @CBCNews: At least 2 people killed in 7.8 magnitude earthquake, New Zealands PM says",injured_or_dead_people,injured_or_dead_people,0.95,,ok
+797862075502456833,RT @NZWarriors: We hope everyone is doing ok after last nights earthquake #WarriorNation. Stay safe whanau ὊA#eqnz,sympathy_and_support,sympathy_and_support,0.95,,ok
+800239718076063744,This timeline underlines why the first warning for a tsunami is an earthquake.,caution_and_advice,caution_and_advice,0.8,,ok
+797868836607270912,Thoughts with all affected by #eqnz Scary night. Stay safe and look after each other.,sympathy_and_support,sympathy_and_support,0.95,,ok
+798033138484015104,"RT @NZStuff: #Kaikoura - Drinking water vessels can be filled at Austin St, Cromer St, Bayview St, Hastings St or Mt Fyffe Ave #nzearthquak",caution_and_advice,other_relevant_information,0.85,,ok
+797893806037213184,Praying for my home country New Zealand and all my family and friends. Keep safe. #earthquake #nz,sympathy_and_support,sympathy_and_support,0.95,,ok
+797993467783720961,Plenty of ways to help out those in need -  #eqnz #earthquake,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+797956037848379393,What’s the state of commercial buildings in earthquake damaged areas and when will they be declared safe? #NZHFocus #eqnz,infrastructure_and_utility_damage,other_relevant_information,0.85,,ok
+797929957603176448,"Its been a shaky night and morning for much of New Zealand, thoughts are with the upper part of the South Island and Wellington area. #eqnz",sympathy_and_support,sympathy_and_support,0.95,,ok
+797994726762958849,Glad to be back in beautiful #NewZealand after 19 years but very sad over loss of life &amp; destruction in 7.8 magnitude earthquake #RingofFire,infrastructure_and_utility_damage,sympathy_and_support,0.9,,ok
+797849010983710720,A powerful magnitude-7.4 earthquake has been felt on the South Island of New Zealand near the city of Christchurch,other_relevant_information,other_relevant_information,0.95,,ok
+798176297470033920,Photos: Another major earthquake has caused utter devastation” in New Zealand,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+797874675028066304,1news reports that TSB Arena &amp; BNZ centre on the waterfront has sustained most damage #Wellington #eqnz,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+797911390472130561,Our thoughts are with those impacted by the recent #eqnz. Contact us for alternative delivery options above North Canterbury &amp; North Island.,sympathy_and_support,sympathy_and_support,0.95,,ok
+797897339117502464,#eqnz Boys home today with their school closed - eyes all a-goggling as we check out emerging photos esp. of damage to roads around Kaikoura,not_humanitarian,infrastructure_and_utility_damage,0.9,,ok
+771464956705320961,Its almost been 6 years since we had our first big earthquake here ὡ4,other_relevant_information,not_humanitarian,0.95,,ok
+797953770315386880,#eqnz Crisis relief =bubbles,rescue_volunteering_or_donation_effort,not_humanitarian,0.95,,ok
+798171945812434944,RT @BoyGeorge: Sad news about the earthquake in New Zealand. Thoughts and prayers with everyone!,sympathy_and_support,sympathy_and_support,0.95,,ok
+797977367746519041,Our thoughts and prayers are with everyone impacted by the NZ earthquakes #eqnz,sympathy_and_support,sympathy_and_support,0.95,,ok
+800438671673430016,SEDDON - If you have lost or found a pet in or near Seddon please contact Seddon Information Centre:  #eqnz,rescue_volunteering_or_donation_effort,not_humanitarian,0.95,,ok
+797962894059196416,Two large aftershocks have just hit Seddon and Cheviot  #eqnz,caution_and_advice,other_relevant_information,0.9,,ok
+798004148729954304,RT @RougeLikeGirl: Asking again if anyone has any contact with people south of Kaikoura and can help me get hold of my parents in Clarence.,requests_or_urgent_needs,requests_or_urgent_needs,0.9,,ok
+797932934388805632,"RT @nzherald: Brown water in taps in Brooklyn, Newtown, Te Aro and Cuba St, Wellington — Council says safe to drink",other_relevant_information,infrastructure_and_utility_damage,0.9,,ok
+800123848456704001,"Navy ships that supported #eqnz relief effort, including #USSSampson, sail into Wellington  via @TVONENZ",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+797890693716815872,RT @BNONews: BREAKING: All tsunami warnings for New Zealand have been canceled after this mornings powerful earthquake - civil defence,caution_and_advice,other_relevant_information,0.95,,ok
+798045252447649792,By now you may have heard about the earthquake in NZ. Our thoughts go to those effected. Stay safe New Zealand! Photo via @youngadventuress,sympathy_and_support,sympathy_and_support,0.95,,ok
+798016188701806595,Thank you to all the emergency services and volunteer personnel who have responded to this quake. Your efforts are greatly appreciated #eqnz,rescue_volunteering_or_donation_effort,sympathy_and_support,0.95,,ok
+797914524783259648,Our thoughts and prayers go out to family and friends in the South Island. Stay strong and keep safe. #earthquake #eqnz #Kaikoura,sympathy_and_support,sympathy_and_support,0.95,,ok
+798692171020783616,@RoyalNZNavy is currently #evacuating #people from #kaikoura #earthquake #NewZealand,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+771564730150379520,"#earthquake: Just found out the 7.1 is hitting NZs North Island, East Coast and now theres a warning that there might be a tsunami coming!",caution_and_advice,other_relevant_information,0.9,,ok
+797885104022384641,#BIGUPS to @radionz for their fantastic overnight coverage re: #eqnz and tsunami warnings. Feeling informed helped us feel safer.,other_relevant_information,sympathy_and_support,0.8,,ok
+799933530209808384,RT @SarahWerner_NZ: Teams lining up for prize giving. Round of applause for the @StJohnNZ Chch team supporting #eqnz efforts,sympathy_and_support,rescue_volunteering_or_donation_effort,0.85,,ok
+798432142514470912,The cats have been obsessive about food for the last 36 hours. I suspect its related to the #eqnz,not_humanitarian,not_humanitarian,0.95,,ok
+797823420624936960,That said the 12.40am CDEM Media Alert National Advisory: No Tsunami Threat to New Zealand was unfortunate/  /2,caution_and_advice,other_relevant_information,0.9,,ok
+797969697580777472,Wouldnt be surprised if a tornado full of sharks ripped through Wellingtons CBD in the next 20 minutes. #eqnz,not_humanitarian,not_humanitarian,0.95,,ok
+797858903497113600,Mum-in-law living at Leithfield Beach scared but okay – the whole place has been evacuated on the tsunami warning. #eqnz,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+797829523253260288,RT @WeatherWatchNZ: New Zealand earthquake and tsunami coverage dominates global news today:,other_relevant_information,other_relevant_information,0.9,,ok
+798106953087995904,7.8 magnitude earthquake hits New Zealand. Thanks God I am safe and sound. .@SophiyAnjam,not_humanitarian,other_relevant_information,0.85,,ok
+797792424097480704,RT @monique_nz: Surreal listening to Katy Gosset on @radionz with tsunami sirens going off in background. #eqnz,caution_and_advice,not_humanitarian,0.95,,ok
+771579222410211328,Ive been getting calls from friends and family around the world to see if family and I are ok because the earthquake and tsunami warning.,sympathy_and_support,other_relevant_information,0.85,,ok
+798672548380581888,"The Defence Force HQ in Wellington is closed due to quake damage, unsure when itll be safe again  #eqnz",not_humanitarian,infrastructure_and_utility_damage,0.95,,ok
+797797356024365057,RT @jackyan: Here are the #tsunami evacuation zones for Wellington City to Ngauranga. #eqnz,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+797889211332333569,"LIVE: Two confirmed dead, military helicopters on the way to assess damage, aftershocks still happening  #eqnz",injured_or_dead_people,injured_or_dead_people,0.9,,ok
+798700310105505792,Hey @BishopTamaki seems you had a bit to say about earthquakes of late. Why not tell us what your church is doing to help #eqnz victims?,other_relevant_information,rescue_volunteering_or_donation_effort,0.7,,ok
+797885808308985857,Woah. Major damage on SH1.,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+800600023310286848,RT @IFRCAsiaPacific: .@NZRedCross personnel still operating in areas worst affected by last Mondays 7.8 magnitude earthquake /,rescue_volunteering_or_donation_effort,other_relevant_information,0.9,,ok
+797821848641617920,Wakefield Rd actually. Nobody on the streets. Witness have said that Mount Victoria is collapsed. Everyone is running away tsunami #eqnz,other_relevant_information,infrastructure_and_utility_damage,0.9,,ok
+771476388100440064,#BREAKING Live footage of tsunami hitting NZ coast following 7.1 earthquake this morning. #eqnz,other_relevant_information,other_relevant_information,0.9,,ok
+797982075177472001,"RT @socialpinpoint: Our thoughts are with our friends in New Zealand today, stay safe everyone #EQNZ",sympathy_and_support,sympathy_and_support,0.95,,ok
+797828789774356480,RT @BreakingNews: Magnitude 7.4 earthquake hits Canterbury region of New Zealands South Island - USGS,caution_and_advice,other_relevant_information,0.95,,ok
+798267192290603009,"RT @lyallbaynz: Big hugs to the emergency services today helping out around Wellington with #eqnz and now weather issues, thank you for wha",sympathy_and_support,sympathy_and_support,0.95,,ok
+797794841677529089,RT @neogeo: .@radionz reports earthquake has upgraded from 6.6 to 7.5 #eqnz - take tsunami threat seriously #wellington #nz,caution_and_advice,caution_and_advice,0.9,,ok
+797795081268785153,im highkey scared rn i dont think i want to get wet and get sick and freeze from the tsunami no thanx,not_humanitarian,not_humanitarian,0.9,,ok
+797856051949281280,"Live: One death confirmed in Kaikoura, tsunami warning for much of NZs east coast after massive quake",injured_or_dead_people,injured_or_dead_people,0.95,,ok
+797843610892804096,RT @LucanLeBlanc: #BREAKING: Tsunami warning extended to North Island East Coast after 2 metre wave hit South Island. #eqnz,caution_and_advice,caution_and_advice,0.9,,ok
+797793413903118336,Tsunami hits after multiple strong New Zealand quakes,other_relevant_information,other_relevant_information,0.9,,ok
+797808377191600128,RT @caity_petersonn: UPDATE: Hanmer Springs -housing damage and power loss according to family relatives in the area #eqnz,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok

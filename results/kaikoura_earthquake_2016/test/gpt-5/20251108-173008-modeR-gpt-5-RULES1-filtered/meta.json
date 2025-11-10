@@ -1,7 +1,0 @@
-{
-  "model": "gpt-5",
-  "tag": "modeR-gpt-5-RULES1-filtered",
-  "tsv": "Dataset/HumAID/kaikoura_earthquake_2016/kaikoura_earthquake_2016_test.tsv",
-  "max_retry_attempts": 3,
-  "retry_delay": 1.0
-}
