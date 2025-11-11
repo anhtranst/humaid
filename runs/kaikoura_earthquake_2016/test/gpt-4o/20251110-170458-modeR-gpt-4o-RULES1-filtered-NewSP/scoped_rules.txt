@@ -1,0 +1,9 @@
+- caution_and_advice: warnings/instructions/tips
+- sympathy_and_support: prayers/condolences, no actionable info
+- requests_or_urgent_needs: asking for help/supplies/SOS
+- displaced_people_and_evacuations: evacuations, relocation, shelters
+- injured_or_dead_people: injuries, casualties, fatalities
+- infrastructure_and_utility_damage: damage/outages to roads/bridges/power/water/buildings
+- rescue_volunteering_or_donation_effort: offering help, donation, organizing aid
+- other_relevant_information: on-topic but none of the above
+- not_humanitarian: unrelated to disasters/aid

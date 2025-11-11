@@ -1,0 +1,83 @@
+{
+  "macro_f1": 0.6923777574435658,
+  "weighted_f1": 0.7148231943578375,
+  "per_class": {
+    "caution_and_advice": {
+      "precision": 0.7241379310344828,
+      "recall": 0.6428571428571429,
+      "f1-score": 0.6810810810810811,
+      "support": 98.0
+    },
+    "displaced_people_and_evacuations": {
+      "precision": 0.6153846153846154,
+      "recall": 0.47058823529411764,
+      "f1-score": 0.5333333333333333,
+      "support": 17.0
+    },
+    "infrastructure_and_utility_damage": {
+      "precision": 0.726027397260274,
+      "recall": 0.8548387096774194,
+      "f1-score": 0.7851851851851852,
+      "support": 62.0
+    },
+    "injured_or_dead_people": {
+      "precision": 1.0,
+      "recall": 0.9523809523809523,
+      "f1-score": 0.975609756097561,
+      "support": 21.0
+    },
+    "not_humanitarian": {
+      "precision": 0.782608695652174,
+      "recall": 0.4090909090909091,
+      "f1-score": 0.5373134328358209,
+      "support": 44.0
+    },
+    "other_relevant_information": {
+      "precision": 0.4024390243902439,
+      "recall": 0.5409836065573771,
+      "f1-score": 0.46153846153846156,
+      "support": 61.0
+    },
+    "requests_or_urgent_needs": {
+      "precision": 0.4,
+      "recall": 0.8,
+      "f1-score": 0.5333333333333333,
+      "support": 5.0
+    },
+    "rescue_volunteering_or_donation_effort": {
+      "precision": 0.9666666666666667,
+      "recall": 0.7073170731707317,
+      "f1-score": 0.8169014084507042,
+      "support": 41.0
+    },
+    "sympathy_and_support": {
+      "precision": 0.8556701030927835,
+      "recall": 0.9651162790697675,
+      "f1-score": 0.907103825136612,
+      "support": 86.0
+    },
+    "accuracy": 0.7149425287356321,
+    "macro avg": {
+      "precision": 0.7192149370534711,
+      "recall": 0.7047969897887131,
+      "f1-score": 0.6923777574435658,
+      "support": 435.0
+    },
+    "weighted avg": {
+      "precision": 0.7394144359284323,
+      "recall": 0.7149425287356321,
+      "f1-score": 0.7148231943578375,
+      "support": 435.0
+    }
+  },
+  "num_evaluated": 435,
+  "num_invalid": 0,
+  "classification_stats": {
+    "total_rows": 435,
+    "successful_first_try": 435,
+    "successful_with_retry": 0,
+    "used_fallback": 0,
+    "failed_completely": 0
+  },
+  "api_endpoint": "responses"
+}

@@ -1,0 +1,81 @@
+tweet_id,tweet_text,class_label,predicted_label,confidence,entropy,status
+910554563144536065,"New story on NPR: In Puerto Rico, Hurricane Maria Brings Widespread Damage And Widespread Flooding World News",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+910563240987443200,"#HurricaneMaria, #Category5 #Hurricane, devastates #StCroix Our thoughts are with you! #Resiliency in the face of a very brutal #storm!",sympathy_and_support,sympathy_and_support,0.95,,ok
+910576641557938176,RT @GWillowWilson: People in the NGO sector: what are the best boots-on-the-ground relief organizations we should be donating to?,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+910579410360705025,Praying for the fam out in Puerto Rico!ὤFἿCὡ4,sympathy_and_support,sympathy_and_support,0.95,,ok
+910585550519898113,Our thoughts and prayers are with the whole Island as Hurricane Maria moves across Puerto Rico. @WyndhamGrandRM @SeePuertoRico @PRDayTrips,sympathy_and_support,sympathy_and_support,0.95,,ok
+910634277984964609,Increasing water levels and heat due to climate change is making coastal regions more and more unlivable. Nature’s clearing all vegetation.,caution_and_advice,other_relevant_information,0.85,,ok
+910684573360631808,"Hurricane Maria causes major destruction in Puerto Rico. TV Only reporting about capital,bad reporting.",other_relevant_information,infrastructure_and_utility_damage,0.85,,ok
+910685245405413376,"Hurricane Maria destroys homes, knocks out power in Puerto Rico  via @cbsnews #PuertoRico #HurricaneMaria",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+910703605849645057,. please help my beautiful island and my family out there. every little bit counts ὉE #PuertoRicoStrong ἟5἟7ὡE,sympathy_and_support,rescue_volunteering_or_donation_effort,0.9,,ok
+910738170043449344,"9-20-2017 San Juan, Puerto Rico #Hurricane #Maria Damage, flooding, surge, buildings &amp; trees down  v/@LiveStormsMedia",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+910739504356618240,Please donate if you can or send the link to someone who is able to. Its very important to help these islands after they were destroyed,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+910781305746489344,"Tropical Storm Maria forms in western Atlantic Ocean, prompting hurricane watch for areas battered by Hurricane Irma",caution_and_advice,other_relevant_information,0.9,,ok
+910784644664184833,RT @JosephDeMauro1:  Aftermath Hurricane Maria #HurricaneMaria #stormsurge #flooding #MariaHurricane #PuertoRico #Sa,other_relevant_information,other_relevant_information,0.85,,ok
+910816435055857665,"RT @WeDontHaveTime0: Puerto Rico in dark, curfew set after island destroyed by #climatechange",other_relevant_information,infrastructure_and_utility_damage,0.9,,ok
+911637954388480001,Damage On St. Croix By Hurricane Maria - Williams Delight (Bottom),infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+911699424153407489,@realDonaldTrump Please tweet about American citizens suffering in the USVI Virgin Islands Water and Power Authority issued an update,other_relevant_information,other_relevant_information,0.85,,ok
+911717821897461760,Volunteers collect aid for #hurricane-ravaged #Puerto Rico where power remains out 3 days after #Marias landfall,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+911784329814167552,RT @NotCloudyAllDay: PLEASE HELP 900 TBs/OTTBs #HurricaneMaria #PuertoRico via @ShelleyBlodgett @CaribbeanOTTB  No,requests_or_urgent_needs,requests_or_urgent_needs,0.9,,ok
+911785042866778112,Hurricane Maria kills 32 as it lashes Caribbean islands | Puerto Rico News | Al Jazeera #globaldev #humanitarian,injured_or_dead_people,injured_or_dead_people,0.95,,ok
+911845395164254208,Let us all join hands and pray for those affected by Hurricane Maria,sympathy_and_support,sympathy_and_support,0.95,,ok
+911872826805817344,If you care about what has happened to the Caribbean please RT &amp; donate to the Dominican High Commision.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+911931813634945024,RT @CBSMiami: Locals organizing donations for struggling island of Puerto Rico #HurricaneMaria #PuertoRico @silvaharapetian,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+912166639520698369,Puerto Ricans have been US citizens since 1917. They need our help after Hurricane Maria. Donate at Samaritans Purse or World Vision.,requests_or_urgent_needs,rescue_volunteering_or_donation_effort,0.95,,ok
+912315995666223105,Dam damaged by Hurricane Maria still posing threat. Thoughts remain w/all evacd &amp; those still recovering from storm,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+912327287370022920,I wish @realDonaldTrump and his supporters cared about this- please donate!,rescue_volunteering_or_donation_effort,not_humanitarian,0.95,,ok
+912421878072999937,@davidaxelrod  Aid and assistance is and has been in Puerto Rico for days.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+912423914277605376,RT @greenpeaceusa: 100% go directly to community-led recovery efforts in areas impacted by Maria.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+912976311643197440,"Just spoken to @JPRAMShipping, who confirmed theyll be shipping #Dominica #HurricaneMaria relief from London for FREE. Deadline 4th Oct.",other_relevant_information,rescue_volunteering_or_donation_effort,0.95,,ok
+912998475473747969,"As #Maria continues, people on the mainland will evacuate &amp; their towns will get aid soon. #HelpPuertoRico NOW. #PuertoRicoIsAmerican",displaced_people_and_evacuations,displaced_people_and_evacuations,0.9,,ok
+913004186102636544,"RT @TODAYshow: WATCH: Where will Maria go next, and will you be affected? @alroker tracks the storm",other_relevant_information,other_relevant_information,0.85,,ok
+913011546799984640,RT @Enquirer: Xavier volleyball collecting donations for Hurricane Maria survivors,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+913087594841468930,OneBlood Sending Blood to Puerto Rico The Island’s Blood Supply in Need of Help Following Hurricane Maria,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+913105512694030336,RT @Shareblue: Listen to this USMC vet asking for help! #HelpPuertoRicoNOW,requests_or_urgent_needs,requests_or_urgent_needs,0.85,,ok
+913125316528394242,@GetWisdomDude When will enough be enough? Waiver shouldve been in place minutes after hurricane Maria hit. Where are aerial drops of supplies?,not_humanitarian,requests_or_urgent_needs,0.85,,ok
+913141317449940993,@SenSanders We need soldiers in Puerto Rico to secure the streets amd drive trucks to get goods out! Please HELP #HurricaneMaria,requests_or_urgent_needs,requests_or_urgent_needs,0.9,,ok
+913221112221323264,"As Arecibo Observatorys staff assesses the damage from Hurricane Maria, how will it affect the facilitys future?",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+913262556621398016,Unbelievable. Donald Trump Refuses to Send More Aid to Puerto Rico,not_humanitarian,not_humanitarian,0.95,,patched_sync
+913333518230487040,"RT @JustTrueBlue: What hell? These people are in desperate. Trump Refuses xtra Aid to Puerto Rico, Citing Business Interests",other_relevant_information,requests_or_urgent_needs,0.85,,ok
+913372096947982336,#Caribbean #SaintKittsNevis All pop (46k) exposed to #HurricaneMaria. Agriculture &amp; housing stocks heavily affected,other_relevant_information,infrastructure_and_utility_damage,0.9,,ok
+913400279093075968,Hurricane Maria devastated Puerto Rico. It caused so much damage that it forced most Americans to actually locate Puerto Rico on a map.,infrastructure_and_utility_damage,not_humanitarian,0.9,,ok
+913401022780977153,Rally 6pm in NYC calling on Federal Gov to act to help #PuertoRico post #HurricaneMaria! #MariaPR #PRSeLevanta Link:,requests_or_urgent_needs,rescue_volunteering_or_donation_effort,0.85,,ok
+913420518002487296,"these are #Americans #uscitizens 10,000 of themthey need help! please watch and retweet. #HurricaneMaria #PuertoRico #Vieques",requests_or_urgent_needs,requests_or_urgent_needs,0.95,,ok
+913493326711672832,Walmart Announces $5 million Commitment for Hurricane Maria Relief  #Hijau #Berkebun #Asia #Indonesia #Brunei #Mal,other_relevant_information,rescue_volunteering_or_donation_effort,0.95,,ok
+913504144933228544,RT @Dr_RDaniel: I donated to @SavetheChildren to help children in need from hurricane Maria. They need our help! You can help too!:,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+913511477042130944,First Warning Forecast: Many folks will wake up to the 50s: Tropical Storm Maria  via @WTKR3,caution_and_advice,other_relevant_information,0.85,,ok
+913515718695702529,WSBTV reports NEW AT 5: Were getting a new look at some of the damage in Puerto Rico from Hurricane Maria. Why it,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+913598887616765954,2 million liters of water have been supplied 2 a population of 3.5 Million Americans. You do the math! 10k containers stuck in San Juan Port,other_relevant_information,other_relevant_information,0.85,,ok
+913737589907185664,RT @dwallacewells: Marias climate refugees are only the start.,not_humanitarian,displaced_people_and_evacuations,0.85,,ok
+913744911765266432,My thoughts &amp; prayers are with #PuertoRico after #HurricaneMaria has caused such devastation. Sending♥️ to #PuertoRicans &amp; those effected ♥️,sympathy_and_support,sympathy_and_support,0.95,,ok
+913759238643691520,ACTION ALERT for #PuertoRicoRelief #VirginIslands - call your reps using our script to demand #HurricaneMaria #HurricaneIrma relief now!,other_relevant_information,rescue_volunteering_or_donation_effort,0.9,,ok
+913767843321311232,RT @ExeterUniNews: Report in todays @WMNNews on efforts to salvage a research station destroyed by #HurricaneMaria @ljnbrent /,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+913791000828620801,RT @WPXI: Clemente Museum holding open house to help Puerto Rico  #HurricaneMaria,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+913833090362904577,RT @bradplumer: The death toll in Puerto Rico from Hurricane Maria is likely much higher than the official count of 16:,injured_or_dead_people,injured_or_dead_people,0.95,,ok
+913883154691362820,#Troop182Jax ==&gt; #HurricaneMaria Relief Assistance - #Puerto Rico Public · Hosted by Boy Scouts Troop 182,other_relevant_information,rescue_volunteering_or_donation_effort,0.95,,ok
+913904096666701827,"Instead of developing Mars, could Elon Musk please donate towards rebuilding Puerto Rico? #HurricaneMaria",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+913908326894899200,RT @elizondogabriel: Prime Minister of #Dominica @SkerritR addressing the nation now. His country destroyed from Hurricane Maria.,infrastructure_and_utility_damage,other_relevant_information,0.9,,ok
+914129773898612739,We are supporting our pastors in Puerto Rico w/ Ministerial Relief funds for #HurricaneMaria recovery. Supporting Ministry is Our Mission!,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+914135269019869184,Helping Ὑ0. #Marine escorts a woman to an evacuation center for stranded U.S. citizens in #Dominica. #HurricaneMaria #ReliefEfforts,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+914142275634126849,#DSTRRescueNeeded Mountains of aid for Puerto Rico sit on do,requests_or_urgent_needs,rescue_volunteering_or_donation_effort,0.85,,ok
+914165180375977984,"#PuertoRico# HurricaneMaria Hear Mayor Cruz reply to Trump slam. Cruz, btw, has been living in a shelter w/ nearly 700 of her constituents.",other_relevant_information,displaced_people_and_evacuations,0.9,,ok
+914183735062532097,RT @nytimes: How to help the victims of Hurricane Maria that devastated the Caribbean,other_relevant_information,rescue_volunteering_or_donation_effort,0.95,,ok
+914195297395343360,RT @DDPWorldwide: Please join us in supporting the Hurricane Maria relief efforts. Every little bit counts! ❤️️❤️️,requests_or_urgent_needs,rescue_volunteering_or_donation_effort,0.95,,ok
+914199739960307712,Hurricane Maria Destruction to AM WDHP 1620 Antenna Tower in U.S. Virgin Islands,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+914210549495410688,#PuertoRico still needs your help: Here is a list of local orgs you can donate too  #UnidosPorPR,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+914233127136104448,Many students in Texas have also had to relocate indefinitely due to major damage to many schools.,infrastructure_and_utility_damage,displaced_people_and_evacuations,0.9,,ok
+914273876158246912,@Rangers to donate proceeds of Texas 2 Split 50/50 Raffle to Hurricane Maria relief efforts from Sundays season finale against @Athletics.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+914341338434252801,True Leadership vs Trump who in 1st 10 days following #HurricaneMaria hasn’t shown up 2 help our fellow American citizens. Too busy golfing.,sympathy_and_support,not_humanitarian,0.95,,ok
+914388200180895744,"@jackie_r_c @Impeach_D_Trump It was only part of Tx hit. Tropical storm by then. The flooding was Houston, &amp; because of not evac. Post Maria PR was largely flatted",other_relevant_information,other_relevant_information,0.85,,ok
+914482937827086336,RT @urbanhorsedoc: #Animals from shelters in #PuertoRico arrive in US,other_relevant_information,displaced_people_and_evacuations,0.85,,ok
+914513457503801345,RT @WarriorofGod97: ὏5ἺFResearch best charities to donate toἺF὏5,rescue_volunteering_or_donation_effort,not_humanitarian,0.95,,ok
+914517211162624001,@FoxNews I ll donate after this mayor stops lying:,rescue_volunteering_or_donation_effort,not_humanitarian,0.95,,ok
+914526459087265792,New post: Puerto Rico: Hurricane Maria destroyed everything,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+914536791490928641,Puerto Rico is reeling from the massive damage left by Hurricane Maria earlier in September. The islands,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+914538056744620037,HOMOSOCIALIST JIHAD/CNN: TRUMPS FAULT -- Puerto Rico Teamsters Union Frente Amplio” Refuse to Deliver Supplies,other_relevant_information,not_humanitarian,0.95,,ok
+914573478933778433,RT @megstrainer: 99% of municipal buildings have been destroyed by Hurricane Maria. Need all the help in next weeks to transport the dogs a,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+914597914265116673,"Puerto Ricos Death Toll Could Rise as Vulnerable Residents Struggle to Get Water, Gas and Basic Care: Expert",injured_or_dead_people,injured_or_dead_people,0.85,,ok
+914690844107489280,Rumors are FALSE! -- Teamsters organize truckers to move supplies in Puerto Rico / CNN Money,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+914937044643848193,"We are seeking #disability related donations for #HurricaneMaria relief; however, we need a way to get them there. Any ideas?",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+914981132088889346,RT @voxdotcom: Puerto Rico hasn’t updated the Hurricane Maria death toll in 5 days,injured_or_dead_people,other_relevant_information,0.9,,ok
+914986767119462405,RT @sunkingreturns: Me with City of East Point Leaders #helping #hurricaneharvey #hurricaneirma #hurricanemaria Victims,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok

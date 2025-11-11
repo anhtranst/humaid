@@ -1,0 +1,6 @@
+tweet_id,tweet_text,class_label,predicted_label,confidence
+798274825441538048,The earthquake in New Zealand was massive. Billions of dollars of damage. And it was followed by a storm.,infrastructure_and_utility_damage,infrastructure_and_utility_damage,
+798452064208568320,These pictures show the alarming extent of the quake damage to this building. Keep well clear!,infrastructure_and_utility_damage,caution_and_advice,
+797804396767682560,Just woke to news of another earthquake! WTF NZ?! They seem to be happening an awful lot. Stay safe everyone xx #eqnz,sympathy_and_support,caution_and_advice,
+798434862830993408,"When theres an actual earthquake, landslide and severe flooding during your driving test and you still pass #eqnz #Wellington @NZTAWgtn",not_humanitarian,not_humanitarian,
+797790705414377472,"Tsunami warning for entire East Coast of NZ, be safe people, move to higher ground! #eqnz",caution_and_advice,caution_and_advice,

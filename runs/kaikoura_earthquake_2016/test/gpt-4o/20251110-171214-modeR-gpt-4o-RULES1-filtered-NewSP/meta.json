@@ -1,0 +1,8 @@
+{
+  "model": "gpt-4o",
+  "tag": "modeR-gpt-4o-RULES1-filtered-NewSP",
+  "tsv": "Dataset/HumAID/kaikoura_earthquake_2016/kaikoura_earthquake_2016_test.tsv",
+  "max_retry_attempts": 5,
+  "retry_delay": 1.0,
+  "api_endpoint": "responses"
+}

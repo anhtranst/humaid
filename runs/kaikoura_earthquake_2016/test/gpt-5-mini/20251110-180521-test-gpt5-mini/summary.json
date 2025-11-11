@@ -1,0 +1,52 @@
+{
+  "macro_f1": 0.25,
+  "weighted_f1": 0.3,
+  "per_class": {
+    "caution_and_advice": {
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1-score": 0.5,
+      "support": 1.0
+    },
+    "infrastructure_and_utility_damage": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1-score": 0.5,
+      "support": 2.0
+    },
+    "not_humanitarian": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "sympathy_and_support": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "accuracy": 0.4,
+    "macro avg": {
+      "precision": 0.20833333333333331,
+      "recall": 0.375,
+      "f1-score": 0.25,
+      "support": 5.0
+    },
+    "weighted avg": {
+      "precision": 0.26666666666666666,
+      "recall": 0.4,
+      "f1-score": 0.3,
+      "support": 5.0
+    }
+  },
+  "num_evaluated": 5,
+  "num_invalid": 0,
+  "classification_stats": {
+    "total_rows": 5,
+    "successful_first_try": 5,
+    "successful_with_retry": 0,
+    "used_fallback": 0,
+    "failed_completely": 0
+  }
+}
