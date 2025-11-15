@@ -30,7 +30,7 @@ from .batch import (
     retry_fill_missing_predictions,
     # We’ll reuse batch module’s HTTP config via its helpers
 )
-from .prompts import SYSTEM_PROMPT, make_user_message
+from .prompts import SYSTEM_PROMPT, LABELS, make_user_message
 from .batch import _make_schema, OPENAI_BASE, H_JSON  # use same base & headers
 from .eval import macro_f1, analyze_and_export_mistakes
 
@@ -50,7 +50,8 @@ def _present_labels_from_df(df: pd.DataFrame) -> list[str]:
           .replace({"": pd.NA, "nan": pd.NA, "None": pd.NA})
           .dropna()
     )
-    return sorted(set(s.tolist()))
+    present_lower = {x.lower() for x in s.tolist()}
+    return [l for l in LABELS if l.lower() in present_lower]
 
 def _predict_single_label_event(df: pd.DataFrame, only_label: str) -> pd.DataFrame:
     """

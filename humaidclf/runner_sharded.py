@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Tuple, Dict, Any, Optional, List
 import json
+import re
 
 import pandas as pd
 
@@ -17,6 +18,54 @@ from .batch import (
 )
 from .eval import analyze_and_export_mistakes, macro_f1
 
+def parse_rules_kv(rules_text: str) -> dict[str, str]:
+    """
+    Parse compact one-liners like:
+      - caution_and_advice: warnings/instructions/tips
+    Returns {label: ORIGINAL_LINE}.
+    Ignores any trailing non '- label:' lines (e.g., 'Tie-break: ...').
+    """
+    kv: dict[str, str] = {}
+    for m in re.finditer(r'^\s*-\s*([a-z0-9_]+)\s*:\s*(.+?)\s*$', rules_text, flags=re.I | re.M):
+        label = m.group(1).strip()
+        whole_line = m.group(0).rstrip()
+        kv[label] = whole_line
+    return kv
+
+def parse_rules_blocks(rules_text: str) -> dict[str, str]:
+    """
+    Parse multi-line blocks:
+      - label_name
+        Definition: ...
+        Include: ...
+        Exclude: ...
+    Returns {label: ORIGINAL_BLOCK_TEXT}.
+    """
+    blocks = {}
+    parts = re.split(r'\n(?=-\s+[a-z0-9_]+)', "\n" + rules_text.strip(), flags=re.I)
+    for p in parts:
+        m = re.match(r'-\s+([a-z0-9_]+)\s*\n(.+)$', p.strip(), flags=re.I | re.S)
+        if m:
+            label = m.group(1).strip()
+            body  = m.group(2).rstrip()
+            blocks[label] = f"- {label}\n{body}\n"
+    return blocks
+
+def slice_rules_for_labels(rules_text: str, labels: list[str]) -> str:
+    """
+    Return ORIGINAL rule text limited to `labels` in canonical HumAID order.
+    Works for both compact one-liners ('- label: summary') and multi-line blocks.
+    If neither format is detected, returns the original text (trimmed).
+    """
+    kv = parse_rules_kv(rules_text)
+    if kv:
+        return "\n".join([kv[l] for l in labels if l in kv]).strip()
+
+    blocks = parse_rules_blocks(rules_text)
+    if blocks:
+        return "\n\n".join([blocks[l].rstrip() for l in labels if l in blocks]).strip()
+
+    return rules_text.strip()
 
 def run_experiment_sharded(
     dataset_path: str,
@@ -49,11 +98,13 @@ def run_experiment_sharded(
     df_full["tweet_id"] = df_full["tweet_id"].astype(str)
 
     truth_labels = _present_labels_from_df(df_full)  # event-level label set (truth-only)
+    rules_scoped = slice_rules_for_labels(rules, truth_labels) # filter rules based on the truth labels    
 
     # --- Plan directory for the whole sharded run
     plan_root = plan_run_dirs(dataset_path, out_root=out_root, model=model, tag=tag)
     run_dir = Path(plan_root["dir"])
     (run_dir / "shards").mkdir(parents=True, exist_ok=True)
+    (scoped := run_dir / "scoped_rules.txt").write_text(rules_scoped, encoding="utf-8")
 
     # --- Build stratified shards
     shards = stratified_k_shards(df_full, label_col="class_label", k=k_shards, seed=42)
@@ -81,7 +132,7 @@ def run_experiment_sharded(
         build_requests_jsonl_S(
             df_shard,
             out_path=str(plan["requests_jsonl"]),
-            rules=rules,
+            rules=rules_scoped,
             model=model,
             temperature=temperature,
             labels_override=truth_labels,          # keep schema consistent across shards
@@ -131,7 +182,7 @@ def run_experiment_sharded(
             preds = retry_fill_missing_predictions(
                 source_df=df_shard,
                 preds_df=preds,
-                rules=rules,
+                rules=rules_scoped,
                 model=model,
                 temperature=temperature,
                 max_tokens=40,

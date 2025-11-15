@@ -29,7 +29,9 @@ dist/
 .coverage
 .coverage.*
 htmlcov/
+runs_probe/
 .tox/
+zz_sanity_check.ipynb
 
 # --- Type checking / linters ---
 .mypy_cache/

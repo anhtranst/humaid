@@ -9,6 +9,7 @@ from .humaid_rules import (
     RULES_1,
     RULES_2,
     RULES_3,
+    RULES_4,
     RULES_REGISTRY,
     get_rule,
 )
