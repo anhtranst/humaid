@@ -1,0 +1,7 @@
+{
+  "model": "gpt-5.1",
+  "tag": "modeR-gpt-5-1-high-reasoning-low-verbosity-RULES1-probe",
+  "tsv": "Dataset/HumAID/canada_wildfires_2016/canada_wildfires_2016_test.tsv",
+  "max_retry_attempts": 5,
+  "retry_delay": 1.0
+}

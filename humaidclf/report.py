@@ -391,6 +391,8 @@ def _render_summary_table(df: pd.DataFrame) -> str:
             pill_cls = "pill-5-pro" 
         elif "5-nano" in m:
             pill_cls = "pill-5-nano"
+        elif "5.1" in m:
+            pill_cls = "pill-5-1"            
         elif "5" in m:
             pill_cls = "pill-5"              
         elif "4o-mini" in m:
@@ -666,6 +668,7 @@ def build_results_index(
   .pill-5 {{ background:#eed7f7; color:#5b0c7d; border:1px solid #5b0c7d; }}
   .pill-5-pro {{ background:#e5aefc; color:#5b0c7d; border:1px solid #5b0c7d; }}
   .pill-5-nano {{ background:#d784fa; color:#5b0c7d; border:1px solid #5b0c7d; }}
+  .pill-5-1 {{ background:#bc20fa; color:#fff94a; border:1px solid #33074a; }}
 
   /* Modal (for images and OOS tables) */
   .modal {{
