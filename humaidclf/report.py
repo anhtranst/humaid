@@ -453,7 +453,14 @@ def build_results_index(
     recompute_subdir: str = "analysis_recomputed",
 ) -> pd.DataFrame:
     """
-    Build an HTML index page summarizing curated results, organized by SPLIT sections.
+    Build an HTML index page summarizing curated results.
+
+    Layout
+    ------
+      1) Summary by split:
+         - For each split: one compact table (Event, Model, Run, Test size, Accuracy, Macro-F1, [Scope], [OOS preds])
+      2) Details by split:
+         - For each split: labeled section with per-run cards and embedded charts.
 
     Options
     -------
@@ -464,15 +471,6 @@ def build_results_index(
         Set False to force-recompute every run (new artifacts go to recompute_subdir).
     recompute_subdir : str
         Subdirectory name under each run to write recomputed artifacts (non-destructive).
-
-    Page content
-    ------------
-      - Summary table (Event, Model, Run, Test size, Accuracy, Macro-F1, [Scope], [OOS preds])
-        • Sortable headers
-        • Best badges per (split, event)
-        • Clickable OOS preds → breakdown modal
-      - Detail cards with embedded chart previews
-      - Zoomable images
     """
     results_root = Path(results_root)
     out_html = Path(out_html) if out_html else (results_root / "index.html")
@@ -487,19 +485,22 @@ def build_results_index(
         out_html.write_text("<h2>No results found.</h2>", encoding="utf-8")
         return pd.DataFrame()
 
-    # Sorted for stable grouping; badges computed per split/event
-    df = pd.DataFrame(entries).sort_values(["split", "event", "model", "run_name"]).reset_index(drop=True)
+    # Sorted for stable grouping; badges computed per split/event later
+    df = pd.DataFrame(entries).sort_values(
+        ["split", "event", "model", "run_name"]
+    ).reset_index(drop=True)
 
     def rel(p: Path | str) -> str:
         """Return a path relative to results_root with POSIX separators."""
         return str(Path(p).relative_to(results_root)).replace("\\", "/")
 
-    # Build HTML sections per split
-    split_sections: List[str] = []
-    for split in df["split"].unique():
+    split_order = list(df["split"].unique())
+
+    # ---------- 1) SUMMARY BY SPLIT (tables only) ----------
+    summary_sections: List[str] = []
+    for split in split_order:
         df_split = df[df["split"] == split].copy()
 
-        # Summary for this split (includes badges per event)
         base_cols = ["event", "model", "run_name", "test_size", "accuracy", "macro_f1"]
         if "labels_scope" in df_split.columns:
             base_cols.append("labels_scope")
@@ -510,8 +511,20 @@ def build_results_index(
             df_split[base_cols].sort_values(["event", "model", "run_name"])
         )
 
-        # Details (cards) for this split
+        summary_sections.append(f"""
+          <section class="split-summary">
+            <h2>Split: <code>{split}</code></h2>
+            {summary_table_html}
+          </section>
+        """)
+
+    # ---------- 2) DETAILS BY SPLIT (cards only) ----------
+    detail_sections: List[str] = []
+    for split in split_order:
+        df_split = df[df["split"] == split].copy()
+
         rows_html: List[str] = []
+
         # Per-event maxima for badges on the cards
         max_acc_by_event = df_split.groupby("event")["accuracy"].transform("max")
         max_f1_by_event  = df_split.groupby("event")["macro_f1"].transform("max")
@@ -544,17 +557,27 @@ def build_results_index(
             oos_val = int(r.get("invalid_pred_outside_truth", 0))
             if oos_val > 0:
                 oos_breakdown = r.get("oos_breakdown", []) or []
-                data_attr = f" data-oos='{json.dumps(oos_breakdown, ensure_ascii=False)}' data-title='{r['event']} • {r['model']} • {r['run_name']}'"
+                data_attr = (
+                    f" data-oos='{json.dumps(oos_breakdown, ensure_ascii=False)}'"
+                    f" data-title='{r['event']} • {r['model']} • {r['run_name']}'"
+                )
                 oos_row = (
                     "<tr><th>OOS preds</th>"
-                    f"<td class='num bad'>{oos_val} <a href='#' class='oos-link'{data_attr}>view</a></td></tr>"
+                    f"<td class='num bad'>{oos_val} "
+                    f"<a href='#' class='oos-link'{data_attr}>view</a></td></tr>"
                 )
             else:
                 oos_row = "<tr><th>OOS preds</th><td class='num'>0</td></tr>"
 
             # Badges
-            best_acc_badge = "<span class='badge badge-acc' title='Best Accuracy in Event'>best</span>" if r["_best_acc"] else ""
-            best_f1_badge  = "<span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span>" if r["_best_f1"] else ""
+            best_acc_badge = (
+                "<span class='badge badge-acc' title='Best Accuracy in Event'>best</span>"
+                if r["_best_acc"] else ""
+            )
+            best_f1_badge = (
+                "<span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span>"
+                if r["_best_f1"] else ""
+            )
 
             rows_html.append(f"""
             <section class="card">
@@ -578,13 +601,17 @@ def build_results_index(
             </section>
             """)
 
-        split_sections.append(f"""
-          <h2>Split: <code>{split}</code></h2>
-          {summary_table_html}
-          <div class="grid">
-            {''.join(rows_html)}
-          </div>
+        detail_sections.append(f"""
+          <section class="split-detail">
+            <h2>Split: <code>{split}</code></h2>
+            <div class="grid">
+              {''.join(rows_html)}
+            </div>
+          </section>
         """)
+
+    summary_block = "".join(summary_sections)
+    details_block = "".join(detail_sections)
 
     # Assemble full page
     html = f"""<!doctype html>
@@ -614,8 +641,8 @@ def build_results_index(
 
   /* Badges */
   .badge {{ display: inline-block; padding: 2px 6px; border-radius: 999px; font-size: 10px; margin-left: 6px; vertical-align: 1px; }}
-  .badge-acc {{ background: #eef2ff; color: #3730a3; border: 1px solid #c7d2fe; }}  /* indigo */
-  .badge-f1  {{ background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }}  /* emerald */
+  .badge-acc {{ background: #6efffa; color: #0c484a; border: 1px solid #0c484a; }}  
+  .badge-f1  {{ background: #92fcaf; color: #0e3318; border: 1px solid #0e3318; }}  
 
   /* Optional visual cues */
   td.bad {{ color: #b91c1c; font-weight: 700; }}   /* red numeric for OOS preds > 0 */
@@ -632,9 +659,9 @@ def build_results_index(
 
   /* Model pills */
   .pill {{ display:inline-block; padding:2px 6px; border-radius:999px; font-size:11px; line-height:1; }}
-  .pill-4o     {{ background:#eef2ff; color:#3730a3; border:1px solid #c7d2fe; }}
-  .pill-41     {{ background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; }}
-  .pill-4omini {{ background:#fef3c7; color:#92400e; border:1px solid #fde68a; }}
+  .pill-41     {{ background:#9ab4fc; color:#132557; border:1px solid #132557; }}  
+  .pill-4o     {{ background:#84e38d; color:#1d4021; border:1px solid #1d4021; }}  
+  .pill-4omini {{ background:#eefa4d; color:#3d4011; border:1px solid #3d4011; }}
   .pill-5mini {{ background:#f6edfa; color:#5b0c7d; border:1px solid #5b0c7d; }}
   .pill-5 {{ background:#eed7f7; color:#5b0c7d; border:1px solid #5b0c7d; }}
   .pill-5-pro {{ background:#e5aefc; color:#5b0c7d; border:1px solid #5b0c7d; }}
@@ -671,7 +698,17 @@ def build_results_index(
 <body>
   <h1>HumAID Zero-shot Results</h1>
 
-  {''.join(split_sections)}
+  <section>
+    <h2>Summary by split</h2>
+    {summary_block}
+  </section>
+
+  <hr style="margin:24px 0; border:none; border-top:1px solid #e5e7eb;" />
+
+  <section>
+    <h2>Details by split</h2>
+    {details_block}
+  </section>
 
   <!-- Shared Modal -->
   <div id="imgModal" class="modal" aria-hidden="true">
@@ -807,3 +844,4 @@ def build_results_index(
 """
     out_html.write_text(html, encoding="utf-8")
     return df
+

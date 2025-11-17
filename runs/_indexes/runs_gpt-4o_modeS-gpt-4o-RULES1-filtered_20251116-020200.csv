@@ -1,0 +1,11 @@
+event,split,run_dir,predictions_csv,macro_f1,accuracy,num_total,mode
+canada_wildfires_2016,train,runs\canada_wildfires_2016\train\gpt-4o\20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10,runs\canada_wildfires_2016\train\gpt-4o\20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10\predictions.csv,0.6584256859286506,0.7890376035691523,1569,sharded10
+kaikoura_earthquake_2016,train,runs\kaikoura_earthquake_2016\train\gpt-4o\20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10,runs\kaikoura_earthquake_2016\train\gpt-4o\20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10\predictions.csv,0.7012667780000356,0.7180989583333334,1536,sharded10
+cyclone_idai_2019,train,ERROR,,,,0,sharded18
+hurricane_florence_2018,train,runs\hurricane_florence_2018\train\gpt-4o\20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28,runs\hurricane_florence_2018\train\gpt-4o\20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28\predictions.csv,0.6679904829356192,0.7447536496350365,4384,sharded28
+hurricane_maria_2017,train,runs\hurricane_maria_2017\train\gpt-4o\20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31,runs\hurricane_maria_2017\train\gpt-4o\20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31\predictions.csv,0.6411142660220511,0.662740478994896,5094,sharded31
+california_wildfires_2018,train,runs\california_wildfires_2018\train\gpt-4o\20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33,runs\california_wildfires_2018\train\gpt-4o\20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33\predictions.csv,0.6331169593329691,0.7193492155723417,5163,sharded33
+hurricane_dorian_2019,train,runs\hurricane_dorian_2019\train\gpt-4o\20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33,runs\hurricane_dorian_2019\train\gpt-4o\20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33\predictions.csv,0.5841960066989218,0.6286357665603303,5329,sharded33
+kerala_floods_2018,train,ERROR,,,,0,sharded35
+hurricane_harvey_2017,train,runs\hurricane_harvey_2017\train\gpt-4o\20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39,runs\hurricane_harvey_2017\train\gpt-4o\20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39\predictions.csv,0.619240182648811,0.6525556600815302,6378,sharded39
+hurricane_irma_2017,train,ERROR,,,,0,sharded40

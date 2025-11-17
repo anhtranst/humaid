@@ -1,0 +1,4 @@
+event,split,run_dir,predictions_csv,macro_f1,accuracy,num_total,mode
+cyclone_idai_2019,train,runs\cyclone_idai_2019\train\gpt-4o\20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1,runs\cyclone_idai_2019\train\gpt-4o\20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1\predictions.csv,0.5879460983659375,0.742462767889575,2753,single
+kerala_floods_2018,train,runs\kerala_floods_2018\train\gpt-4o\20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1,runs\kerala_floods_2018\train\gpt-4o\20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1\predictions.csv,0.5812708394978254,0.7040085898353615,5588,single
+hurricane_irma_2017,train,runs\hurricane_irma_2017\train\gpt-4o\20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1,runs\hurricane_irma_2017\train\gpt-4o\20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1\predictions.csv,0.6050621782104623,0.6187870497036023,6579,single

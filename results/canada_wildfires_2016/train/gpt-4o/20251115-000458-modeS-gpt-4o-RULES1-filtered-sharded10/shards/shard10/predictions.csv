@@ -1,0 +1,154 @@
+tweet_id,tweet_text,class_label,predicted_label,confidence,entropy,status
+733665357236342784,Interesting insights on the shifting communications landscape from 2013 floods to todays #wildfire  #smem #cdnpoli,other_relevant_information,not_humanitarian,0.95,,ok
+731963038429929472,RT @globeandmail: Oil sands producers helping workers affected by Fort McMurray wildfire  from @GlobeBusiness,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+735938864251064320,"Sometimes when a person wants free food, he/she gets it, but from a different source.",other_relevant_information,not_humanitarian,0.95,,ok
+730473637602574336,#Penniac residents to raise money for victims of #FortMac wildfire #ymmfire,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+730487576436592640,RT @NCollegiate: Support the victims of the Fort McMurray wildfire by buying baked goods at the Student Council Bake Sale May 12&amp;13. :,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+729985764860141569,"At this point, having 85% of city intact is a good thing! Fort McMurray wildfires #cdnpoli #nbpoli #abpoli",other_relevant_information,infrastructure_and_utility_damage,0.85,,ok
+728739693865537536,RT @bevrobertson3: Trudeau urges Canadians to keep giving to Red Cross as wildfire burns  via @1310News VOTE &amp; RT P,other_relevant_information,rescue_volunteering_or_donation_effort,0.9,,ok
+728694561518854144,RT @southerngazette: St. Gabriel’s Hall planning fundraiser for victims of Alberta wildfire: Local performers are lending their vo,other_relevant_information,rescue_volunteering_or_donation_effort,0.9,,ok
+730855209753153536,"From man camps to pizza: after #Canada #wildfire, a silver lining for businesses  @reutersnicolem #fortmacfire",not_humanitarian,not_humanitarian,0.95,,ok
+728640877963423744,Amazing numberthe Red Cross has raised $30 million for #FortMcMurray,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+730492634125500417,Fort McMurray wildfire evacuees line up for emergency funds in droves,rescue_volunteering_or_donation_effort,displaced_people_and_evacuations,0.95,,ok
+728589151197605888,consider donating to the Red Cross to help with the wildfire evacuation in Fort McMurray. Text redcross to 30333,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+730134256039677954,Firefighters distracted with homes ⚡️ Fort McMurray-area wildfire grows as two fires combine,other_relevant_information,infrastructure_and_utility_damage,0.85,,ok
+732644409662164992,#Wildfire forces evacuation of #FortMac oilsands camps,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+733434587712360448,Lambton County Donates $100K To Alberta Wildfire Relief Efforts  Much appreciated giving. Thank u. @CountyofLambton,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+731222017337380869,RT @GEBAmerica: You can help the victims of the Ft. McMurray wildfire by donating with @100Huntley: Call 1-800-265-3100 or visit .,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+730063817061715968,"On May 11, @White_Spot will donate $2 from every #burger platter or combo to support #FortMcMurray #wildfire victims",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728991278210285572,RT @680CJOB: 20 members from the MB Urban Search &amp; Rescue team are traveling to Fort McMurray to assist in the wildfire fight.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+732904994643546112,"RT @billmckibben: 8,000 more evacuated in Alberta, as wildfire turns.  Donate to help victims:",displaced_people_and_evacuations,displaced_people_and_evacuations,0.9,,ok
+729241217192595456,"Okay, cool. Northern Lights are trending and not a wildfire that has taken THOUSANDS from their homes, and its still fucking going.",not_humanitarian,displaced_people_and_evacuations,0.85,,ok
+733352833580474369,#NEWS: the growing wildfire that destroyed thousands of structures in #FortMcMurray has crossed into #Saskatchewan,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+728692674312556544,"RT @GoreMutual: An estimated 90% of homes in Fort McMurray, Alta. neighbourhood lost in wildfire -  @CdnUnderwriter",other_relevant_information,infrastructure_and_utility_damage,0.95,,ok
+728748816912912384,RT @TheFordFANatic: Help where you can #support #fortmcmurray #wildfire #victims #WeTheNorth #fansgofurther,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+731978812976562177,RT @NinaMaechik: Please consider making donations to redcross.ca,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+732360851529682944,Fort Mac evacuees have to escape again because of another wildfire surrounding the camps ὡ4ὤFἿD,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729896838921265152,Connect with your fellow condo residents - @GeniePad is offering #ymm buildings affected by wildfire 6 months free,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+729018189305253889,"Alberta Premier says around 5,500 Fort McMurray wildfire evacuees are staying in reception centers, government seeking housing solutions -",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729660870826004480,RT @YoDoggyDogStore: HEROES rescue dogs in Alberta wildfire  #ymmhelps #ymmfire,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728920042046402560,"RT @DanielleThorny: If you can give anything, please donate to @redcrosscanada. This is absolutely devastating to see.",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+733021006890184704,"Yay more fires, more drought what a forecast!",not_humanitarian,not_humanitarian,0.95,,ok
+728725370254594048,Fort McMurray wildfire May 6 update  #alberta #fire #fortmcmurray,other_relevant_information,other_relevant_information,0.85,,ok
+728575000572268545,"Fort McMurray wildfire prompts more evacuations, fears of destruction in its wake",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729991141530083328,"Pockets of destruction, but most of Fort McMurra",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+728745722133143553,"Fort McMurray fire could double in size  ὒ5Already over 1,010 square kms destroyed by raging wildfire!",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+728672758591152128,BC firefighters stretched up north. Evacuation orders expanded in Fort St. John,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729355302789779456,WEB POLL: Have you made a donation to help with the Fort McMurray wildfire relief efforts? Vote at:  #ctvwpb,rescue_volunteering_or_donation_effort,not_humanitarian,0.85,,ok
+728560485503795201,I just texted REDCROSS to 30333 to donate $5. Its that easy. -- Fort McMurray wildfire: How you can help,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+730813488118018048,"RT @BlackburnSarnia: .@PointEdward is donating $5,000 to assist victims of the wildfire in Ft. McMurray.",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728636623093649409,RT @TorontoStar: #BREAKING Canadian Red Cross has raised $30 million in support of Fort McMurray wildfire.  /,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+729994568754561024,Empire hosting wildfire fundraiser: An upcoming local concert is aimed at support victims of the Fort McMurra,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+729906865157607424,Big hand to Labatts Brewing of Canada who stopped beer production to can fresh drinking water to send to #FortMcMurray wildfire victims. X,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728660948173475841,"RT @ajplus: Alberta, Canada, declared a state of emergency after a wildfire forced more than 80,000 people to evacuate.",caution_and_advice,displaced_people_and_evacuations,0.95,,ok
+730146223735209984,RT @AirbnbSuperhost: Our thoughts go out to everyone effected by the #FortMcMurray fire. #Airbnb hosts are offering free lodging,sympathy_and_support,rescue_volunteering_or_donation_effort,0.9,,ok
+729479998847901696,"RT @bbdd333: As wildfire crisis unfolds, the displaced turn to @RMWoodBuffalo. #SMEM helping people in #ymmfire.  #v",displaced_people_and_evacuations,displaced_people_and_evacuations,0.9,,ok
+735458799037743104,@shawndearn Will net shrub-growth counteract net wildfire destruction that will burn the shrubs? #Humour #Climate #AbLeg #CdnPoli #Science,not_humanitarian,not_humanitarian,0.95,,ok
+732698515906777089,"RT @WeAreHNL: Our Blacksand Executive Lodge has sustained wildfire damage #ymmfire. For more info, visit .",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+730155104423321601,My friend is rebuilding a life after the Fort Mac wildfire  via @barrietoday @saTAMic #staystrongalberta #donate,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.8,,ok
+728776241030021120,RT @ryanking46: Easiest way to help #FortMacFire is text REDCROSS to 30333 - Donate 5$ on your next phone bill - Help save #Ymm .,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728767338040844288,"Samaritans Help Rescue Pets Left by Owners Who Fled Fort McMurray Wildfire: By John Cotter, The Canadian Press FORT",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+729547494003232770,RT @phalguy: Shout out to the Canadian airlines who allowed the evacuees to take their pets on board with them when they fled the Fort McMu,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729044930346160128,"Wildfire evacuees get supplies, support at evacuation center: LAC LA BICHE, Alberta (AP) — A community recreation",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+732642388464766976,#ymmfire #ymmhelps #FortMcMurray #FortMacFire 10:10am Fort Mac fire update,caution_and_advice,other_relevant_information,0.85,,ok
+728593732036009984,RT @ModernSole: Just a reminder we are donating 10% of our sales (up until Sunday) to the Red Cross in support of the wildfire reli :,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+733082224610975744,"RT @Benw_Silverman: In support of the wildfire relief in Alberta, I will be donating $10/birdie &amp; $20/eagle this week at BMW Charity Pro-am",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+729133386279886848,WILDFIRE UPDATE: Weve just heard from the Canadian Red Cross that donations for Fort McMurray wildfire evacuees has exceeded $46 million,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+729678701881778176,RT @GlobalCalgary: James Taylor to donate proceeds from Alberta shows to Fort McMurray wildfire relief efforts. #ymmfire #FortMacFire,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728564187740315648,@MusicForRelief hey we could use some of your relief up here in Fort McMurray Alberta to help the evacuees of the wildfireὡE #ymmfire,rescue_volunteering_or_donation_effort,requests_or_urgent_needs,0.95,,ok
+728658877667938304,RT @RandySmall: SHOCKING video of the destruction of the #ymmfire in #FortMcMurray. #FortMacFire,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+732352048352595968,RT @MikeHudema: BREAKING: Growing wildfire forces evacuation of Fort McMurray oilfield camps. Read:  #ymmfire :,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729744381335379969,Danger from the Fort McMurray wildfire wont end when the flames stop.Research from California fires  via @cbcnews,caution_and_advice,other_relevant_information,0.85,,ok
+728634025083031554,"Urgent Ft. McMurray, Alberta Canada Accommodations. @Airbnb waves fees for people displaced by McMurray wildfire",rescue_volunteering_or_donation_effort,displaced_people_and_evacuations,0.95,,ok
+728786338720448512,RT @CTVNews: Satellite images show extent of Fort McMurray wildfire damage,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+735160222411546624,With much of the trees and forestry burned around the areas it is safer as no fuel for the fire but it is still early in wildfire season,other_relevant_information,other_relevant_information,0.85,,ok
+729034618247221248,RT @dsimonjackson: Want to help support victims of the Fort McMurray wildfire? There are alternatives to the Red Cross.,sympathy_and_support,rescue_volunteering_or_donation_effort,0.9,,ok
+732226382374277122,"RT @CNWNews: . @cdnpayroll donates $10,000 to help victims of the #FortMcMurray Wildfire  #ymmfire",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+732056141581172740,RT @iNews880: New wildfire north of Fox Creek leads to evacuation notice for the M.D of Greenview,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+728716073193758720,"These 2 fires are nearing 35,000 hectares.",other_relevant_information,other_relevant_information,0.85,,ok
+729344266112278529,Fort McMurray wildfire: Aerial footage of the destruction in Abasand and Beacon Hill,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+728599870269997058,Make a donation in-store to Fort McMurray Wildfire Relief and we will match it! All proceeds to Canadian Red Cross! .@canredcrossnl,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728803322488979456,RT @loridowney3: Ἑ8 #FortMcMurray #ymmfire ὒ5 #Alberta How to help &amp; GET help⏩ #Pet aid⏩ :,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+729437357338845184,RT @LondonDrugs: Bringing much needed supplies to @EdmontonERSS for distribution to various centres for wildfire evacuees. #ymmhelps :,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+732346851475644416,Latest from #FortMac this hour: camps north of city being evacuated. #ymmfire,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+731009668785549312,"Canada Wildfire May Give Profit To Certain Businesses - Fort McMurray, a city in Canada, was mostly destroyed f",infrastructure_and_utility_damage,not_humanitarian,0.9,,ok
+730446581661614080,"With raging wildfire forcing city residents to flee, crew of plant workers stay to provide firefighters with #water",rescue_volunteering_or_donation_effort,displaced_people_and_evacuations,0.9,,ok
+729876322437234688,RT @630CHED: 90% of Fort McMurray still standing as crews look into the wildfire damage,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+730134943146332161,Did the Tar Sands catch ⚡️ Fort McMurray-area wildfire grows as two fires combine,other_relevant_information,other_relevant_information,0.85,,ok
+729784848546725888,James Taylor to donate proceeds from Edmonton and Calgary shows to help Alberta wildfire relief efforts #yymfire,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+729602379172155392,New Langford business welcomes displaced Fort Mac workers  While efforts to control a devastating Alberta wildfire,displaced_people_and_evacuations,displaced_people_and_evacuations,0.85,,ok
+730520815255588866,"Caddy Lake, Beresford Lake wildfires grow",other_relevant_information,not_humanitarian,0.85,,ok
+730916372201361408,Alberta Health Services has issued a Precautionary Air Quality Advisory for our region due Wildfire Smoke. Details:,caution_and_advice,caution_and_advice,0.95,,ok
+732627955092885504,"@JaimeFraser @MichelleRempel and how does that mean that pollution and wildfire are unrelated?! dry conditions, heat and &amp; deforestation!!",other_relevant_information,not_humanitarian,0.95,,ok
+732702276482031616,"EXCLUSIVE: As Alberta burns, @GlobalNews finds millions unspent by Alberta agency tasked with preventing wildfires",other_relevant_information,not_humanitarian,0.95,,ok
+732627454720778240,"RT @mniype: UPDATE: Two home explosions in Fort McMurray, work camp destroyed and others threatened as wildfire grows. #ymmfire",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+730221357884039168,RT @nowthisnews: These Syrian refugees are helping those who lost their homes in Canadas massive wildfire,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+731361386756902913,"Fort McMurray evacuees eligible for almost $2,000 each in aid /via @globeandmail",rescue_volunteering_or_donation_effort,displaced_people_and_evacuations,0.9,,ok
+729724398022725633,RT @OfficerJulieM: Please check before you donate! Give to charities you know and trust. Fake donation scams are common after tragedies htt,rescue_volunteering_or_donation_effort,caution_and_advice,0.95,,ok
+732840266558738432,"Earth Changes: Canada wildfire threatens Fort McMurray again as 12,000 evacuated from nearby oil sand camps:",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729881563522011136,"RT @AnointedNachos: Pray for the families effected by the Canada wildfire! 1,600: Homes destroyed 88,000: People evacuated #PrayForFortMcMu",sympathy_and_support,sympathy_and_support,0.95,,ok
+731455959843917824,"12 homes evacuated due to wildfire near Gold Bar, Wash. - dougdKING5",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+730051986465263617,We dont need the help with the fireswe need the help now with food shelter and other necessities for these people,requests_or_urgent_needs,requests_or_urgent_needs,0.95,,ok
+731197400405020674,Local events helping raise funds for Fort McMurray wildfire victims continue  #yql helps #ymm,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+732489030948904962,"Workers evacuated from Alberta oil camps due to wildfire  FORT MCMURRAY, Alberta (AP) — Some 8,000 workers at oil c",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729029842545434624,RT @LondonDrugs: Way to go team! @londondrugs volunteers assembling hygiene packs for the wildfire victims. #ymmfire,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728699689755942912,"If you have a finished quilt to donate to comfort those affected by the wildfire in Fort McMurray, you can send",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+733015286182350848,City and Colour Helping Alberta Wildfire Relief Efforts Through Ticket Sales -,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+729446662951800832,RT @REALTORSCare: Please RT! Fort McMurray residents need our help after a devastating wildfire. Learn more and donate today: /,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+732606867667623938,"RT @Natural_RF: #oil #wildfires | Summer has just begun, will it ever end?",not_humanitarian,not_humanitarian,0.95,,ok
+732239833834229760,"Wildfire prompts evacuation order in northeastern B.C.: More than 100 firefighters are battling the blaze, al",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+730759475297030144,World News - How wildfires hide -- then rage again: The Fort McMurray wildfire could keep bu  by abigailpollak,other_relevant_information,not_humanitarian,0.95,,ok
+728705357443293185,"RT @a_gaffar: State of Emergency declared in #FortMcmurray due to wildfire! Over 80,000 people have evacuated so far. #ymmfire",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729316736206569472,PLEASE PRAY for Fort McMurray the Wildfire Could Double in Size again by Tomorrow,sympathy_and_support,sympathy_and_support,0.95,,ok
+732005824227201026,WATCH: New satellite imagery helps #ymm residents survey #wildfire damage,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.85,,ok
+728716010392453122,RT @AndrewRanger1: @jiadarola @cenkuygur @jimmy_dore Adding to the F.M. fire story. Even the Mexicans came to help us! ty! :) #tytlive http,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+732052320280698884,MD of Greenview declares mandatory evacuation in the following areas because of an out of control wildfire. #ABfire,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+728614333786279936,I donated for #FortMcMurray. DOUBLE your donations with the governments matching of @redcrosscanada donations!,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728667606828224512,I have loved visiting #Alberta; so sorry for all who have lost their homes and dreams in this massive #wildfire at Fort McMurray.,sympathy_and_support,sympathy_and_support,0.95,,ok
+729379936264314880,RT @WritingRosa: Interested in helping the people affected by the wildfire in Fort McMurray? Here are some ways you can help. /,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+729345621824548864,"RT @raz_akram: Alberta Wildfire has affected 80,000 ppl. Evacuated, displaced &amp; homeless. Donate today @ Canadian Red Cross.",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729029590455193600,Our hearts go out to Albertans affected by these wildfires. Here is the latest update from the Premier.,sympathy_and_support,sympathy_and_support,0.9,,ok
+728582668250718208,"RT @JohnOCAP:  #FortMckayFirstNation with population of 800 sheltered 5,000 following #FortMacFire",other_relevant_information,displaced_people_and_evacuations,0.95,,ok
+730175327780081665,"RT @XHNews: To the worlds relief, most of houses saved in wildfire-raged oil sands town in west Canada",other_relevant_information,infrastructure_and_utility_damage,0.85,,ok
+732375734321209344,RT @ctvwinnipeg: Manitoba Urban Search and Rescue returns from front lines of Alberta wildfire: Manitobas Urban Search and Re,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+729016246658686977,Health official warns Manitoba wildfire smoke could cause breathing problems: Forest fires popping up along t,other_relevant_information,caution_and_advice,0.9,,ok
+731109912781131776,"Bonnies Thoughts &amp; Jots: Horrible Wildfire, Alberta",other_relevant_information,not_humanitarian,0.85,,ok
+729119499727810561,My thoughts are with all those affected by this fire. Be safe Ὡ2ὉB,sympathy_and_support,sympathy_and_support,0.95,,ok
+728712517954965506,#wildfire are destroying Fort McMurray. Text REDCROSS to 30333 + youll donate $5 to help the relief effort. Every bit helps.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+729767795206938628,Fort McMurray Wildfire Relief Effort Donations,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728986549010898944,Fort McMurray wildfire continues. Individual donations to the Red Cross will be matched by the federal government.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+728668835868495872,State of Emergency issued due to wildfire north of Fort St. John,caution_and_advice,other_relevant_information,0.9,,ok
+728690215615750144,Siphon Creek wildfire puts Clear Hills County residents on evacuation preparedness alert,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729155340416225280,RT @wildlandfireAZ: RT @PCIAA: In a wildfire evacuation pets have needs too-build a kit for your animals today #WildfirePrepDay,displaced_people_and_evacuations,caution_and_advice,0.95,,ok
+729733911853465600,RT @SturgeonFYI: #SturgeonCounty sends aid to #ymm in wake of massive wildfire. #ymmstrong,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+728902008204201984,Fort McMurray wildfire threatens to double in size by days end  cant even imagine losing everything.please donate,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+732308830692904960,Smoke from #ymm wildfire still visible on satellite. Air quality in the area still a major concern. #ymmfire,caution_and_advice,caution_and_advice,0.85,,ok
+733079900261847040,A Must Read Fort McMurray native @ScottieUpshall reflects on the damage to his hometown in the @PlayersTribune,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+729423933124927489,Canada officials start to get a handle on largest wildfire - Reuters,other_relevant_information,not_humanitarian,0.95,,ok
+728623918819352577,Massive effort underway to rescue evacuees trapped by Canada wildfire: A massive effort is underway Friday morning,displaced_people_and_evacuations,rescue_volunteering_or_donation_effort,0.95,,ok
+728536957324800000,Rex Murphy | Fort McMurray Wildfire  Heartfelt &amp;true. We cannot do enough but every little bit helps. Please donate,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+729967956353028096,"RT @Shadonhess: To all the people suffering from the wildfire going on in Canada, my heart goes out to you.",sympathy_and_support,sympathy_and_support,0.95,,ok
+729675825705029633,@phemsworth @fuelfixblog thing is Fort McMurray fires could burn for months,caution_and_advice,other_relevant_information,0.85,,ok
+730083450661769216,@Bossbattletim  Im hosting a stream from 8am to 2am as a marathon to collect for the McMurray Wildfire victims!,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+732759831837298688,RT @phunphunphun: It says a lot about the people of #Attawapiskat - raising money to help #ymmfire Great kindness &amp; consideration. &lt;3,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+732723401115107329,Attawapiskat donates to wildfire relief fund,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+730480020104192000,"RT @GlobalEdmonton: Fort McMurray wildfire: Red Cross gives $50M, Alberta gives $100M in emergency funding @ChalmersErin has the details ht",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+732348103026606080,"#Ymmfire heading up Tower Road. Moving away from Fort McMurray, but prompting camps to be evacuated for smoke. #ymm",displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+728784450033623040,RT @BruceClaggett: Fire damage from #FortMacFire #FortMcMurray photographed in @nytimes,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.95,,ok
+731544870863536129,"RT @lmncalgary: @CMHACalgary Using CASE - Comfort, Assistance, Support &amp; Empowerment to help Fort McMurray wildfire evacuees",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+728648727448145920,The Kamloops Youth Soccer Association’s U13 Girls House Wildfire have chosen to fund raise toward the relief,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+728746161964716032,RT @FurRSQ: LOVE this story! WOW! Fort McMurray wildfire: Locksmith comes to cats’ rescue during evacuation,rescue_volunteering_or_donation_effort,displaced_people_and_evacuations,0.85,,ok
+730405375787343872,"Im praying for the huge wildfire in northern Alberta. Over 100.000 people, including the city of Fort McMurray,",sympathy_and_support,sympathy_and_support,0.95,,ok
+728732588869705728,RT @CBCjulie_dupre: Mandatory evacuation order now in effect for the Beresford cottage subdivision of Nopiming Provicial Park b/c of wildfi,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+732970814090272771,Makes me miss home - @ScottieUpshall reflects on the damage to his hometown in the @PlayersTribune,infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.8,,ok
+728770306396033024,"RT @Aritans85:  Still no donations to speak of, but if we can reach my goal, I will donate every dollar over to the",rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.85,,ok
+729386324982038529,our heats go out to all effected! Please donate what you can as the people of that community try and hold on.,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+729314517608337408,"RT @RMWoodBuffalo: Wildfire Update - May 4, 4 a.m. Residential damage assessment (approximate) #ymmfire #ymm",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+728807232142508032,Fort McMurray wildfire east coast musicians offering support for relief efforts #D7,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.9,,ok
+732608603157204992,The latest on the #Ymmfire and @RachelNotley to update on fire and 8k evacuated from 19 oilfield camps at 11am,displaced_people_and_evacuations,displaced_people_and_evacuations,0.95,,ok
+729473689113088000,"Canada wildfire: 20% of Fort McMurray homes destroyed, says MP - BBC News on @BBCNews",infrastructure_and_utility_damage,infrastructure_and_utility_damage,0.9,,ok
+728615601040556036,My heart goes out to the Canadians experiencing these catastrophic fires.,sympathy_and_support,sympathy_and_support,0.95,,ok
+732866610961096704,RT @mickar1: We want to help. - Attawapiskat makes $5K donation to Alta. wildfire relief: Red Cross  #cdnpoli #abl,rescue_volunteering_or_donation_effort,rescue_volunteering_or_donation_effort,0.95,,ok
+735507276065165312,‘Salu-salo’ solidarity with Filipino victims of Alberta wildfire,other_relevant_information,sympathy_and_support,0.85,,ok
+729409342735290373,"Yes, applauding destruction of personal property for your ends continues to be a smart way to go. #yymfire #Cdnpoli",infrastructure_and_utility_damage,not_humanitarian,0.95,,ok
+729833504335376384,RT @HinesPAhunter: This wildfire in Canada is just tragic!! Thoughts and prayers to all fighting it and anyone affected by it!!!,sympathy_and_support,sympathy_and_support,0.95,,ok

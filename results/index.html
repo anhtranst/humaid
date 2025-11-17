@@ -25,8 +25,8 @@
 
   /* Badges */
   .badge { display: inline-block; padding: 2px 6px; border-radius: 999px; font-size: 10px; margin-left: 6px; vertical-align: 1px; }
-  .badge-acc { background: #eef2ff; color: #3730a3; border: 1px solid #c7d2fe; }  /* indigo */
-  .badge-f1  { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }  /* emerald */
+  .badge-acc { background: #6efffa; color: #0c484a; border: 1px solid #0c484a; }  
+  .badge-f1  { background: #92fcaf; color: #0e3318; border: 1px solid #0e3318; }  
 
   /* Optional visual cues */
   td.bad { color: #b91c1c; font-weight: 700; }   /* red numeric for OOS preds > 0 */
@@ -43,9 +43,9 @@
 
   /* Model pills */
   .pill { display:inline-block; padding:2px 6px; border-radius:999px; font-size:11px; line-height:1; }
-  .pill-4o     { background:#eef2ff; color:#3730a3; border:1px solid #c7d2fe; }
-  .pill-41     { background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; }
-  .pill-4omini { background:#fef3c7; color:#92400e; border:1px solid #fde68a; }
+  .pill-41     { background:#9ab4fc; color:#132557; border:1px solid #132557; }  
+  .pill-4o     { background:#84e38d; color:#1d4021; border:1px solid #1d4021; }  
+  .pill-4omini { background:#eefa4d; color:#3d4011; border:1px solid #3d4011; }
   .pill-5mini { background:#f6edfa; color:#5b0c7d; border:1px solid #5b0c7d; }
   .pill-5 { background:#eed7f7; color:#5b0c7d; border:1px solid #5b0c7d; }
   .pill-5-pro { background:#e5aefc; color:#5b0c7d; border:1px solid #5b0c7d; }
@@ -82,9 +82,12 @@
 <body>
   <h1>HumAID Zero-shot Results</h1>
 
-  
-          <h2>Split: <code>test</code></h2>
-          <table class='summary sortable'><thead><tr><th data-type='string'>Event</th><th data-type='string'>Model</th><th data-type='string'>Run</th><th data-type='number'>Test size</th><th data-type='number'>Accuracy</th><th data-type='number'>Macro-F1</th><th data-type='string'>Scope</th><th data-type='number'>OOS preds</th></tr></thead><tbody><tr class='grp-1' title='california_wildfires_2018
+  <section>
+    <h2>Summary by split</h2>
+    
+          <section class="split-summary">
+            <h2>Split: <code>test</code></h2>
+            <table class='summary sortable'><thead><tr><th data-type='string'>Event</th><th data-type='string'>Model</th><th data-type='string'>Run</th><th data-type='number'>Test size</th><th data-type='number'>Accuracy</th><th data-type='number'>Macro-F1</th><th data-type='string'>Scope</th><th data-type='number'>OOS preds</th></tr></thead><tbody><tr class='grp-1' title='california_wildfires_2018
 gpt-4.1
 RULES1'><td><strong>california_wildfires_2018</strong></td><td><span class='pill pill-41'>gpt-4.1</span></td><td><code>20251105-000600-modeS-gpt-41-RULES1-filtered-sharded7</code></td><td class='num' data-sort='1461'>1461</td><td class='num' data-sort='0.7105'>0.7105 </td><td class='num' data-sort='0.6353'>0.6353 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-1' title='california_wildfires_2018
 gpt-4o
@@ -221,8 +224,64 @@ gpt-5
 RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-5'>gpt-5</span></td><td><code>20251108-002836-modeR-gpt-5-RULES1-probe</code></td><td class='num' data-sort='1582'>1582</td><td class='num' data-sort='0.6764'>0.6764 </td><td class='num' data-sort='0.5267'>0.5267 </td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='kerala_floods_2018
 gpt-5-mini
 RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-5mini'>gpt-5-mini</span></td><td><code>20251107-222719-responses-gpt-5-mini-RULES1-probe</code></td><td class='num' data-sort='1582'>1582</td><td class='num' data-sort='0.6694'>0.6694 </td><td class='num' data-sort='0.5115'>0.5115 </td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr></tbody></table>
-          <div class="grid">
-            
+          </section>
+        
+          <section class="split-summary">
+            <h2>Split: <code>train</code></h2>
+            <table class='summary sortable'><thead><tr><th data-type='string'>Event</th><th data-type='string'>Model</th><th data-type='string'>Run</th><th data-type='number'>Test size</th><th data-type='number'>Accuracy</th><th data-type='number'>Macro-F1</th><th data-type='string'>Scope</th><th data-type='number'>OOS preds</th></tr></thead><tbody><tr class='grp-1' title='california_wildfires_2018
+gpt-4o
+RULES1'><td><strong>california_wildfires_2018</strong></td><td><span class='pill pill-4o'>gpt-4o</span></td><td><code>20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33</code></td><td class='num' data-sort='5163'>5163</td><td class='num' data-sort='0.7193'>0.7193 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.6331'>0.6331 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-1' title='california_wildfires_2018
+gpt-4o-mini
+RULES1'><td><strong>california_wildfires_2018</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251020-235341-modeS-RULES1</code></td><td class='num' data-sort='5163'>5163</td><td class='num' data-sort='0.7124'>0.7124 </td><td class='num' data-sort='0.6238'>0.6238 </td><td class='scope'>None</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='canada_wildfires_2016
+gpt-4o
+RULES1'><td><strong>canada_wildfires_2016</strong></td><td><span class='pill pill-4o'>gpt-4o</span></td><td><code>20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10</code></td><td class='num' data-sort='1569'>1569</td><td class='num' data-sort='0.789'>0.7890 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.6584'>0.6584 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='canada_wildfires_2016
+gpt-4o-mini
+RULES1'><td><strong>canada_wildfires_2016</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-202956-modeS-RULES1-TIER1</code></td><td class='num' data-sort='1569'>1569</td><td class='num' data-sort='0.7731'>0.7731 </td><td class='num' data-sort='0.5862'>0.5862 </td><td class='scope'>None</td><td class='num bad' data-sort='2'><button class='oos-btn' data-oos='[["missing_or_found_people", 2]]' data-title='canada_wildfires_2016 • gpt-4o-mini • 20251021-202956-modeS-RULES1-TIER1' aria-label='View OOS breakdown'>2</button></td></tr><tr class='grp-1' title='cyclone_idai_2019
+gpt-4o
+RULES1'><td><strong>cyclone_idai_2019</strong></td><td><span class='pill pill-4o'>gpt-4o</span></td><td><code>20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1</code></td><td class='num' data-sort='2753'>2753</td><td class='num' data-sort='0.7425'>0.7425 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5879'>0.5879 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-1' title='cyclone_idai_2019
+gpt-4o-mini
+RULES1'><td><strong>cyclone_idai_2019</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-205521-modeS-RULES1-TIER1</code></td><td class='num' data-sort='2753'>2753</td><td class='num' data-sort='0.6833'>0.6833 </td><td class='num' data-sort='0.5785'>0.5785 </td><td class='scope'>None</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='hurricane_dorian_2019
+gpt-4o
+RULES1'><td><strong>hurricane_dorian_2019</strong></td><td><span class='pill pill-4o'>gpt-4o</span></td><td><code>20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33</code></td><td class='num' data-sort='5329'>5329</td><td class='num' data-sort='0.6286'>0.6286 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5842'>0.5842 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='hurricane_dorian_2019
+gpt-4o-mini
+RULES1'><td><strong>hurricane_dorian_2019</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-224703-modeS-RULES1-ALT</code></td><td class='num' data-sort='5329'>5329</td><td class='num' data-sort='0.6179'>0.6179 </td><td class='num' data-sort='0.5841'>0.5841 </td><td class='scope'>None</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-1' title='hurricane_florence_2018
+gpt-4o
+RULES1'><td><strong>hurricane_florence_2018</strong></td><td><span class='pill pill-4o'>gpt-4o</span></td><td><code>20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28</code></td><td class='num' data-sort='4384'>4384</td><td class='num' data-sort='0.7448'>0.7448 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.668'>0.6680 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-1' title='hurricane_florence_2018
+gpt-4o-mini
+RULES1'><td><strong>hurricane_florence_2018</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-212048-modeS-RULES1-ALT</code></td><td class='num' data-sort='4384'>4384</td><td class='num' data-sort='0.7368'>0.7368 </td><td class='num' data-sort='0.6004'>0.6004 </td><td class='scope'>None</td><td class='num bad' data-sort='2'><button class='oos-btn' data-oos='[["missing_or_found_people", 2]]' data-title='hurricane_florence_2018 • gpt-4o-mini • 20251021-212048-modeS-RULES1-ALT' aria-label='View OOS breakdown'>2</button></td></tr><tr class='grp-0' title='hurricane_harvey_2017
+gpt-4o
+RULES1'><td><strong>hurricane_harvey_2017</strong></td><td><span class='pill pill-4o'>gpt-4o</span></td><td><code>20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39</code></td><td class='num' data-sort='6378'>6378</td><td class='num' data-sort='0.6526'>0.6526 </td><td class='num' data-sort='0.6192'>0.6192 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='hurricane_harvey_2017
+gpt-4o-mini
+RULES1'><td><strong>hurricane_harvey_2017</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251022-001305-modeS-RULES1-ALT</code></td><td class='num' data-sort='6378'>6378</td><td class='num' data-sort='0.6675'>0.6675 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5668'>0.5668 </td><td class='scope'>None</td><td class='num bad' data-sort='7'><button class='oos-btn' data-oos='[["missing_or_found_people", 7]]' data-title='hurricane_harvey_2017 • gpt-4o-mini • 20251022-001305-modeS-RULES1-ALT' aria-label='View OOS breakdown'>7</button></td></tr><tr class='grp-1' title='hurricane_irma_2017
+gpt-4o
+RULES1'><td><strong>hurricane_irma_2017</strong></td><td><span class='pill pill-4o'>gpt-4o</span></td><td><code>20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1</code></td><td class='num' data-sort='6579'>6579</td><td class='num' data-sort='0.6188'>0.6188 </td><td class='num' data-sort='0.6051'>0.6051 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-1' title='hurricane_irma_2017
+gpt-4o-mini
+RULES1'><td><strong>hurricane_irma_2017</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251022-004334-modeS-RULES1-ALT</code></td><td class='num' data-sort='6579'>6579</td><td class='num' data-sort='0.6375'>0.6375 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5553'>0.5553 </td><td class='scope'>None</td><td class='num bad' data-sort='12'><button class='oos-btn' data-oos='[["missing_or_found_people", 12]]' data-title='hurricane_irma_2017 • gpt-4o-mini • 20251022-004334-modeS-RULES1-ALT' aria-label='View OOS breakdown'>12</button></td></tr><tr class='grp-0' title='hurricane_maria_2017
+gpt-4o
+RULES1'><td><strong>hurricane_maria_2017</strong></td><td><span class='pill pill-4o'>gpt-4o</span></td><td><code>20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31</code></td><td class='num' data-sort='5094'>5094</td><td class='num' data-sort='0.6627'>0.6627 </td><td class='num' data-sort='0.6411'>0.6411 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='hurricane_maria_2017
+gpt-4o-mini
+RULES1'><td><strong>hurricane_maria_2017</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-215113-modeS-RULES1-ALT</code></td><td class='num' data-sort='5094'>5094</td><td class='num' data-sort='0.6633'>0.6633 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.577'>0.5770 </td><td class='scope'>None</td><td class='num bad' data-sort='16'><button class='oos-btn' data-oos='[["missing_or_found_people", 16]]' data-title='hurricane_maria_2017 • gpt-4o-mini • 20251021-215113-modeS-RULES1-ALT' aria-label='View OOS breakdown'>16</button></td></tr><tr class='grp-1' title='kaikoura_earthquake_2016
+gpt-4o
+RULES1'><td><strong>kaikoura_earthquake_2016</strong></td><td><span class='pill pill-4o'>gpt-4o</span></td><td><code>20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10</code></td><td class='num' data-sort='1536'>1536</td><td class='num' data-sort='0.7181'>0.7181 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.7013'>0.7013 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-1' title='kaikoura_earthquake_2016
+gpt-4o-mini
+RULES1'><td><strong>kaikoura_earthquake_2016</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-182421-modeS-RULES1-TIER1</code></td><td class='num' data-sort='1536'>1536</td><td class='num' data-sort='0.6947'>0.6947 </td><td class='num' data-sort='0.6663'>0.6663 </td><td class='scope'>None</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='kerala_floods_2018
+gpt-4o
+RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4o'>gpt-4o</span></td><td><code>20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1</code></td><td class='num' data-sort='5588'>5588</td><td class='num' data-sort='0.704'>0.7040 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5813'>0.5813 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='scope'>truth</td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='kerala_floods_2018
+gpt-4o-mini
+RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-231731-modeS-RULES1-ALT</code></td><td class='num' data-sort='5588'>5588</td><td class='num' data-sort='0.6809'>0.6809 </td><td class='num' data-sort='0.5095'>0.5095 </td><td class='scope'>None</td><td class='num bad' data-sort='4'><button class='oos-btn' data-oos='[["missing_or_found_people", 4]]' data-title='kerala_floods_2018 • gpt-4o-mini • 20251021-231731-modeS-RULES1-ALT' aria-label='View OOS breakdown'>4</button></td></tr></tbody></table>
+          </section>
+        
+  </section>
+
+  <hr style="margin:24px 0; border:none; border-top:1px solid #e5e7eb;" />
+
+  <section>
+    <h2>Details by split</h2>
+    
+          <section class="split-detail">
+            <h2>Split: <code>test</code></h2>
+            <div class="grid">
+              
             <section class="card">
               <div class="head">
                 <div>
@@ -1855,53 +1914,82 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-5
               </div>
             </section>
             
-          </div>
+            </div>
+          </section>
         
-          <h2>Split: <code>train</code></h2>
-          <table class='summary sortable'><thead><tr><th data-type='string'>Event</th><th data-type='string'>Model</th><th data-type='string'>Run</th><th data-type='number'>Test size</th><th data-type='number'>Accuracy</th><th data-type='number'>Macro-F1</th><th data-type='number'>OOS preds</th></tr></thead><tbody><tr class='grp-1' title='california_wildfires_2018
-gpt-4o-mini
-RULES1'><td><strong>california_wildfires_2018</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-222139-modeS-RULES1-ALT</code></td><td class='num' data-sort='5163'>5163</td><td class='num' data-sort='0.7058'>0.7058 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.6155'>0.6155 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='canada_wildfires_2016
-gpt-4o-mini
-RULES1'><td><strong>canada_wildfires_2016</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-202956-modeS-RULES1-TIER1</code></td><td class='num' data-sort='1569'>1569</td><td class='num' data-sort='0.7731'>0.7731 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5862'>0.5862 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='num bad' data-sort='2'><button class='oos-btn' data-oos='[["missing_or_found_people", 2]]' data-title='canada_wildfires_2016 • gpt-4o-mini • 20251021-202956-modeS-RULES1-TIER1' aria-label='View OOS breakdown'>2</button></td></tr><tr class='grp-1' title='cyclone_idai_2019
-gpt-4o-mini
-RULES1'><td><strong>cyclone_idai_2019</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-205521-modeS-RULES1-TIER1</code></td><td class='num' data-sort='2753'>2753</td><td class='num' data-sort='0.6833'>0.6833 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5785'>0.5785 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='hurricane_dorian_2019
-gpt-4o-mini
-RULES1'><td><strong>hurricane_dorian_2019</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-224703-modeS-RULES1-ALT</code></td><td class='num' data-sort='5329'>5329</td><td class='num' data-sort='0.6179'>0.6179 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5841'>0.5841 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='num' data-sort='0'>0</td></tr><tr class='grp-1' title='hurricane_florence_2018
-gpt-4o-mini
-RULES1'><td><strong>hurricane_florence_2018</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-212048-modeS-RULES1-ALT</code></td><td class='num' data-sort='4384'>4384</td><td class='num' data-sort='0.7368'>0.7368 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.6004'>0.6004 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='num bad' data-sort='2'><button class='oos-btn' data-oos='[["missing_or_found_people", 2]]' data-title='hurricane_florence_2018 • gpt-4o-mini • 20251021-212048-modeS-RULES1-ALT' aria-label='View OOS breakdown'>2</button></td></tr><tr class='grp-0' title='hurricane_harvey_2017
-gpt-4o-mini
-RULES1'><td><strong>hurricane_harvey_2017</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251022-001305-modeS-RULES1-ALT</code></td><td class='num' data-sort='6378'>6378</td><td class='num' data-sort='0.6675'>0.6675 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5668'>0.5668 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='num bad' data-sort='7'><button class='oos-btn' data-oos='[["missing_or_found_people", 7]]' data-title='hurricane_harvey_2017 • gpt-4o-mini • 20251022-001305-modeS-RULES1-ALT' aria-label='View OOS breakdown'>7</button></td></tr><tr class='grp-1' title='hurricane_irma_2017
-gpt-4o-mini
-RULES1'><td><strong>hurricane_irma_2017</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251022-004334-modeS-RULES1-ALT</code></td><td class='num' data-sort='6579'>6579</td><td class='num' data-sort='0.6375'>0.6375 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5553'>0.5553 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='num bad' data-sort='12'><button class='oos-btn' data-oos='[["missing_or_found_people", 12]]' data-title='hurricane_irma_2017 • gpt-4o-mini • 20251022-004334-modeS-RULES1-ALT' aria-label='View OOS breakdown'>12</button></td></tr><tr class='grp-0' title='hurricane_maria_2017
-gpt-4o-mini
-RULES1'><td><strong>hurricane_maria_2017</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-215113-modeS-RULES1-ALT</code></td><td class='num' data-sort='5094'>5094</td><td class='num' data-sort='0.6633'>0.6633 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.577'>0.5770 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='num bad' data-sort='16'><button class='oos-btn' data-oos='[["missing_or_found_people", 16]]' data-title='hurricane_maria_2017 • gpt-4o-mini • 20251021-215113-modeS-RULES1-ALT' aria-label='View OOS breakdown'>16</button></td></tr><tr class='grp-1' title='kaikoura_earthquake_2016
-gpt-4o-mini
-RULES1'><td><strong>kaikoura_earthquake_2016</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-182421-modeS-RULES1-TIER1</code></td><td class='num' data-sort='1536'>1536</td><td class='num' data-sort='0.6947'>0.6947 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.6663'>0.6663 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='num' data-sort='0'>0</td></tr><tr class='grp-0' title='kerala_floods_2018
-gpt-4o-mini
-RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4omini'>gpt-4o-mini</span></td><td><code>20251021-231731-modeS-RULES1-ALT</code></td><td class='num' data-sort='5588'>5588</td><td class='num' data-sort='0.6809'>0.6809 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td><td class='num' data-sort='0.5095'>0.5095 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td><td class='num bad' data-sort='4'><button class='oos-btn' data-oos='[["missing_or_found_people", 4]]' data-title='kerala_floods_2018 • gpt-4o-mini • 20251021-231731-modeS-RULES1-ALT' aria-label='View OOS breakdown'>4</button></td></tr></tbody></table>
-          <div class="grid">
+          <section class="split-detail">
+            <h2>Split: <code>train</code></h2>
+            <div class="grid">
+              
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>california_wildfires_2018 — train</h3>
+                  <div class="sub">model: <code>gpt-4o</code> — <code>20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33</code></div>
+                  <div class="sub path">california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>5163</td></tr>
+                  <tr><th>Accuracy</th><td>0.7193 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
+                  <tr><th>Macro-F1</th><td>0.6331 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Scope</th><td>truth</td></tr>
+                  <tr><th>OOS preds</th><td class='num'>0</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                <div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o/20251115-104438-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/top_confusions.png"></div>
+              </div>
+            </section>
             
             <section class="card">
               <div class="head">
                 <div>
                   <h3>california_wildfires_2018 — train</h3>
-                  <div class="sub">model: <code>gpt-4o-mini</code> — <code>20251021-222139-modeS-RULES1-ALT</code></div>
-                  <div class="sub path">california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT</div>
+                  <div class="sub">model: <code>gpt-4o-mini</code> — <code>20251020-235341-modeS-RULES1</code></div>
+                  <div class="sub path">california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1</div>
                 </div>
                 <table class="metrics">
                   <tr><th>Test size</th><td>5163</td></tr>
-                  <tr><th>Accuracy</th><td>0.7058 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
-                  <tr><th>Macro-F1</th><td>0.6155 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Accuracy</th><td>0.7124 </td></tr>
+                  <tr><th>Macro-F1</th><td>0.6238 </td></tr>
                   
                   <tr><th>OOS preds</th><td class='num'>0</td></tr>
                 </table>
               </div>
               <div class="imgs">
-                <div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT/analysis/charts/confusion_matrix_counts.png"></div>
-<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT/analysis/charts/confusion_matrix_row_normalized.png"></div>
-<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT/analysis/charts/per_class_error_rate.png"></div>
-<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT/analysis/charts/per_class_f1.png"></div>
-<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o-mini/20251021-222139-modeS-RULES1-ALT/analysis/charts/top_confusions.png"></div>
+                <div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="california_wildfires_2018/train/gpt-4o-mini/20251020-235341-modeS-RULES1/analysis/charts/top_confusions.png"></div>
+              </div>
+            </section>
+            
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>canada_wildfires_2016 — train</h3>
+                  <div class="sub">model: <code>gpt-4o</code> — <code>20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10</code></div>
+                  <div class="sub path">canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>1569</td></tr>
+                  <tr><th>Accuracy</th><td>0.7890 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
+                  <tr><th>Macro-F1</th><td>0.6584 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Scope</th><td>truth</td></tr>
+                  <tr><th>OOS preds</th><td class='num'>0</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                <div class="imgbox">  <img class="zoomable" src="canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="canada_wildfires_2016/train/gpt-4o/20251115-000458-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/top_confusions.png"></div>
               </div>
             </section>
             
@@ -1914,8 +2002,8 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4
                 </div>
                 <table class="metrics">
                   <tr><th>Test size</th><td>1569</td></tr>
-                  <tr><th>Accuracy</th><td>0.7731 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
-                  <tr><th>Macro-F1</th><td>0.5862 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Accuracy</th><td>0.7731 </td></tr>
+                  <tr><th>Macro-F1</th><td>0.5862 </td></tr>
                   
                   <tr><th>OOS preds</th><td class='num bad'>2 <a href='#' class='oos-link' data-oos='[["missing_or_found_people", 2]]' data-title='canada_wildfires_2016 • gpt-4o-mini • 20251021-202956-modeS-RULES1-TIER1'>view</a></td></tr>
                 </table>
@@ -1933,13 +2021,37 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4
               <div class="head">
                 <div>
                   <h3>cyclone_idai_2019 — train</h3>
+                  <div class="sub">model: <code>gpt-4o</code> — <code>20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1</code></div>
+                  <div class="sub path">cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>2753</td></tr>
+                  <tr><th>Accuracy</th><td>0.7425 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
+                  <tr><th>Macro-F1</th><td>0.5879 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Scope</th><td>truth</td></tr>
+                  <tr><th>OOS preds</th><td class='num'>0</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                <div class="imgbox">  <img class="zoomable" src="cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="cyclone_idai_2019/train/gpt-4o/20251116-125253-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/top_confusions.png"></div>
+              </div>
+            </section>
+            
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>cyclone_idai_2019 — train</h3>
                   <div class="sub">model: <code>gpt-4o-mini</code> — <code>20251021-205521-modeS-RULES1-TIER1</code></div>
                   <div class="sub path">cyclone_idai_2019/train/gpt-4o-mini/20251021-205521-modeS-RULES1-TIER1</div>
                 </div>
                 <table class="metrics">
                   <tr><th>Test size</th><td>2753</td></tr>
-                  <tr><th>Accuracy</th><td>0.6833 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
-                  <tr><th>Macro-F1</th><td>0.5785 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Accuracy</th><td>0.6833 </td></tr>
+                  <tr><th>Macro-F1</th><td>0.5785 </td></tr>
                   
                   <tr><th>OOS preds</th><td class='num'>0</td></tr>
                 </table>
@@ -1957,13 +2069,37 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4
               <div class="head">
                 <div>
                   <h3>hurricane_dorian_2019 — train</h3>
+                  <div class="sub">model: <code>gpt-4o</code> — <code>20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33</code></div>
+                  <div class="sub path">hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>5329</td></tr>
+                  <tr><th>Accuracy</th><td>0.6286 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
+                  <tr><th>Macro-F1</th><td>0.5842 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Scope</th><td>truth</td></tr>
+                  <tr><th>OOS preds</th><td class='num'>0</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                <div class="imgbox">  <img class="zoomable" src="hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="hurricane_dorian_2019/train/gpt-4o/20251115-144625-modeS-gpt-4o-RULES1-filtered-sharded33/analysis/charts/top_confusions.png"></div>
+              </div>
+            </section>
+            
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>hurricane_dorian_2019 — train</h3>
                   <div class="sub">model: <code>gpt-4o-mini</code> — <code>20251021-224703-modeS-RULES1-ALT</code></div>
                   <div class="sub path">hurricane_dorian_2019/train/gpt-4o-mini/20251021-224703-modeS-RULES1-ALT</div>
                 </div>
                 <table class="metrics">
                   <tr><th>Test size</th><td>5329</td></tr>
-                  <tr><th>Accuracy</th><td>0.6179 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
-                  <tr><th>Macro-F1</th><td>0.5841 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Accuracy</th><td>0.6179 </td></tr>
+                  <tr><th>Macro-F1</th><td>0.5841 </td></tr>
                   
                   <tr><th>OOS preds</th><td class='num'>0</td></tr>
                 </table>
@@ -1981,13 +2117,37 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4
               <div class="head">
                 <div>
                   <h3>hurricane_florence_2018 — train</h3>
+                  <div class="sub">model: <code>gpt-4o</code> — <code>20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28</code></div>
+                  <div class="sub path">hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>4384</td></tr>
+                  <tr><th>Accuracy</th><td>0.7448 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
+                  <tr><th>Macro-F1</th><td>0.6680 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Scope</th><td>truth</td></tr>
+                  <tr><th>OOS preds</th><td class='num'>0</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                <div class="imgbox">  <img class="zoomable" src="hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="hurricane_florence_2018/train/gpt-4o/20251115-034627-modeS-gpt-4o-RULES1-filtered-sharded28/analysis/charts/top_confusions.png"></div>
+              </div>
+            </section>
+            
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>hurricane_florence_2018 — train</h3>
                   <div class="sub">model: <code>gpt-4o-mini</code> — <code>20251021-212048-modeS-RULES1-ALT</code></div>
                   <div class="sub path">hurricane_florence_2018/train/gpt-4o-mini/20251021-212048-modeS-RULES1-ALT</div>
                 </div>
                 <table class="metrics">
                   <tr><th>Test size</th><td>4384</td></tr>
-                  <tr><th>Accuracy</th><td>0.7368 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
-                  <tr><th>Macro-F1</th><td>0.6004 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Accuracy</th><td>0.7368 </td></tr>
+                  <tr><th>Macro-F1</th><td>0.6004 </td></tr>
                   
                   <tr><th>OOS preds</th><td class='num bad'>2 <a href='#' class='oos-link' data-oos='[["missing_or_found_people", 2]]' data-title='hurricane_florence_2018 • gpt-4o-mini • 20251021-212048-modeS-RULES1-ALT'>view</a></td></tr>
                 </table>
@@ -2005,13 +2165,37 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4
               <div class="head">
                 <div>
                   <h3>hurricane_harvey_2017 — train</h3>
+                  <div class="sub">model: <code>gpt-4o</code> — <code>20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39</code></div>
+                  <div class="sub path">hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>6378</td></tr>
+                  <tr><th>Accuracy</th><td>0.6526 </td></tr>
+                  <tr><th>Macro-F1</th><td>0.6192 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Scope</th><td>truth</td></tr>
+                  <tr><th>OOS preds</th><td class='num'>0</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                <div class="imgbox">  <img class="zoomable" src="hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="hurricane_harvey_2017/train/gpt-4o/20251115-185842-modeS-gpt-4o-RULES1-filtered-sharded39/analysis/charts/top_confusions.png"></div>
+              </div>
+            </section>
+            
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>hurricane_harvey_2017 — train</h3>
                   <div class="sub">model: <code>gpt-4o-mini</code> — <code>20251022-001305-modeS-RULES1-ALT</code></div>
                   <div class="sub path">hurricane_harvey_2017/train/gpt-4o-mini/20251022-001305-modeS-RULES1-ALT</div>
                 </div>
                 <table class="metrics">
                   <tr><th>Test size</th><td>6378</td></tr>
                   <tr><th>Accuracy</th><td>0.6675 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
-                  <tr><th>Macro-F1</th><td>0.5668 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Macro-F1</th><td>0.5668 </td></tr>
                   
                   <tr><th>OOS preds</th><td class='num bad'>7 <a href='#' class='oos-link' data-oos='[["missing_or_found_people", 7]]' data-title='hurricane_harvey_2017 • gpt-4o-mini • 20251022-001305-modeS-RULES1-ALT'>view</a></td></tr>
                 </table>
@@ -2029,13 +2213,37 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4
               <div class="head">
                 <div>
                   <h3>hurricane_irma_2017 — train</h3>
+                  <div class="sub">model: <code>gpt-4o</code> — <code>20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1</code></div>
+                  <div class="sub path">hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>6579</td></tr>
+                  <tr><th>Accuracy</th><td>0.6188 </td></tr>
+                  <tr><th>Macro-F1</th><td>0.6051 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Scope</th><td>truth</td></tr>
+                  <tr><th>OOS preds</th><td class='num'>0</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                <div class="imgbox">  <img class="zoomable" src="hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="hurricane_irma_2017/train/gpt-4o/20251116-133843-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/top_confusions.png"></div>
+              </div>
+            </section>
+            
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>hurricane_irma_2017 — train</h3>
                   <div class="sub">model: <code>gpt-4o-mini</code> — <code>20251022-004334-modeS-RULES1-ALT</code></div>
                   <div class="sub path">hurricane_irma_2017/train/gpt-4o-mini/20251022-004334-modeS-RULES1-ALT</div>
                 </div>
                 <table class="metrics">
                   <tr><th>Test size</th><td>6579</td></tr>
                   <tr><th>Accuracy</th><td>0.6375 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
-                  <tr><th>Macro-F1</th><td>0.5553 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Macro-F1</th><td>0.5553 </td></tr>
                   
                   <tr><th>OOS preds</th><td class='num bad'>12 <a href='#' class='oos-link' data-oos='[["missing_or_found_people", 12]]' data-title='hurricane_irma_2017 • gpt-4o-mini • 20251022-004334-modeS-RULES1-ALT'>view</a></td></tr>
                 </table>
@@ -2053,13 +2261,37 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4
               <div class="head">
                 <div>
                   <h3>hurricane_maria_2017 — train</h3>
+                  <div class="sub">model: <code>gpt-4o</code> — <code>20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31</code></div>
+                  <div class="sub path">hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>5094</td></tr>
+                  <tr><th>Accuracy</th><td>0.6627 </td></tr>
+                  <tr><th>Macro-F1</th><td>0.6411 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Scope</th><td>truth</td></tr>
+                  <tr><th>OOS preds</th><td class='num'>0</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                <div class="imgbox">  <img class="zoomable" src="hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="hurricane_maria_2017/train/gpt-4o/20251115-072255-modeS-gpt-4o-RULES1-filtered-sharded31/analysis/charts/top_confusions.png"></div>
+              </div>
+            </section>
+            
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>hurricane_maria_2017 — train</h3>
                   <div class="sub">model: <code>gpt-4o-mini</code> — <code>20251021-215113-modeS-RULES1-ALT</code></div>
                   <div class="sub path">hurricane_maria_2017/train/gpt-4o-mini/20251021-215113-modeS-RULES1-ALT</div>
                 </div>
                 <table class="metrics">
                   <tr><th>Test size</th><td>5094</td></tr>
                   <tr><th>Accuracy</th><td>0.6633 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
-                  <tr><th>Macro-F1</th><td>0.5770 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Macro-F1</th><td>0.5770 </td></tr>
                   
                   <tr><th>OOS preds</th><td class='num bad'>16 <a href='#' class='oos-link' data-oos='[["missing_or_found_people", 16]]' data-title='hurricane_maria_2017 • gpt-4o-mini • 20251021-215113-modeS-RULES1-ALT'>view</a></td></tr>
                 </table>
@@ -2077,13 +2309,37 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4
               <div class="head">
                 <div>
                   <h3>kaikoura_earthquake_2016 — train</h3>
+                  <div class="sub">model: <code>gpt-4o</code> — <code>20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10</code></div>
+                  <div class="sub path">kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>1536</td></tr>
+                  <tr><th>Accuracy</th><td>0.7181 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
+                  <tr><th>Macro-F1</th><td>0.7013 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Scope</th><td>truth</td></tr>
+                  <tr><th>OOS preds</th><td class='num'>0</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                <div class="imgbox">  <img class="zoomable" src="kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="kaikoura_earthquake_2016/train/gpt-4o/20251115-015531-modeS-gpt-4o-RULES1-filtered-sharded10/analysis/charts/top_confusions.png"></div>
+              </div>
+            </section>
+            
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>kaikoura_earthquake_2016 — train</h3>
                   <div class="sub">model: <code>gpt-4o-mini</code> — <code>20251021-182421-modeS-RULES1-TIER1</code></div>
                   <div class="sub path">kaikoura_earthquake_2016/train/gpt-4o-mini/20251021-182421-modeS-RULES1-TIER1</div>
                 </div>
                 <table class="metrics">
                   <tr><th>Test size</th><td>1536</td></tr>
-                  <tr><th>Accuracy</th><td>0.6947 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
-                  <tr><th>Macro-F1</th><td>0.6663 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Accuracy</th><td>0.6947 </td></tr>
+                  <tr><th>Macro-F1</th><td>0.6663 </td></tr>
                   
                   <tr><th>OOS preds</th><td class='num'>0</td></tr>
                 </table>
@@ -2101,13 +2357,37 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4
               <div class="head">
                 <div>
                   <h3>kerala_floods_2018 — train</h3>
+                  <div class="sub">model: <code>gpt-4o</code> — <code>20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1</code></div>
+                  <div class="sub path">kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1</div>
+                </div>
+                <table class="metrics">
+                  <tr><th>Test size</th><td>5588</td></tr>
+                  <tr><th>Accuracy</th><td>0.7040 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
+                  <tr><th>Macro-F1</th><td>0.5813 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Scope</th><td>truth</td></tr>
+                  <tr><th>OOS preds</th><td class='num'>0</td></tr>
+                </table>
+              </div>
+              <div class="imgs">
+                <div class="imgbox">  <img class="zoomable" src="kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_counts.png" alt="confusion_matrix_counts.png"        data-fullsrc="kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_counts.png"></div>
+<div class="imgbox">  <img class="zoomable" src="kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_row_normalized.png" alt="confusion_matrix_row_normalized.png"        data-fullsrc="kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/confusion_matrix_row_normalized.png"></div>
+<div class="imgbox">  <img class="zoomable" src="kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_error_rate.png" alt="per_class_error_rate.png"        data-fullsrc="kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_error_rate.png"></div>
+<div class="imgbox">  <img class="zoomable" src="kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_f1.png" alt="per_class_f1.png"        data-fullsrc="kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/per_class_f1.png"></div>
+<div class="imgbox">  <img class="zoomable" src="kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/top_confusions.png" alt="top_confusions.png"        data-fullsrc="kerala_floods_2018/train/gpt-4o/20251116-131317-modeS-gpt-4o-RULES1-filtered-TIER1/analysis/charts/top_confusions.png"></div>
+              </div>
+            </section>
+            
+            <section class="card">
+              <div class="head">
+                <div>
+                  <h3>kerala_floods_2018 — train</h3>
                   <div class="sub">model: <code>gpt-4o-mini</code> — <code>20251021-231731-modeS-RULES1-ALT</code></div>
                   <div class="sub path">kerala_floods_2018/train/gpt-4o-mini/20251021-231731-modeS-RULES1-ALT</div>
                 </div>
                 <table class="metrics">
                   <tr><th>Test size</th><td>5588</td></tr>
-                  <tr><th>Accuracy</th><td>0.6809 <span class='badge badge-acc' title='Best Accuracy in Event'>best</span></td></tr>
-                  <tr><th>Macro-F1</th><td>0.5095 <span class='badge badge-f1'  title='Best Macro-F1 in Event'>best</span></td></tr>
+                  <tr><th>Accuracy</th><td>0.6809 </td></tr>
+                  <tr><th>Macro-F1</th><td>0.5095 </td></tr>
                   
                   <tr><th>OOS preds</th><td class='num bad'>4 <a href='#' class='oos-link' data-oos='[["missing_or_found_people", 4]]' data-title='kerala_floods_2018 • gpt-4o-mini • 20251021-231731-modeS-RULES1-ALT'>view</a></td></tr>
                 </table>
@@ -2121,8 +2401,10 @@ RULES1'><td><strong>kerala_floods_2018</strong></td><td><span class='pill pill-4
               </div>
             </section>
             
-          </div>
+            </div>
+          </section>
         
+  </section>
 
   <!-- Shared Modal -->
   <div id="imgModal" class="modal" aria-hidden="true">
