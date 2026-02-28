@@ -5,6 +5,9 @@
 > 🔗 **Live Results Dashboard:**  
 > https://htmlpreview.github.io/?https://github.com/anhtranst/humaid/blob/main/results/index.html
 
+> 🔗 **Test Summary Dashboard:**  
+> https://htmlpreview.github.io/?https://github.com/anhtranst/humaid/blob/main/results/test_rules1_dashboard.html
+
 Zero-shot tweet classification for humanitarian response categories (HumAID-style labels) using OpenAI's **Chat Completions + Structured Outputs** and the **Batch API**.  
 Outputs include predictions and analysis artifacts (confusion matrices, per-class metrics, mistakes), plus a **curated results dashboard**.
 
